@@ -1,0 +1,90 @@
+/* ARK MARBLES — CENTRAL ADMIN RECYCLE BIN */
+.ark-recycle-page {
+  width: 100%;
+  min-height: calc(100vh - 150px);
+  padding: 24px clamp(16px, 1.6vw, 30px) 32px;
+  color: #f7eee1;
+  background: radial-gradient(ellipse at 50% 0%, rgba(123, 74, 31, .12), transparent 52%), #0c0d0f;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.ark-recycle-heading {
+  display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:22px;
+}
+.ark-recycle-eyebrow { color:#e4b64e; font-size:12px; font-weight:800; letter-spacing:2px; }
+.ark-recycle-heading h1 { margin:8px 0 5px; font-family:Georgia,serif; font-size:clamp(30px,2.5vw,42px); color:#fff4df; }
+.ark-recycle-heading p { margin:0; color:#c9bca8; font-size:15px; }
+.ark-recycle-refresh,.ark-recycle-filters select,.ark-recycle-pagination button {
+  border:1px solid #76531e; border-radius:10px; background:#19130e; color:#f7e6c7; padding:12px 16px; font-size:14px;
+}
+.ark-recycle-refresh { display:flex; align-items:center; gap:9px; cursor:pointer; }
+.ark-recycle-refresh:disabled { opacity:.55; cursor:wait; }
+.ark-recycle-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; margin-bottom:17px; }
+.ark-recycle-stat { display:flex; align-items:center; gap:15px; min-height:102px; padding:17px; border:1px solid #6e4b1b; border-radius:15px; background:linear-gradient(135deg,#21160f,#111214); }
+.ark-recycle-stat-icon { display:grid; place-items:center; width:54px; height:54px; flex:0 0 54px; border:1px solid #b98932; border-radius:14px; color:#f3c45e; background:#30200e; }
+.ark-recycle-stat small,.ark-recycle-stat em { display:block; color:#c9b99f; font-size:13px; font-style:normal; }
+.ark-recycle-stat strong { display:block; margin:2px 0; color:#fff; font-family:Georgia,serif; font-size:30px; }
+.ark-recycle-panel { overflow:hidden; border:1px solid #76531e; border-radius:16px; background:linear-gradient(145deg,#1a120d,#111315 65%); }
+.ark-recycle-toolbar { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:20px; border-bottom:1px solid #44321d; }
+.ark-recycle-toolbar h2 { display:flex; align-items:center; gap:10px; margin:0 0 5px; color:#fff1d6; font-family:Georgia,serif; font-size:24px; }
+.ark-recycle-toolbar h2 svg { color:#efbd50; }
+.ark-recycle-toolbar p { margin:0; color:#bdb09e; font-size:13px; }
+.ark-recycle-filters { display:flex; align-items:center; gap:10px; }
+.ark-recycle-search { display:flex; align-items:center; gap:9px; min-width:280px; padding:0 13px; border:1px solid #74501e; border-radius:10px; color:#e9b94f; background:#100f0e; }
+.ark-recycle-search input { width:100%; height:44px; border:0; outline:0; color:#fff; background:transparent; font-size:14px; }
+.ark-recycle-search input::placeholder { color:#9d907e; }
+.ark-recycle-filters select { min-width:180px; height:46px; }
+.ark-recycle-notice { display:flex; align-items:center; gap:9px; margin:14px 18px 0; padding:12px 14px; border-radius:9px; font-size:14px; }
+.ark-recycle-notice.error { color:#ffc0b9; background:#471c1d; border:1px solid #923b3b; }
+.ark-recycle-notice.success { color:#c8f7d0; background:#12351f; border:1px solid #267341; }
+.ark-recycle-table-wrap { width:100%; overflow-x:auto; }
+.ark-recycle-table { width:100%; border-collapse:collapse; min-width:850px; }
+.ark-recycle-table th { padding:16px 17px; text-align:left; color:#ffe1a0; background:linear-gradient(90deg,#493018,#69471e); font-size:14px; font-weight:800; white-space:nowrap; }
+.ark-recycle-table td { padding:15px 17px; border-bottom:1px solid #3c3025; color:#f2e9dc; font-size:14px; vertical-align:middle; }
+.ark-recycle-table tbody tr:hover { background:rgba(218,166,70,.06); }
+.ark-recycle-record { display:flex; align-items:center; gap:12px; min-width:190px; }
+.ark-recycle-record strong { font-size:14px; font-weight:700; }
+.ark-recycle-record-icon { display:grid; place-items:center; width:38px; height:38px; flex:0 0 38px; border:1px solid #75501f; border-radius:9px; color:#efbd50; background:#241a11; }
+.ark-recycle-type { display:inline-block; padding:7px 11px; border:1px solid #8d682b; border-radius:20px; color:#f5d28a; background:#382711; font-size:12px; white-space:nowrap; }
+.ark-recycle-id { color:#c7bba9 !important; font-family:monospace; }
+.ark-recycle-date { display:flex; align-items:center; gap:8px; color:#cfc3b2; white-space:nowrap; }
+.ark-recycle-date svg { color:#dcae4b; }
+.ark-recycle-actions { display:flex; align-items:center; gap:8px; white-space:nowrap; }
+.ark-recycle-actions button { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:37px; padding:8px 12px; border-radius:8px; font-size:13px; font-weight:700; cursor:pointer; }
+.ark-recycle-actions button:disabled { opacity:.5; cursor:wait; }
+.ark-recycle-actions .restore { border:1px solid #96702c; color:#17110a; background:linear-gradient(135deg,#ffdc83,#dba63d); }
+.ark-recycle-actions .purge { width:38px; border:1px solid #8d3a37; color:#ff8e85; background:#321718; }
+.ark-recycle-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-height:260px; padding:35px 20px; text-align:center; color:#bfb3a1; }
+.ark-recycle-empty > span { display:grid; place-items:center; width:62px; height:62px; border:1px solid #8b6427; border-radius:18px; color:#efbd50; background:#261b10; }
+.ark-recycle-empty strong { color:#fff0d2; font-size:18px; }
+.ark-recycle-empty p { margin:0; font-size:14px; }
+.ark-recycle-pagination { display:flex; justify-content:space-between; align-items:center; gap:15px; padding:15px 18px; color:#c6b9a6; font-size:13px; }
+.ark-recycle-pagination div { display:flex; align-items:center; gap:10px; }
+.ark-recycle-pagination button { padding:9px 13px; cursor:pointer; }
+.ark-recycle-pagination button:disabled { opacity:.4; cursor:not-allowed; }
+.ark-recycle-pagination strong { color:#f4c75e; font-size:14px; }
+.ark-recycle-modal-backdrop { position:fixed; inset:0; z-index:9999; display:grid; place-items:center; padding:20px; background:rgba(0,0,0,.72); }
+.ark-recycle-modal { position:relative; width:min(100%,440px); padding:30px; border:1px solid #946c2b; border-radius:17px; text-align:center; color:#f6ecdd; background:linear-gradient(145deg,#21160f,#101214); box-shadow:0 20px 70px #000; }
+.ark-recycle-modal .close { position:absolute; top:13px; right:13px; display:grid; place-items:center; width:34px; height:34px; border:1px solid #5c472d; border-radius:8px; color:#e8d6b8; background:#181512; cursor:pointer; }
+.ark-recycle-modal .warning { display:grid; place-items:center; width:58px; height:58px; margin:0 auto 13px; border:1px solid #a34a3e; border-radius:16px; color:#ff9b8e; background:#3a1b19; }
+.ark-recycle-modal h2 { margin:0 0 9px; font-family:Georgia,serif; font-size:25px; }
+.ark-recycle-modal p { color:#c9bca9; font-size:14px; line-height:1.6; }
+.ark-recycle-modal p strong { color:#fff0d2; }
+.ark-recycle-modal .modal-actions { display:flex; justify-content:center; gap:10px; margin-top:22px; }
+.ark-recycle-modal .modal-actions button { display:inline-flex; align-items:center; gap:8px; padding:11px 15px; border-radius:9px; font-weight:700; cursor:pointer; }
+.ark-recycle-modal .cancel { border:1px solid #6c512a; color:#f4e2c4; background:#191511; }
+.ark-recycle-modal .confirm { border:1px solid #9d3e37; color:#fff; background:#842e29; }
+.ark-recycle-spin { animation:arkRecycleSpin 1s linear infinite; }
+@keyframes arkRecycleSpin { to { transform:rotate(360deg); } }
+@media (max-width:900px) {
+  .ark-recycle-toolbar { align-items:stretch; flex-direction:column; }
+  .ark-recycle-filters { width:100%; }
+  .ark-recycle-search { flex:1; min-width:0; }
+}
+@media (max-width:650px) {
+  .ark-recycle-page { padding:18px 10px 25px; }
+  .ark-recycle-heading { align-items:flex-start; flex-direction:column; }
+  .ark-recycle-stats { grid-template-columns:1fr; }
+  .ark-recycle-filters { align-items:stretch; flex-direction:column; }
+  .ark-recycle-filters select { width:100%; }
+  .ark-recycle-pagination { align-items:flex-start; flex-direction:column; }
+}

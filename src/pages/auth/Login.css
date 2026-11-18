@@ -1,0 +1,753 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+/* =========================================
+   ARK MARBLES — LUXURY LOGIN
+   Black • Champagne Gold • Marble
+   ========================================= */
+
+.ark-login {
+  --gold: #e8bd69;
+  --gold-light: #ffe1a0;
+  --white: #fffaf0;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  color: var(--white);
+  font-family: "DM Sans", sans-serif;
+  background: #100905;
+}
+
+.ark-login *,
+.ark-login *::before,
+.ark-login *::after {
+  box-sizing: border-box;
+}
+
+.ark-login a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Background image */
+.ark-login-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/images/ark-login-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: ark-background-appear 1s ease both;
+}
+
+/* Dark overlay keeps text readable */
+.ark-login-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 5, 3, 0.76) 0%,
+      rgba(10, 5, 3, 0.38) 48%,
+      rgba(10, 5, 3, 0.72) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(10, 5, 3, 0.78) 0%,
+      rgba(10, 5, 3, 0.12) 60%,
+      rgba(10, 5, 3, 0.4) 100%
+    );
+}
+
+/* Header */
+.ark-login-header {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  min-height: 78px;
+  padding: 14px 5.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid rgba(232, 189, 105, 0.28);
+  background: rgba(12, 7, 5, 0.62);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.ark-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex-shrink: 0;
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+.ark-brand-mark,
+.ark-login-logo {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-family: "Playfair Display", serif;
+}
+
+.ark-brand-mark {
+  width: 46px;
+  height: 46px;
+  font-size: 29px;
+}
+
+.ark-brand-copy strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+.ark-brand-copy small {
+  display: block;
+  margin-top: 5px;
+  color: #d7c7ae;
+  font-size: 8px;
+  letter-spacing: 1.25px;
+  white-space: nowrap;
+}
+
+.ark-login-header nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.ark-login-header nav a {
+  color: #fff8e9;
+  font-size: 11px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.ark-login-header nav a:hover {
+  color: var(--gold);
+}
+
+/* Main two-column layout */
+.ark-login-main {
+  position: relative;
+  z-index: 1;
+  flex: 1 0 auto;
+  width: min(1320px, 90%);
+  margin: 0 auto;
+  padding: 42px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(370px, 440px);
+  align-items: center;
+  gap: clamp(35px, 5vw, 75px);
+}
+
+/* Intro section */
+.ark-login-intro {
+  max-width: 650px;
+  padding: 25px 0;
+  animation: ark-content-appear 0.8s ease both;
+}
+
+.ark-kicker {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+}
+
+.ark-login-intro h1 {
+  margin: 0;
+  color: var(--gold-light);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.ark-login-intro h1 span,
+.ark-login-intro h1 em {
+  display: block;
+  margin-top: 12px;
+  color: #fffaf0;
+  font-size: clamp(28px, 3.2vw, 43px);
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.ark-login-intro h1 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.ark-login-intro-text {
+  max-width: 430px;
+  margin: 22px 0 30px;
+  color: #eee0cc;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Feature icons */
+.ark-login-features {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.ark-login-features > div {
+  min-width: 105px;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-right: 1px solid rgba(232, 189, 105, 0.35);
+  text-align: center;
+}
+
+.ark-login-features > div:first-child {
+  padding-left: 0;
+}
+
+.ark-login-features > div:last-child {
+  border-right: 0;
+}
+
+.ark-login-features svg {
+  width: 30px;
+  height: 30px;
+  color: var(--gold);
+  stroke-width: 1.5;
+}
+
+.ark-login-features span {
+  color: #fff5e4;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Login card */
+.ark-login-card {
+  width: 100%;
+  min-width: 0;
+  padding: 30px 30px 28px;
+  border: 1px solid rgba(232, 189, 105, 0.82);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(21, 12, 8, 0.96),
+    rgba(12, 8, 6, 0.94)
+  );
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(232, 160, 54, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  animation: ark-card-appear 0.7s ease both;
+}
+
+.ark-login-logo {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 10px;
+  font-size: 32px;
+}
+
+.ark-login-card > h2 {
+  margin: 0;
+  color: var(--gold-light);
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.ark-login-subtitle {
+  margin: 8px 0 19px;
+  color: #e5d8c5;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.ark-login-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+
+.ark-login-divider span {
+  width: 58px;
+  height: 1px;
+  background: rgba(232, 189, 105, 0.55);
+}
+
+.ark-login-card > h3 {
+  margin: 0;
+  color: #fffaf0;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.ark-login-card > h3 span {
+  color: var(--gold);
+}
+
+.ark-login-description {
+  margin: 8px 0 22px;
+  color: #d9cfc2;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Error and success messages */
+.ark-login-message {
+  margin-bottom: 13px;
+  padding: 11px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ark-login-message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ark-login-error {
+  border: 1px solid rgba(255, 105, 105, 0.4);
+  background: rgba(130, 20, 20, 0.2);
+  color: #ffb7b7;
+}
+
+.ark-login-success {
+  border: 1px solid rgba(95, 210, 145, 0.35);
+  background: rgba(25, 110, 65, 0.18);
+  color: #a7f0c5;
+}
+
+/* Inputs */
+.ark-login-input {
+  min-height: 49px;
+  margin-bottom: 12px;
+  padding: 0 13px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid rgba(232, 189, 105, 0.58);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--gold-light);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ark-login-input:focus-within {
+  border-color: var(--gold-light);
+  box-shadow: 0 0 0 3px rgba(232, 189, 105, 0.1);
+}
+
+.ark-login-input > svg {
+  flex-shrink: 0;
+}
+
+.ark-login-input input {
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fffaf0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+}
+
+.ark-login-input input::placeholder {
+  color: #b9ada0;
+}
+
+.ark-login-input input:disabled {
+  opacity: 0.65;
+}
+
+.ark-login-input .ark-password-toggle {
+  width: 30px;
+  height: 34px;
+  flex-shrink: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #e7d8c4;
+  cursor: pointer;
+}
+
+.ark-password-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Remember me and forgot password */
+.ark-login-options {
+  margin: 14px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.ark-login-options .ark-remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #f8ead5;
+  cursor: pointer;
+}
+
+.ark-remember input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--gold);
+}
+
+.ark-login-options a,
+.ark-register-link a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+.ark-login-options a:hover,
+.ark-register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Sign-in button */
+.ark-login-submit {
+  width: 100%;
+  min-height: 49px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #ffe1a0, #d89a42);
+  color: #1a1006;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.ark-login-submit:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.ark-login-submit:disabled,
+.ark-google-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.ark-login-spinner {
+  animation: ark-spin 0.9s linear infinite;
+}
+
+/* Divider and Google button */
+.ark-login-or {
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: #eee2d0;
+  font-size: 10px;
+}
+
+.ark-login-or span {
+  flex: 1;
+  height: 1px;
+  background: rgba(232, 189, 105, 0.35);
+}
+
+.ark-google-button {
+  width: 100%;
+  min-height: 45px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(232, 189, 105, 0.7);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ark-google-button:hover:not(:disabled) {
+  background: rgba(232, 189, 105, 0.1);
+}
+
+/* Register link */
+.ark-register-link {
+  margin: 20px 0 0;
+  color: #e5d8c5;
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.ark-register-link a {
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+/* Footer */
+.ark-login-footer {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  min-height: 52px;
+  padding: 13px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px 35px;
+  border-top: 1px solid rgba(232, 189, 105, 0.35);
+  background: rgba(10, 6, 4, 0.78);
+  color: #ffe0a0;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* Animations */
+@keyframes ark-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ark-content-appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ark-card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ark-background-appear {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1000px) {
+  .ark-login-header nav {
+    gap: 14px;
+  }
+
+  .ark-login-main {
+    width: 92%;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 410px);
+    gap: 28px;
+  }
+
+  .ark-login-card {
+    padding: 28px 23px;
+  }
+
+  .ark-login-features > div {
+    min-width: 85px;
+    padding: 0 12px;
+  }
+
+  .ark-brand-copy small {
+    letter-spacing: 0.8px;
+  }
+}
+
+/* Tablets and phones */
+@media (max-width: 760px) {
+  .ark-login {
+    overflow: visible;
+  }
+
+  .ark-login-header {
+    min-height: 70px;
+    padding: 12px 5%;
+  }
+
+  .ark-login-header nav {
+    display: none;
+  }
+
+  .ark-login-main {
+    width: 90%;
+    min-height: auto;
+    padding: 32px 0 40px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .ark-login-intro {
+    padding: 12px 0;
+  }
+
+  .ark-kicker {
+    margin-bottom: 16px;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
+  .ark-login-intro h1 {
+    font-size: clamp(38px, 9vw, 56px);
+  }
+
+  .ark-login-intro h1 span,
+  .ark-login-intro h1 em {
+    font-size: clamp(27px, 6.5vw, 37px);
+  }
+
+  .ark-login-intro-text {
+    margin: 17px 0 22px;
+    font-size: 13px;
+  }
+
+  .ark-login-features {
+    gap: 12px 0;
+  }
+
+  .ark-login-card {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .ark-login-footer {
+    gap: 12px 22px;
+    font-size: 9px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .ark-brand {
+    gap: 9px;
+  }
+
+  .ark-brand-copy strong {
+    font-size: 16px;
+  }
+
+  .ark-brand-copy small {
+    font-size: 7px;
+    letter-spacing: 0.6px;
+  }
+
+  .ark-brand-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+
+  .ark-login-card {
+    padding: 25px 17px;
+    border-radius: 14px;
+  }
+
+  .ark-login-card > h3 {
+    font-size: 29px;
+  }
+
+  .ark-login-features > div {
+    min-width: 0;
+    flex: 1;
+    padding: 0 8px;
+  }
+
+  .ark-login-features span {
+    font-size: 10px;
+  }
+
+  .ark-login-footer {
+    padding: 13px 4%;
+    gap: 10px 15px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .ark-login-background,
+  .ark-login-intro,
+  .ark-login-card {
+    animation: none;
+  }
+
+  .ark-login *,
+  .ark-login *::before,
+  .ark-login *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

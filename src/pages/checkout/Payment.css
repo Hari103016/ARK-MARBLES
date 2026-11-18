@@ -1,0 +1,1012 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap");
+
+.ark-payment-screen,
+.ark-payment-screen *,
+.ark-payment-order-summary,
+.ark-payment-order-summary * {
+  box-sizing: border-box;
+}
+
+.ark-payment-screen {
+  --ark-wine: #430b16;
+  --ark-wine-dark: #26060b;
+  --ark-wine-light: #64101f;
+  --ark-gold: #dca64e;
+  --ark-gold-light: #f4d18a;
+  --ark-cream: #fff6e7;
+  --ark-muted: #8b7565;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  padding: 36px clamp(16px, 4vw, 64px) 50px;
+  overflow: hidden;
+  color: var(--ark-wine);
+  background: #f4e8d3;
+  font-family: "Inter", sans-serif;
+}
+
+.ark-payment-backdrop {
+  position: absolute;
+  z-index: -2;
+  inset: 0 0 auto;
+  height: 650px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(35, 5, 9, 0.89) 0%,
+      rgba(50, 7, 13, 0.72) 46%,
+      rgba(38, 6, 10, 0.43) 100%
+    ),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85")
+      center 55% / cover no-repeat,
+    linear-gradient(125deg, #200509, #681624 60%, #9b673b);
+}
+
+/* MAIN PAYMENT LAYOUT */
+
+.ark-payment-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+  align-items: stretch;
+  gap: 0;
+  width: min(1500px, 100%);
+  margin: 0 auto;
+  border: 1px solid rgba(220, 166, 78, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+  background: var(--ark-wine-dark);
+  box-shadow: 0 25px 75px rgba(35, 7, 8, 0.25);
+}
+
+/* LEFT: PAYMENT FORM */
+
+.ark-payment-panel {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding: clamp(25px, 3.1vw, 48px);
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(220, 166, 78, 0.1),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #fff8eb, #f3dfbf);
+}
+
+.ark-payment-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: clamp(35px, 4vw, 58px);
+}
+
+.ark-payment-monogram {
+  display: grid;
+  place-items: center;
+  flex: 0 0 58px;
+  height: 58px;
+  border: 2px solid var(--ark-gold);
+  color: var(--ark-gold-light);
+  background: var(--ark-wine);
+  font: 400 42px/1 "Cormorant Garamond", serif;
+}
+
+.ark-payment-brand-name {
+  color: var(--ark-wine);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.ark-payment-brand-caption {
+  margin-top: 5px;
+  color: #705342;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
+
+.ark-payment-step {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #a16a26;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.ark-payment-step::after {
+  display: block;
+  width: 95px;
+  height: 1px;
+  background: var(--ark-gold);
+  content: "";
+}
+
+.ark-payment-title {
+  margin: 14px 0 8px;
+  color: var(--ark-wine);
+  font: 500 clamp(42px, 4.2vw, 70px)/1.02
+    "Cormorant Garamond", serif;
+  letter-spacing: -1.5px;
+}
+
+.ark-payment-title em {
+  color: #bd8436;
+  font-weight: 500;
+}
+
+.ark-payment-subtitle {
+  margin: 13px 0 27px;
+  color: #755846;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  line-height: 1.8;
+}
+
+/* PAYMENT METHOD OPTIONS */
+
+.ark-payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ark-payment-option {
+  position: relative;
+  display: grid;
+  grid-template-columns: 25px 76px minmax(0, 1fr) 70px 32px;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 112px;
+  padding: 15px 16px;
+  overflow: hidden;
+  border: 1px solid #dfc49f;
+  border-radius: 13px;
+  color: var(--ark-wine);
+  background: rgba(255, 251, 242, 0.87);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.ark-payment-option:hover {
+  border-color: #c88b3d;
+  box-shadow: 0 7px 18px rgba(67, 11, 22, 0.08);
+  transform: translateY(-1px);
+}
+
+.ark-payment-option.is-selected {
+  border: 2px solid #b76d13;
+  padding: 14px 15px;
+  background: linear-gradient(110deg, #fff1d7, #fffaf0);
+  box-shadow: 0 5px 15px rgba(151, 87, 16, 0.08);
+}
+
+.ark-payment-radio {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #bb8c58;
+  border-radius: 50%;
+  background: #fffdf7;
+}
+
+.ark-payment-option.is-selected .ark-payment-radio {
+  border: 5px solid #fff7e8;
+  outline: 2px solid var(--ark-wine);
+  background: var(--ark-wine);
+}
+
+.ark-payment-method-logo {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 70px;
+  border: 1px solid #efd7ac;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #f4dfb8, #fff9eb);
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+
+.upi-logo {
+  color: #111;
+  font-size: 21px;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+.upi-logo::first-letter {
+  color: #111;
+}
+
+.card-logo {
+  color: #68101e;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.bank-logo {
+  color: #64101f;
+  font-size: 46px;
+}
+
+.cash-logo {
+  color: #762f10;
+  font-size: 43px;
+}
+
+.ark-payment-method-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ark-payment-method-name {
+  color: #530c17;
+  font: 600 clamp(19px, 1.65vw, 27px)/1.1
+    "Cormorant Garamond", serif;
+}
+
+.ark-payment-method-description {
+  color: #6f594a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ark-payment-method-tagline {
+  color: #a56623;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* PAYMENT PROVIDER LABELS */
+
+.ark-payment-brands {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ark-payment-brand-chip {
+  color: #173c7a;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.brand-upi:nth-child(2) {
+  color: #4329a2;
+}
+
+.brand-upi:nth-child(3) {
+  color: #51442c;
+}
+
+.brand-card:nth-child(2) {
+  color: #e52d41;
+}
+
+.brand-card:nth-child(3) {
+  color: #12845c;
+}
+
+.brand-netbanking:nth-child(2) {
+  color: #bd1429;
+}
+
+.brand-netbanking:nth-child(3) {
+  color: #25477e;
+}
+
+.brand-cod {
+  color: #85511e;
+  letter-spacing: 0.8px;
+}
+
+.ark-payment-arrow {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #bb7a34;
+  border-radius: 50%;
+  color: #955b20;
+  font: 400 28px/1 "Inter", sans-serif;
+}
+
+.ark-payment-option.is-selected .ark-payment-arrow {
+  border-color: var(--ark-gold);
+  color: #fff;
+  background: #dba04a;
+}
+
+/* ACTION BUTTONS */
+
+.ark-payment-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 22px;
+}
+
+.ark-payment-back-button,
+.ark-payment-review-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 13px 22px;
+  border-radius: 8px;
+  font: 500 20px/1.2 "Cormorant Garamond", serif;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.ark-payment-back-button {
+  border: 1px solid #dfbd8a;
+  color: var(--ark-wine);
+  background: rgba(255, 249, 236, 0.6);
+}
+
+.ark-payment-back-button:hover {
+  background: #fffaf0;
+}
+
+.ark-payment-review-button {
+  min-width: 220px;
+  border: 1px solid #9c672b;
+  color: #fff6e5;
+  background: linear-gradient(110deg, #390710, #800b23);
+  box-shadow: 0 8px 18px rgba(67, 11, 22, 0.15);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.ark-payment-review-button:hover {
+  background: linear-gradient(110deg, #500918, #9b112b);
+  box-shadow: 0 10px 24px rgba(67, 11, 22, 0.23);
+  transform: translateY(-1px);
+}
+
+.ark-payment-back-button:focus-visible,
+.ark-payment-review-button:focus-visible,
+.ark-payment-option:focus-visible,
+.ark-payment-quantity button:focus-visible {
+  outline: 3px solid #c48734;
+  outline-offset: 3px;
+}
+
+.ark-payment-error {
+  margin: 16px 0 0;
+  color: #a20f24;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* BOTTOM TRUST STRIP */
+
+.ark-payment-trust {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid #ddc39d;
+}
+
+.ark-payment-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ark-payment-trust-icon {
+  flex: 0 0 auto;
+  color: #a36b2c;
+  font-size: 30px;
+}
+
+.ark-payment-trust-item strong,
+.ark-payment-trust-item small {
+  display: block;
+}
+
+.ark-payment-trust-item strong {
+  color: #51101b;
+  font: 600 18px/1.2 "Cormorant Garamond", serif;
+}
+
+.ark-payment-trust-item small {
+  margin-top: 4px;
+  color: #80664e;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* RIGHT: SHOWROOM IMAGE */
+
+.ark-payment-showroom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 640px;
+  padding: clamp(30px, 4vw, 58px);
+  overflow: hidden;
+  color: #fff4e2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(40, 5, 11, 0.32),
+      rgba(37, 5, 9, 0.18) 40%,
+      rgba(33, 5, 8, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85")
+      center / cover no-repeat,
+    linear-gradient(145deg, #5a1820, #170508);
+}
+
+.ark-payment-showroom-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 5, 10, 0.2),
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+.ark-payment-showroom-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 430px;
+  margin-left: auto;
+}
+
+.ark-payment-showroom-copy > span {
+  color: var(--ark-gold-light);
+  font: italic 500 33px/1.1 "Cormorant Garamond", serif;
+}
+
+.ark-payment-showroom-copy h2 {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0 18px;
+  color: #fff7e8;
+  font: 500 clamp(44px, 4.4vw, 72px)/0.94
+    "Cormorant Garamond", serif;
+  letter-spacing: -1.5px;
+}
+
+.ark-payment-showroom-copy h2 i {
+  margin: 8px 0;
+  color: var(--ark-gold-light);
+  font-size: 0.65em;
+  font-weight: 500;
+}
+
+.ark-payment-showroom-rule {
+  width: 100px;
+  height: 2px;
+  margin: 25px 0 20px;
+  background: var(--ark-gold-light);
+}
+
+.ark-payment-showroom-copy p {
+  color: #f4e4cf;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 2;
+}
+
+.ark-payment-showroom-caption {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(245, 208, 135, 0.5);
+}
+
+.ark-payment-caption-mark {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--ark-gold-light);
+  color: var(--ark-gold-light);
+  font: 400 34px/1 "Cormorant Garamond", serif;
+}
+
+.ark-payment-showroom-caption strong,
+.ark-payment-showroom-caption small {
+  display: block;
+}
+
+.ark-payment-showroom-caption strong {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+
+.ark-payment-showroom-caption small {
+  margin-top: 5px;
+  color: #f0d6af;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+}
+
+/* ORDER SUMMARY */
+
+.ark-payment-order-summary {
+  width: min(1500px, 100%);
+  margin: 25px auto 0;
+  padding: clamp(24px, 3vw, 42px);
+  border: 1px solid #9f6c35;
+  border-radius: 14px;
+  color: #fff4e1;
+  background: linear-gradient(145deg, #510d1a, #30070e);
+  box-shadow: 0 15px 40px rgba(58, 10, 17, 0.15);
+}
+
+.ark-payment-summary-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(225, 174, 95, 0.6);
+}
+
+.ark-payment-summary-eyebrow {
+  color: var(--ark-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ark-payment-summary-heading h2 {
+  margin: 5px 0 0;
+  font: 500 clamp(32px, 3.3vw, 48px)/1.1
+    "Cormorant Garamond", serif;
+}
+
+.ark-payment-item-count {
+  padding-bottom: 5px;
+  color: #e8c99a;
+  font-size: 13px;
+}
+
+.ark-payment-cart-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.ark-payment-cart-item {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(225, 174, 95, 0.35);
+}
+
+.ark-payment-product-image,
+.ark-payment-product-placeholder {
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(225, 174, 95, 0.65);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ark-payment-product-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--ark-gold-light);
+  background: #28060c;
+  font: 400 60px/1 "Cormorant Garamond", serif;
+}
+
+.ark-payment-product-info h3 {
+  margin: 0 0 7px;
+  color: #fff4e1;
+  font: 600 25px/1.15 "Cormorant Garamond", serif;
+}
+
+.ark-payment-product-info p {
+  margin: 4px 0;
+  color: #e6c9a5;
+  font-size: 13px;
+}
+
+.ark-payment-product-info small {
+  display: block;
+  margin-top: 10px;
+  color: #f4d18a;
+  font-size: 13px;
+}
+
+.ark-payment-remove {
+  margin-top: 12px;
+  padding: 0;
+  border: 0;
+  color: #edc08c;
+  background: transparent;
+  font: 500 12px "Inter", sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ark-payment-product-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 18px;
+}
+
+.ark-payment-quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c99648;
+  border-radius: 5px;
+}
+
+.ark-payment-quantity button {
+  width: 35px;
+  height: 35px;
+  border: 0;
+  color: #ffe4ad;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ark-payment-quantity span {
+  min-width: 28px;
+  color: #fff7e9;
+  font-size: 14px;
+  text-align: center;
+}
+
+.ark-payment-product-controls > strong {
+  color: #fff6e5;
+  font-size: 16px;
+}
+
+.ark-payment-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 22px 0 0 auto;
+}
+
+.ark-payment-totals > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #f0d8b8;
+  font-size: 15px;
+}
+
+.ark-payment-totals strong {
+  color: #fff4e1;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ark-payment-totals .ark-payment-total {
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(225, 174, 95, 0.65);
+  color: #fff4e1;
+  font: 500 29px/1.2 "Cormorant Garamond", serif;
+}
+
+.ark-payment-totals .ark-payment-total strong {
+  color: var(--ark-gold-light);
+  font: 600 clamp(30px, 3vw, 44px)/1.1
+    "Cormorant Garamond", serif;
+}
+
+.ark-payment-summary-promises {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 28px;
+  padding: 20px 10px;
+  border: 1px solid rgba(225, 174, 95, 0.55);
+  border-radius: 9px;
+}
+
+.ark-payment-summary-promises > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.ark-payment-summary-promises > div + div {
+  border-left: 1px solid rgba(225, 174, 95, 0.35);
+}
+
+.ark-payment-summary-promises > div > span {
+  color: var(--ark-gold-light);
+  font-size: 29px;
+}
+
+.ark-payment-summary-promises strong {
+  color: #fff4e1;
+  font: 600 19px/1.15 "Cormorant Garamond", serif;
+}
+
+.ark-payment-summary-promises small {
+  color: #e5c6a1;
+  font-size: 11px;
+}
+
+.ark-payment-disclaimer {
+  margin: 17px 0 0;
+  color: #d9b99b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.ark-payment-empty {
+  padding: 30px 0;
+  color: #e6c9a5;
+  font-size: 16px;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (min-width: 1500px) {
+  .ark-payment-screen {
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .ark-payment-screen {
+    padding: 24px;
+  }
+
+  .ark-payment-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ark-payment-showroom {
+    min-height: 400px;
+    background-position: center 55%;
+  }
+
+  .ark-payment-showroom-copy {
+    margin-left: 0;
+  }
+
+  .ark-payment-showroom-copy h2 {
+    font-size: clamp(45px, 7vw, 65px);
+  }
+
+  .ark-payment-showroom-caption {
+    margin-top: 55px;
+  }
+}
+
+@media (max-width: 650px) {
+  .ark-payment-screen {
+    padding: 12px;
+  }
+
+  .ark-payment-panel {
+    padding: 22px 16px;
+  }
+
+  .ark-payment-brand {
+    margin-bottom: 34px;
+  }
+
+  .ark-payment-monogram {
+    flex-basis: 46px;
+    height: 46px;
+    font-size: 34px;
+  }
+
+  .ark-payment-brand-name {
+    font-size: 17px;
+  }
+
+  .ark-payment-brand-caption {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .ark-payment-title {
+    font-size: 44px;
+  }
+
+  .ark-payment-subtitle {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+  }
+
+  .ark-payment-option,
+  .ark-payment-option.is-selected {
+    grid-template-columns: 20px 48px minmax(0, 1fr) 25px;
+    gap: 9px;
+    min-height: 104px;
+    padding: 12px 9px;
+  }
+
+  .ark-payment-method-logo {
+    width: 48px;
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .bank-logo,
+  .cash-logo {
+    font-size: 30px;
+  }
+
+  .ark-payment-method-name {
+    font-size: 19px;
+  }
+
+  .ark-payment-method-description {
+    font-size: 11px;
+  }
+
+  .ark-payment-method-tagline {
+    font-size: 10px;
+  }
+
+  .ark-payment-brands {
+    display: none;
+  }
+
+  .ark-payment-arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 22px;
+  }
+
+  .ark-payment-actions {
+    flex-wrap: wrap;
+  }
+
+  .ark-payment-back-button,
+  .ark-payment-review-button {
+    min-height: 49px;
+    padding: 11px 13px;
+    font-size: 18px;
+  }
+
+  .ark-payment-review-button {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ark-payment-trust {
+    gap: 7px;
+  }
+
+  .ark-payment-trust-item {
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .ark-payment-trust-icon {
+    font-size: 22px;
+  }
+
+  .ark-payment-trust-item strong {
+    font-size: 15px;
+  }
+
+  .ark-payment-trust-item small {
+    font-size: 9px;
+  }
+
+  .ark-payment-showroom {
+    min-height: 370px;
+    padding: 28px 22px;
+  }
+
+  .ark-payment-showroom-copy h2 {
+    font-size: 49px;
+  }
+
+  .ark-payment-order-summary {
+    padding: 22px 16px;
+  }
+
+  .ark-payment-summary-heading h2 {
+    font-size: 32px;
+  }
+
+  .ark-payment-cart-item {
+    grid-template-columns: 70px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .ark-payment-product-image,
+  .ark-payment-product-placeholder {
+    width: 70px;
+    height: 78px;
+  }
+
+  .ark-payment-product-info h3 {
+    font-size: 21px;
+  }
+
+  .ark-payment-product-controls {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ark-payment-quantity button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ark-payment-summary-promises {
+    padding: 15px 4px;
+  }
+
+  .ark-payment-summary-promises > div {
+    padding: 0 4px;
+  }
+
+  .ark-payment-summary-promises strong {
+    font-size: 15px;
+  }
+
+  .ark-payment-summary-promises small {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ark-payment-screen *,
+  .ark-payment-order-summary * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

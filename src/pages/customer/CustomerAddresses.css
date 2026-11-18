@@ -1,0 +1,1037 @@
+/* =========================================================
+   ARK MARBLES — LUXURY CUSTOMER ADDRESSES
+   Dark Emerald • Champagne Gold • Turquoise
+   Compatible with CustomerAddresses.jsx
+========================================================= */
+
+.customer-addresses-page {
+  --address-bg: #06110d;
+  --address-panel: #0a1b14;
+  --address-panel-light: #10281e;
+  --address-teal: #00d7c6;
+  --address-gold: #d9b878;
+  --address-white: #f5f2e9;
+  --address-muted: #a5b6aa;
+  --address-border: rgba(166, 190, 169, 0.18);
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  padding: 0;
+  color: var(--address-white);
+  background: transparent;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.customer-addresses-page,
+.customer-addresses-page *,
+.customer-addresses-page *::before,
+.customer-addresses-page *::after {
+  box-sizing: border-box;
+}
+
+.customer-addresses-page button,
+.customer-addresses-page input,
+.customer-addresses-page select {
+  font: inherit;
+}
+
+.customer-addresses-page button {
+  cursor: pointer;
+}
+
+.customer-addresses-page button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.customer-addresses-container {
+  width: 100%;
+  max-width: 1400px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 4px;
+  background: transparent;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.customer-addresses-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 34px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--address-border);
+}
+
+.customer-addresses-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--address-gold);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.customer-addresses-back:hover {
+  color: var(--address-teal);
+}
+
+.customer-addresses-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--address-white);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.customer-addresses-brand-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid rgba(0, 215, 198, 0.42);
+  border-radius: 10px;
+  color: var(--address-teal);
+  background: rgba(0, 215, 198, 0.055);
+}
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.customer-addresses-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.customer-addresses-heading > div {
+  min-width: 0;
+}
+
+.customer-addresses-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--address-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.customer-addresses-heading h1 {
+  margin: 0;
+  color: var(--address-white);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.customer-addresses-heading p {
+  margin: 10px 0 0;
+  color: var(--address-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.customer-addresses-add {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 45px;
+  padding: 12px 17px;
+  border: 1px solid rgba(0, 215, 198, 0.38);
+  border-radius: 9px;
+  color: #04130f;
+  background: linear-gradient(135deg, #00d7c6, #00b7a9);
+  font-size: 12px;
+  font-weight: 750;
+  box-shadow: 0 6px 20px rgba(0, 215, 198, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.customer-addresses-add:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #38edda, #00c8b6);
+  box-shadow: 0 10px 24px rgba(0, 215, 198, 0.16);
+}
+
+.customer-addresses-add:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   SUCCESS AND ERROR MESSAGES
+========================================================= */
+
+.customer-addresses-message {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border: 1px solid var(--address-border);
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.customer-addresses-message > svg {
+  flex: 0 0 auto;
+}
+
+.customer-addresses-message > span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.customer-addresses-message > button {
+  display: grid;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  color: inherit;
+  background: transparent;
+}
+
+.customer-addresses-message > button:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.customer-addresses-message.is-success {
+  border-color: rgba(0, 215, 150, 0.28);
+  color: #79e8b5;
+  background: rgba(0, 215, 150, 0.07);
+}
+
+.customer-addresses-message.is-error {
+  border-color: rgba(255, 105, 105, 0.3);
+  color: #ffaaaa;
+  background: rgba(255, 80, 80, 0.07);
+}
+
+/* =========================================================
+   LOADING STATE
+========================================================= */
+
+.customer-addresses-loading {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 35px;
+  border: 1px solid var(--address-border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #0b2017, #07130e);
+  color: var(--address-muted);
+  text-align: center;
+}
+
+.customer-addresses-loading p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.addresses-spinner {
+  color: var(--address-teal);
+  animation: address-spin 1s linear infinite;
+}
+
+@keyframes address-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   EMPTY ADDRESS STATE
+========================================================= */
+
+.customer-addresses-empty {
+  position: relative;
+  display: flex;
+  min-height: 310px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 38px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(217, 184, 120, 0.23);
+  border-radius: 15px;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(0, 215, 198, 0.075),
+      transparent 58%
+    ),
+    linear-gradient(145deg, #0c2118, #07140f);
+  text-align: center;
+}
+
+.customer-addresses-empty::before {
+  position: absolute;
+  top: -105px;
+  right: -65px;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(217, 184, 120, 0.09);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  box-shadow: 0 0 0 25px rgba(217, 184, 120, 0.018);
+}
+
+.customer-addresses-empty-icon {
+  position: relative;
+  display: grid;
+  width: 68px;
+  height: 68px;
+  flex: 0 0 68px;
+  place-items: center;
+  margin-bottom: 17px;
+  border: 1px solid rgba(217, 184, 120, 0.37);
+  border-radius: 50%;
+  color: var(--address-gold);
+  background: rgba(217, 184, 120, 0.075);
+  box-shadow: 0 0 30px rgba(217, 184, 120, 0.035);
+}
+
+.customer-addresses-empty h2 {
+  position: relative;
+  margin: 0;
+  color: var(--address-white);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.customer-addresses-empty p {
+  position: relative;
+  margin: 9px 0 20px;
+  color: var(--address-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.customer-addresses-empty .customer-addresses-add {
+  position: relative;
+}
+
+/* =========================================================
+   SAVED ADDRESS GRID
+========================================================= */
+
+.customer-addresses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.customer-address-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 21px;
+  border: 1px solid var(--address-border);
+  border-radius: 14px;
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(0, 215, 198, 0.045),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #0c2118, #07130e);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.customer-address-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(217, 184, 120, 0.35);
+  box-shadow: 0 17px 36px rgba(0, 0, 0, 0.2);
+}
+
+.customer-address-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--address-border);
+}
+
+.customer-address-label {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.customer-address-icon {
+  display: grid;
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  place-items: center;
+  border: 1px solid rgba(217, 184, 120, 0.25);
+  border-radius: 10px;
+  color: var(--address-gold);
+  background: rgba(217, 184, 120, 0.06);
+}
+
+.customer-address-label > div {
+  min-width: 0;
+}
+
+.customer-address-label h2 {
+  margin: 0;
+  color: var(--address-white);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.customer-address-type {
+  display: block;
+  margin-top: 4px;
+  color: var(--address-muted);
+  font-size: 10px;
+}
+
+.customer-address-default {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 8px;
+  border: 1px solid rgba(0, 215, 198, 0.24);
+  border-radius: 20px;
+  color: var(--address-teal);
+  background: rgba(0, 215, 198, 0.07);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.customer-address-details {
+  flex: 1;
+  padding: 18px 0;
+  overflow-wrap: anywhere;
+}
+
+.customer-address-details h3 {
+  margin: 0 0 9px;
+  color: var(--address-white);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.customer-address-details p {
+  margin: 4px 0;
+  color: #b8c6bb;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.customer-address-details p:first-of-type {
+  color: var(--address-gold);
+}
+
+/* =========================================================
+   ADDRESS CARD ACTIONS
+========================================================= */
+
+.customer-address-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 15px;
+  border-top: 1px solid var(--address-border);
+}
+
+.customer-address-actions button {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid var(--address-border);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 650;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.customer-address-default-btn {
+  color: var(--address-gold);
+  background: rgba(217, 184, 120, 0.055);
+}
+
+.customer-address-default-btn:hover {
+  border-color: rgba(217, 184, 120, 0.45);
+  background: rgba(217, 184, 120, 0.12);
+}
+
+.customer-address-edit {
+  color: var(--address-teal);
+  background: rgba(0, 215, 198, 0.045);
+}
+
+.customer-address-edit:hover {
+  border-color: rgba(0, 215, 198, 0.4);
+  background: rgba(0, 215, 198, 0.1);
+}
+
+.customer-address-delete {
+  margin-left: auto;
+  color: #ffaaaa;
+  background: rgba(255, 90, 90, 0.045);
+}
+
+.customer-address-delete:hover {
+  border-color: rgba(255, 100, 100, 0.4);
+  background: rgba(255, 90, 90, 0.12);
+}
+
+/* =========================================================
+   PRIVACY FOOTER
+========================================================= */
+
+.customer-addresses-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 23px;
+  padding: 15px 17px;
+  border: 1px solid rgba(0, 215, 198, 0.16);
+  border-radius: 10px;
+  color: var(--address-muted);
+  background: rgba(0, 215, 198, 0.035);
+  font-size: 11px;
+}
+
+.customer-addresses-footer svg {
+  flex: 0 0 auto;
+  color: var(--address-teal);
+}
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.customer-address-modal-overlay {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  overflow-y: auto;
+  background: rgba(1, 7, 5, 0.84);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+/* =========================================================
+   ADD / EDIT ADDRESS MODAL
+========================================================= */
+
+.customer-address-modal {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: calc(100vh - 44px);
+  padding: 27px;
+  overflow-y: auto;
+  border: 1px solid rgba(217, 184, 120, 0.35);
+  border-radius: 16px;
+  color: var(--address-white);
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(0, 215, 198, 0.075),
+      transparent 45%
+    ),
+    #091711;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+}
+
+.customer-address-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--address-border);
+}
+
+.customer-address-modal-header h2 {
+  margin: 5px 0 0;
+  color: var(--address-white);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 31px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.customer-address-modal-close {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  place-items: center;
+  border: 1px solid var(--address-border);
+  border-radius: 9px;
+  color: var(--address-muted);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.customer-address-modal-close:hover {
+  border-color: rgba(255, 100, 100, 0.4);
+  color: #ffaaaa;
+  background: rgba(255, 80, 80, 0.08);
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.customer-address-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.customer-address-form-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.customer-address-form-field label {
+  color: #dce4da;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.customer-address-form-field input,
+.customer-address-form-field select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 11px 12px;
+  border: 1px solid rgba(166, 190, 169, 0.23);
+  border-radius: 8px;
+  outline: none;
+  color: var(--address-white);
+  background: #06120d;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.customer-address-form-field input::placeholder {
+  color: #718278;
+}
+
+.customer-address-form-field select {
+  color-scheme: dark;
+}
+
+.customer-address-form-field select option {
+  color: var(--address-white);
+  background: #091711;
+}
+
+.customer-address-form-field input:hover,
+.customer-address-form-field select:hover {
+  border-color: rgba(217, 184, 120, 0.4);
+}
+
+.customer-address-form-field input:focus,
+.customer-address-form-field select:focus {
+  border-color: var(--address-teal);
+  background: #081a13;
+  box-shadow: 0 0 0 3px rgba(0, 215, 198, 0.09);
+}
+
+/* Default address checkbox */
+
+.customer-address-default-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 21px;
+  padding: 13px;
+  border: 1px solid var(--address-border);
+  border-radius: 9px;
+  color: #dce4da;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.customer-address-default-checkbox input {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  accent-color: var(--address-teal);
+  cursor: pointer;
+}
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.customer-address-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 25px;
+  padding-top: 19px;
+  border-top: 1px solid var(--address-border);
+}
+
+.customer-address-modal-actions button {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.customer-address-cancel {
+  border-color: var(--address-border) !important;
+  color: #c0cec4;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.customer-address-cancel:hover:not(:disabled) {
+  border-color: rgba(217, 184, 120, 0.4) !important;
+  color: var(--address-gold);
+  background: rgba(217, 184, 120, 0.07);
+}
+
+.customer-address-submit {
+  color: #04130f;
+  background: linear-gradient(135deg, #00d7c6, #00b7a9);
+}
+
+.customer-address-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #38edda, #00c8b6);
+}
+
+/* =========================================================
+   DELETE CONFIRMATION DIALOG
+========================================================= */
+
+.customer-address-delete-dialog {
+  width: min(440px, 100%);
+  padding: 28px;
+  border: 1px solid rgba(255, 110, 110, 0.28);
+  border-radius: 16px;
+  color: var(--address-white);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255, 90, 90, 0.07),
+      transparent 55%
+    ),
+    #091711;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.customer-address-delete-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  margin: 0 auto 17px;
+  border: 1px solid rgba(255, 110, 110, 0.3);
+  border-radius: 50%;
+  color: #ff9999;
+  background: rgba(255, 80, 80, 0.08);
+}
+
+.customer-address-delete-dialog h2 {
+  margin: 0;
+  color: var(--address-white);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 29px;
+  font-weight: 600;
+}
+
+.customer-address-delete-dialog > p {
+  margin: 11px 0 0;
+  color: var(--address-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.customer-address-confirm-delete {
+  color: #fff;
+  background: #a83232;
+}
+
+.customer-address-confirm-delete:hover {
+  background: #c33b3b;
+}
+
+/* Center confirmation dialog actions */
+
+.customer-address-delete-dialog .customer-address-modal-actions {
+  justify-content: center;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.customer-addresses-page a:focus-visible,
+.customer-addresses-page button:focus-visible,
+.customer-addresses-page input:focus-visible,
+.customer-addresses-page select:focus-visible {
+  outline: 2px solid var(--address-gold);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .customer-addresses-topbar {
+    margin-bottom: 26px;
+  }
+
+  .customer-addresses-heading {
+    gap: 16px;
+  }
+
+  .customer-addresses-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .customer-address-card {
+    padding: 19px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  .customer-addresses-container {
+    padding: 0;
+  }
+
+  .customer-addresses-topbar {
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+
+  .customer-addresses-brand {
+    gap: 7px;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .customer-addresses-brand-icon {
+    width: 35px;
+    height: 35px;
+    flex-basis: 35px;
+  }
+
+  .customer-addresses-heading {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 21px;
+  }
+
+  .customer-addresses-heading h1 {
+    font-size: 35px;
+  }
+
+  .customer-addresses-heading p {
+    font-size: 12px;
+  }
+
+  .customer-addresses-heading .customer-addresses-add {
+    align-self: flex-start;
+  }
+
+  .customer-addresses-empty {
+    min-height: 270px;
+    padding: 28px 16px;
+  }
+
+  .customer-addresses-empty h2 {
+    font-size: 25px;
+  }
+
+  .customer-addresses-empty p {
+    max-width: 300px;
+  }
+
+  .customer-address-card {
+    padding: 16px;
+  }
+
+  .customer-address-card-top {
+    flex-wrap: wrap;
+  }
+
+  .customer-address-modal-overlay {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .customer-address-modal {
+    max-height: calc(100dvh - 24px);
+    padding: 19px;
+  }
+
+  .customer-address-modal-header h2 {
+    font-size: 27px;
+  }
+
+  .customer-address-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .customer-address-modal-actions {
+    align-items: stretch;
+  }
+
+  .customer-address-modal-actions button {
+    flex: 1;
+  }
+
+  .customer-address-delete-dialog {
+    margin: auto 0;
+    padding: 23px 17px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .customer-addresses-back {
+    font-size: 11px;
+  }
+
+  .customer-addresses-brand {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .customer-addresses-brand-icon {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
+  }
+
+  .customer-addresses-heading h1 {
+    font-size: 31px;
+  }
+
+  .customer-addresses-add {
+    width: 100%;
+  }
+
+  .customer-address-actions {
+    gap: 6px;
+  }
+
+  .customer-address-actions button {
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .customer-address-delete {
+    margin-left: 0;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-addresses-page *,
+  .customer-addresses-page *::before,
+  .customer-addresses-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

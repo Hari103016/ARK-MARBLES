@@ -1,0 +1,1468 @@
+
+/* =========================================================
+   ARK MARBLES — COMPLETE REFERENCE THEME
+   Premium Wine Red + Champagne Gold
+   File: src/reference-theme.css
+   ========================================================= */
+
+:root {
+  --wine: #d7ad65;
+  --wine-dark: #a87935;
+  --wine-light: #f0d59c;
+
+  --black: #16090b;
+  --black-2: #210b10;
+  --surface: #2a1015;
+  --surface-2: #35151b;
+
+  --border: #59303a;
+  --border-light: #80505b;
+
+  --white: #ffffff;
+  --text: #f4f7f7;
+  --muted: #a4b4b7;
+  --muted-dark: #718387;
+
+  --success: #36d69a;
+  --warning: #f4c95d;
+  --danger: #f16c78;
+
+  --color-primary: #d7ad65;
+  --color-primary-hover: #f0d59c;
+  --color-primary-dark: #a87935;
+  --color-background: #16090b;
+  --color-background-secondary: #210b10;
+  --color-surface: #2a1015;
+  --color-surface-hover: #35151b;
+  --color-text: #f4f7f7;
+  --color-text-secondary: #a4b4b7;
+  --color-border: #59303a;
+
+  --radius-small: 5px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+}
+
+/* =========================================================
+   1. GLOBAL STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--black);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body,
+#root {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--black) !important;
+  color: var(--text);
+}
+
+body {
+  font-family: "DM Sans", Inter, Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+input,
+select,
+textarea {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+}
+
+p {
+  color: var(--muted);
+}
+
+::selection {
+  background: var(--wine);
+  color: #001416;
+}
+
+:focus-visible {
+  outline: 2px solid var(--wine-light);
+  outline-offset: 3px;
+}
+
+.store-layout,
+.store-main {
+  min-width: 0;
+  background: var(--black) !important;
+  color: var(--text);
+}
+
+/* =========================================================
+   2. NAVIGATION
+   ========================================================= */
+
+.store-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(5, 11, 13, 0.97) !important;
+  border-bottom: 1px solid var(--border) !important;
+  backdrop-filter: blur(18px);
+}
+
+.store-navbar-inner {
+  min-height: 76px;
+}
+
+.store-navbar .store-brand {
+  color: var(--text) !important;
+}
+
+.store-navbar .store-brand-mark {
+  color: var(--wine-light) !important;
+  border-color: var(--wine) !important;
+}
+
+.store-navbar .store-brand-text strong {
+  color: var(--wine-light) !important;
+}
+
+.store-navbar .store-brand-text small {
+  color: var(--muted) !important;
+}
+
+.store-navbar .store-navigation .store-nav-link {
+  color: #d0dcde !important;
+  transition: color 180ms ease;
+}
+
+.store-navbar .store-navigation .store-nav-link:hover,
+.store-navbar .store-navigation .store-nav-link.active {
+  color: var(--wine-light) !important;
+}
+
+.store-navbar .store-icon-link,
+.store-navbar .store-menu-toggle {
+  color: var(--text) !important;
+  background: transparent !important;
+  border-color: var(--border-light) !important;
+}
+
+.store-navbar .store-icon-link:hover,
+.store-navbar .store-menu-toggle:hover {
+  color: var(--wine-light) !important;
+  border-color: var(--wine) !important;
+}
+
+/* Legacy navigation selectors */
+
+.navbar {
+  background: rgba(5, 11, 13, 0.97) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.nav-logo,
+.nav-logo strong {
+  color: var(--text) !important;
+}
+
+.nav-logo span,
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--wine-light) !important;
+}
+
+.nav-links a {
+  color: #d0dcde !important;
+}
+
+.nav-register,
+.primary-btn,
+.book-btn,
+.admin-add-btn,
+.auth-btn {
+  background: var(--wine) !important;
+  border: 1px solid var(--wine) !important;
+  color: #001416 !important;
+  border-radius: var(--radius-small);
+}
+
+.nav-register:hover,
+.primary-btn:hover,
+.book-btn:hover,
+.admin-add-btn:hover,
+.auth-btn:hover {
+  background: var(--wine-light) !important;
+  border-color: var(--wine-light) !important;
+}
+
+.secondary-btn {
+  background: transparent !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+@media (max-width: 760px) {
+  .store-navbar .store-navigation {
+    background: var(--surface) !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  .store-navbar .store-navigation .store-nav-link {
+    border-bottom-color: var(--border) !important;
+  }
+}
+
+/* =========================================================
+   3. HOMEPAGE HERO
+   ========================================================= */
+
+.home-page {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  background: var(--black) !important;
+  color: var(--text) !important;
+}
+
+.home-page .home-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  overflow: hidden;
+  background-color: var(--black) !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5, 11, 13, 0.91) 0%,
+      rgba(5, 11, 13, 0.78) 45%,
+      rgba(5, 11, 13, 0.35) 100%
+    ),
+    url("/images/hero-marble.jpg") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home-page .home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 80% 45%,
+      rgba(215, 173, 101, 0.08),
+      transparent 42%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 11, 13, 0.35),
+      transparent 45%
+    ) !important;
+}
+
+.home-page .home-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 48px, 1200px);
+  margin-inline: auto;
+  padding-block: 76px;
+}
+
+.home-page .home-eyebrow {
+  color: var(--wine-light) !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home-page .home-hero h1 {
+  max-width: 780px;
+  margin: 18px 0;
+  color: #ffffff !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 5.5vw, 74px);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.home-page .home-hero h1 span {
+  color: var(--wine-light) !important;
+}
+
+.home-page .home-hero-content > p {
+  max-width: 580px;
+  color: #c4d0d2 !important;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.home-page .home-primary-button,
+.home-page .home-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 12px 18px;
+  border-radius: var(--radius-small);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.home-page .home-primary-button {
+  background: var(--wine) !important;
+  color: #001416 !important;
+  border: 1px solid var(--wine) !important;
+}
+
+.home-page .home-primary-button:hover {
+  background: var(--wine-light) !important;
+  border-color: var(--wine-light) !important;
+  color: #001416 !important;
+  transform: translateY(-2px);
+}
+
+.home-page .home-secondary-button {
+  background: rgba(5, 11, 13, 0.65) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-light) !important;
+}
+
+.home-page .home-secondary-button:hover {
+  color: var(--wine-light) !important;
+  border-color: var(--wine) !important;
+}
+
+/* =========================================================
+   4. HOMEPAGE BENEFITS
+   ========================================================= */
+
+.home-page .home-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 28px max(24px, calc((100% - 1200px) / 2));
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.home-page .home-benefit {
+  min-width: 0;
+}
+
+.home-page .home-benefit svg {
+  color: var(--wine-light) !important;
+}
+
+.home-page .home-benefit h3 {
+  color: var(--text) !important;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.home-page .home-benefit p {
+  color: var(--muted) !important;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   5. HOMEPAGE FEATURED PRODUCTS
+   ========================================================= */
+
+.home-page .home-products {
+  padding: 64px max(24px, calc((100% - 1200px) / 2));
+  background: var(--black) !important;
+  color: var(--text) !important;
+}
+
+.home-page .home-section-heading {
+  margin-bottom: 28px;
+}
+
+.home-page .home-section-heading h2 {
+  color: var(--text) !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 500;
+}
+
+.home-page .home-section-heading p {
+  color: var(--muted) !important;
+}
+
+.home-page .home-view-all {
+  color: var(--wine-light) !important;
+  text-decoration: none;
+}
+
+.home-page .home-view-all:hover {
+  color: #ffffff !important;
+}
+
+.home-page .home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+
+.home-page .home-product-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* =========================================================
+   6. MARBLE PRODUCT CARDS
+   ========================================================= */
+
+.marble-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-medium) !important;
+  box-shadow: none !important;
+  transition:
+    border-color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.marble-card:hover {
+  border-color: var(--wine) !important;
+  box-shadow: 0 12px 32px rgba(215, 173, 101, 0.08) !important;
+  transform: translateY(-3px);
+}
+
+.marble-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--black-2) !important;
+}
+
+.marble-card-image > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.marble-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 400ms ease;
+}
+
+.marble-card:hover .marble-card-image img {
+  transform: scale(1.04);
+}
+
+.marble-card-wishlist {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: rgba(5, 11, 13, 0.92) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 50%;
+}
+
+.marble-card-wishlist:hover,
+.marble-card-wishlist.active {
+  background: rgba(215, 173, 101, 0.12) !important;
+  color: var(--wine-light) !important;
+  border-color: var(--wine) !important;
+}
+
+.marble-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px;
+  background: var(--surface) !important;
+}
+
+.marble-card-description {
+  display: -webkit-box;
+  min-height: 34px;
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted) !important;
+  font-size: 11px;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.marble-card-content h3 {
+  margin: 0;
+  color: var(--text) !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-weight: 500;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.marble-card-content h3 a {
+  color: var(--text) !important;
+  text-decoration: none;
+}
+
+.marble-card-content h3 a:hover {
+  color: var(--wine-light) !important;
+}
+
+.marble-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.marble-card-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+  min-width: 0;
+  color: var(--text);
+}
+
+.marble-card-price strong {
+  color: var(--wine-light) !important;
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.marble-card-price span {
+  color: var(--muted) !important;
+  font-size: 10px;
+}
+
+.marble-card-view {
+  display: grid;
+  flex: 0 0 36px;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: var(--wine) !important;
+  color: #001416 !important;
+  border: 1px solid var(--wine) !important;
+  border-radius: var(--radius-small);
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+.marble-card-view:hover {
+  background: var(--wine-light) !important;
+  color: #001416 !important;
+}
+
+.marble-card a:focus-visible,
+.marble-card button:focus-visible {
+  outline: 2px solid var(--wine-light);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   7. MARBLES LISTING PAGE
+   ========================================================= */
+
+.marbles-page {
+  min-height: 100vh;
+  background: var(--black) !important;
+  color: var(--text) !important;
+}
+
+.marbles-page-header {
+  padding: 56px 5% 36px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(215, 173, 101, 0.08),
+      transparent 35%
+    ),
+    var(--black-2) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.marbles-page-header h1 {
+  margin: 12px 0;
+  color: var(--text) !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.marbles-page-header .eyebrow,
+.marbles-results-eyebrow {
+  color: var(--wine-light) !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.marbles-page-header > p:not(.eyebrow) {
+  max-width: 650px;
+  color: var(--muted) !important;
+  line-height: 1.8;
+}
+
+.marbles-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 5%;
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.marbles-search,
+.marbles-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 12px;
+  background: var(--black-2) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+}
+
+.marbles-search {
+  flex: 1 1 240px;
+}
+
+.marbles-search svg,
+.marbles-filter svg {
+  flex-shrink: 0;
+  color: var(--wine-light);
+}
+
+.marbles-search input {
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0;
+  background: transparent !important;
+  border: 0 !important;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.marbles-filter {
+  flex: 0 1 210px;
+}
+
+.marbles-filter select {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  background: transparent !important;
+  border: 0 !important;
+  outline: none;
+}
+
+.marbles-sort-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.marbles-sort {
+  width: auto;
+  max-width: 190px;
+  min-height: 44px;
+  padding: 0 12px;
+  background: var(--black-2) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+}
+
+.marbles-reset,
+.marbles-clear-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 14px;
+  background: transparent !important;
+  color: var(--wine-light) !important;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-small);
+}
+
+.marbles-reset:hover,
+.marbles-clear-category:hover {
+  background: rgba(215, 173, 101, 0.08) !important;
+  border-color: var(--wine);
+}
+
+.marbles-results {
+  padding: 44px 5% 60px;
+  background: var(--black) !important;
+}
+
+.marbles-results-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.marbles-results-heading h2 {
+  margin: 6px 0;
+  color: var(--text) !important;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.marbles-results-count {
+  margin: 0;
+  color: var(--muted) !important;
+  font-size: 12px;
+}
+
+.marbles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+}
+
+.marbles-status,
+.marbles-empty {
+  padding: 48px 5%;
+  color: var(--muted) !important;
+  text-align: center;
+}
+
+.marbles-empty h2 {
+  color: var(--text) !important;
+}
+
+.marbles-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 40px 5%;
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border);
+}
+
+.marbles-page-footer h2 {
+  margin: 8px 0;
+  color: var(--text) !important;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.marbles-page-footer .eyebrow {
+  color: var(--wine-light) !important;
+}
+
+.marbles-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.marbles-footer-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--wine-light) !important;
+  font-size: 12px;
+}
+
+/* =========================================================
+   8. MARBLE DETAILS PAGE
+   ========================================================= */
+
+.marble-details-page {
+  background: var(--black) !important;
+  color: var(--text) !important;
+
+  --md-green: #102326;
+  --md-green-dark: #16090b;
+  --md-green-light: #153538;
+  --md-gold: #d7ad65;
+  --md-gold-light: #f0d59c;
+  --md-ivory: #f4f7f7;
+  --md-white: #ffffff;
+  --md-muted: #a4b4b7;
+  --md-border: #59303a;
+}
+
+.marble-details-breadcrumb,
+.marble-details-breadcrumb a {
+  color: var(--muted) !important;
+}
+
+.marble-details-breadcrumb a:hover,
+.marble-details-eyebrow,
+.marble-details-kicker {
+  color: var(--wine-light) !important;
+}
+
+.marble-details-info h1,
+.marble-details-message h1 {
+  color: var(--text) !important;
+}
+
+.marble-details-description,
+.marble-image-caption,
+.marble-price-label,
+.marble-price-value > span,
+.marble-details-price > p {
+  color: var(--muted) !important;
+}
+
+.marble-details-image,
+.marble-details-message {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+
+.marble-image-label {
+  background: rgba(5, 11, 13, 0.94) !important;
+  color: var(--text) !important;
+  border-color: var(--border);
+}
+
+.marble-label-dot {
+  background: var(--wine-light) !important;
+}
+
+.marble-details-price,
+.marble-details-properties,
+.marble-details-availability,
+.marble-details-promises {
+  border-color: var(--border) !important;
+}
+
+.marble-price-value strong {
+  color: var(--wine-light) !important;
+}
+
+.marble-detail-property > span {
+  color: var(--muted) !important;
+}
+
+.marble-detail-property > strong,
+.marble-promise-item strong {
+  color: var(--text) !important;
+}
+
+.stock-available {
+  color: var(--success) !important;
+}
+
+.stock-unavailable {
+  color: var(--danger) !important;
+}
+
+.quantity-control {
+  background: var(--surface) !important;
+  border-color: var(--border-light) !important;
+}
+
+.quantity-control button,
+.quantity-control > span {
+  color: var(--text) !important;
+}
+
+.quantity-control button:hover:not(:disabled) {
+  background: rgba(215, 173, 101, 0.12) !important;
+}
+
+.marble-add-to-cart,
+.marble-enquiry-button,
+.marble-back-button {
+  background: var(--wine) !important;
+  color: #001416 !important;
+  border-color: var(--wine) !important;
+}
+
+.marble-add-to-cart:hover,
+.marble-enquiry-button:hover,
+.marble-back-button:hover {
+  background: var(--wine-light) !important;
+  border-color: var(--wine-light) !important;
+}
+
+.marble-promise-icon {
+  color: var(--wine-light) !important;
+  border-color: var(--border-light) !important;
+}
+
+.marble-promise-item small,
+.marble-details-message p {
+  color: var(--muted) !important;
+}
+
+/* =========================================================
+   9. AUTHENTICATION AND CUSTOMER PAGES
+   ========================================================= */
+
+.auth-page {
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(215, 173, 101, 0.08),
+      transparent 42%
+    ),
+    var(--black) !important;
+  color: var(--text) !important;
+}
+
+.auth-card,
+.marble-form,
+.booking-card,
+.customer-card,
+.admin-stat,
+.admin-actions a,
+.admin-table,
+.admin-hero {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+  border-radius: var(--radius-medium);
+}
+
+.auth-card h1,
+.admin-hero h1,
+.admin-header h1,
+.customer-card h3 {
+  color: var(--text) !important;
+}
+
+.auth-card p,
+.admin-hero p,
+.customer-card p,
+.customer-card small {
+  color: var(--muted) !important;
+}
+
+.auth-card input,
+.marble-form input,
+.marble-form textarea,
+.marble-form select,
+.booking-note {
+  background: var(--black-2) !important;
+  color: var(--text) !important;
+  border-color: var(--border-light) !important;
+}
+
+.auth-card input:focus,
+.marble-form input:focus,
+.marble-form textarea:focus,
+.marble-form select:focus,
+.booking-note:focus {
+  border-color: var(--wine) !important;
+  box-shadow: 0 0 0 3px rgba(215, 173, 101, 0.1);
+}
+
+.auth-footer a {
+  color: var(--wine-light) !important;
+}
+
+.customer-avatar,
+.stat-icon {
+  color: var(--wine-light) !important;
+  background: rgba(215, 173, 101, 0.1) !important;
+}
+
+.admin-hero span,
+.admin-header > div > span {
+  color: var(--wine-light) !important;
+}
+
+.admin-stat strong {
+  color: var(--text) !important;
+}
+
+.admin-stat span {
+  color: var(--muted) !important;
+}
+
+.admin-actions a:hover {
+  border-color: var(--wine) !important;
+}
+
+/* =========================================================
+   10. TABLES AND STATUS
+   ========================================================= */
+
+.table-wrapper,
+.admin-table {
+  border-color: var(--border) !important;
+}
+
+table {
+  color: var(--text);
+}
+
+thead,
+.table-head {
+  background: var(--surface-2) !important;
+  color: var(--muted) !important;
+}
+
+th,
+td {
+  border-color: var(--border) !important;
+}
+
+td,
+.table-row {
+  color: #d0dcde !important;
+}
+
+.table-row strong,
+.table-row td strong {
+  color: var(--text) !important;
+}
+
+tbody tr:hover {
+  background: rgba(215, 173, 101, 0.04) !important;
+}
+
+.table-status {
+  color: var(--wine-light) !important;
+}
+
+.status.confirmed {
+  background: #103b30;
+  color: #60e4aa;
+}
+
+.status.pending {
+  background: #3d3218;
+  color: #f4cf70;
+}
+
+.status.cancelled {
+  background: #3c1920;
+  color: #ff8c9c;
+}
+
+.delete-btn {
+  background: #29161a;
+  color: #ff8796;
+  border-color: #573039;
+}
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+.store-footer {
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border) !important;
+  color: var(--text);
+}
+
+.store-footer-brand {
+  min-width: 0;
+}
+
+.store-footer-brand > p,
+.store-footer-column > a,
+.store-footer-contact > p,
+.store-footer-bottom p {
+  color: var(--muted) !important;
+}
+
+.store-footer-tagline,
+.store-footer-contact > p svg,
+.store-footer-contact-link {
+  color: var(--wine-light) !important;
+}
+
+.store-footer-column h3 {
+  color: var(--text) !important;
+}
+
+.store-footer-column > a:hover {
+  color: var(--wine-light) !important;
+}
+
+.store-footer-bottom {
+  border-top-color: var(--border) !important;
+}
+
+/* =========================================================
+   12. LEGACY CARDS AND BUTTONS
+   ========================================================= */
+
+.marble-card,
+.category-card,
+.feature-card,
+.gallery-card,
+.product-card {
+  border-color: var(--border);
+}
+
+.category-card,
+.feature-card,
+.gallery-card,
+.product-card {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+.category-card:hover,
+.feature-card:hover,
+.gallery-card:hover,
+.product-card:hover {
+  border-color: var(--wine) !important;
+}
+
+.category-card h3,
+.feature-card h3,
+.gallery-card h3,
+.product-card h3 {
+  color: var(--text) !important;
+}
+
+.category-card p,
+.feature-card p,
+.gallery-card p,
+.product-card p {
+  color: var(--muted) !important;
+}
+
+.category-card svg,
+.feature-card svg {
+  color: var(--wine-light) !important;
+}
+
+/* =========================================================
+   13. HOMEPAGE QUOTE BANNER
+   ========================================================= */
+
+.home-page .home-quote-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 48px max(24px, calc((100% - 1200px) / 2));
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(215, 173, 101, 0.12),
+      transparent 40%
+    ),
+    var(--surface) !important;
+  border-top: 1px solid var(--border);
+}
+
+.home-page .home-quote-banner h2 {
+  color: var(--text) !important;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.home-page .home-quote-banner p {
+  color: var(--muted) !important;
+}
+
+.home-page .home-message {
+  padding: 60px 24px;
+  background: var(--black) !important;
+  color: var(--muted) !important;
+  text-align: center;
+}
+
+.home-page .home-error {
+  color: var(--danger) !important;
+}
+
+/* =========================================================
+   14. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .home-page .home-product-grid,
+  .marbles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .home-page .home-hero {
+    min-height: 500px;
+  }
+
+  .home-page .home-products {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+}
+
+/* =========================================================
+   15. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .home-page .home-hero {
+    min-height: 460px;
+    background-position: 60% center;
+  }
+
+  .home-page .home-hero-content {
+    width: calc(100% - 40px);
+    padding-block: 50px;
+  }
+
+  .home-page .home-hero h1 {
+    font-size: clamp(36px, 9vw, 50px);
+  }
+
+  .home-page .home-hero-content > p {
+    font-size: 13px;
+  }
+
+  .home-page .home-benefits {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 28px 20px;
+  }
+
+  .home-page .home-products {
+    padding: 42px 20px;
+  }
+
+  .home-page .home-section-heading {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-page .home-quote-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 34px 20px;
+  }
+
+  .home-page .home-quote-banner .home-primary-button {
+    width: 100%;
+  }
+
+  .marbles-page-header {
+    padding: 38px 20px 28px;
+  }
+
+  .marbles-toolbar {
+    align-items: stretch;
+    padding: 18px 20px;
+  }
+
+  .marbles-search,
+  .marbles-filter {
+    flex: 1 1 100%;
+  }
+
+  .marbles-sort-label {
+    flex: 1 1 100%;
+    justify-content: space-between;
+  }
+
+  .marbles-sort {
+    flex: 1;
+    max-width: none;
+  }
+
+  .marbles-results {
+    padding: 34px 20px 42px;
+  }
+
+  .marbles-results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .marbles-page-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .marbles-footer-actions {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   16. RESPONSIVE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .home-page .home-product-grid,
+  .marbles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .marble-card-content {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .marble-card-description {
+    font-size: 10px;
+  }
+
+  .marble-card-content h3 {
+    font-size: 17px;
+  }
+
+  .marble-card-price strong {
+    font-size: 12px;
+  }
+
+  .marble-card-price span {
+    font-size: 9px;
+  }
+
+  .marble-card-view {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .marble-card-wishlist {
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .store-footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: calc(100% - 40px);
+    gap: 28px 18px;
+  }
+
+  .store-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .store-footer-bottom {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 390px) {
+  .home-page .home-product-grid,
+  .marbles-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page .home-hero h1 {
+    font-size: 35px;
+  }
+
+  .store-footer-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .store-footer-brand {
+    grid-column: auto;
+  }
+}
+
+/* =========================================================
+   17. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

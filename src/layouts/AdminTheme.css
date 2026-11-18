@@ -1,0 +1,256 @@
+
+/* =====================================================
+   ARK MARBLES — SHARED ADMIN THEME
+   Reference: Business Dashboard
+   Black / Charcoal / Champagne Gold
+===================================================== */
+
+:root {
+  --ark-bg: #080b0e;
+  --ark-bg-deep: #0e1114;
+
+  --ark-panel: #15191c;
+  --ark-panel-light: #24272a;
+  --ark-panel-dark: #111417;
+
+  --ark-gold: #f4bd4f;
+  --ark-gold-light: #ffdc8b;
+  --ark-gold-dark: #a8782d;
+
+  --ark-border: rgba(222, 174, 82, 0.42);
+  --ark-border-soft: rgba(208, 200, 182, 0.28);
+
+  --ark-text: #f7f4ec;
+  --ark-text-muted: #aeb2b5;
+
+  --ark-success: #22c55e;
+  --ark-danger: #ef5350;
+  --ark-warning: #e9a928;
+  --ark-info: #38bdf8;
+}
+
+/* MAIN ADMIN BACKGROUND */
+
+.ark-admin-layout {
+  min-height: 100vh;
+  color: var(--ark-text);
+  background: var(--ark-bg);
+}
+
+.ark-admin-main {
+  min-width: 0;
+  color: var(--ark-text);
+  background:
+    radial-gradient(
+      ellipse at 25% 0%,
+      rgba(137, 91, 34, 0.10),
+      transparent 40%
+    ),
+    var(--ark-bg);
+}
+
+/* COMMON CARDS AND PANELS */
+
+.ark-admin-main .ark-card,
+.ark-admin-main .ark-panel,
+.ark-admin-main .ark-stat-card,
+.ark-admin-main .ark-stat,
+.ark-admin-main .ark-summary-card,
+.ark-admin-main .ark-content-card {
+  color: var(--ark-text);
+  border: 1px solid var(--ark-border-soft);
+  border-radius: 12px;
+  background: linear-gradient(
+    140deg,
+    #292b2e,
+    #15181a 65%,
+    #242527
+  );
+  box-shadow:
+    inset 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* SECTION HEADINGS */
+
+.ark-admin-main h1,
+.ark-admin-main h2,
+.ark-admin-main h3 {
+  color: #fff4df;
+}
+
+.ark-admin-main h1,
+.ark-admin-main h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.ark-admin-main p,
+.ark-admin-main small {
+  color: var(--ark-text-muted);
+}
+
+/* GOLD BUTTONS */
+
+.ark-admin-main .btn-primary,
+.ark-admin-main .btn-gold,
+.ark-admin-main .primary-button {
+  color: #19130a;
+  border: 1px solid #e7b64f;
+  border-radius: 8px;
+  background: linear-gradient(
+    120deg,
+    #ffe19b,
+    #d9a13c
+  );
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ark-admin-main .btn-primary:hover,
+.ark-admin-main .btn-gold:hover,
+.ark-admin-main .primary-button:hover {
+  filter: brightness(1.08);
+}
+
+/* SECONDARY BUTTONS */
+
+.ark-admin-main .btn-secondary,
+.ark-admin-main .btn-outline,
+.ark-admin-main .secondary-button {
+  color: #f5ead1;
+  border: 1px solid var(--ark-border);
+  border-radius: 8px;
+  background: #17191b;
+  cursor: pointer;
+}
+
+.ark-admin-main .btn-secondary:hover,
+.ark-admin-main .btn-outline:hover,
+.ark-admin-main .secondary-button:hover {
+  border-color: var(--ark-gold-light);
+  background: #211d16;
+}
+
+/* INPUTS AND SELECTS */
+
+.ark-admin-main input,
+.ark-admin-main select,
+.ark-admin-main textarea {
+  color: #f7f4ec;
+  border: 1px solid #55585a;
+  border-radius: 8px;
+  background: #101315;
+}
+
+.ark-admin-main input::placeholder,
+.ark-admin-main textarea::placeholder {
+  color: #92999d;
+}
+
+.ark-admin-main input:focus,
+.ark-admin-main select:focus,
+.ark-admin-main textarea:focus {
+  outline: none;
+  border-color: var(--ark-gold);
+  box-shadow: 0 0 0 2px rgba(244,189,79,0.12);
+}
+
+.ark-admin-main select option {
+  color: #fff;
+  background: #15191c;
+}
+
+/* TABLES */
+
+.ark-admin-main table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ark-admin-main thead th {
+  padding: 13px 15px;
+  color: #ffe1a0;
+  border-bottom: 1px solid var(--ark-border);
+  background: linear-gradient(
+    90deg,
+    #493018,
+    #69471e
+  );
+  font-size: 12px;
+  font-weight: 800;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ark-admin-main tbody td {
+  padding: 13px 15px;
+  color: #f2e9dc;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  font-size: 13px;
+}
+
+.ark-admin-main tbody tr:hover {
+  background: rgba(218,166,70,0.06);
+}
+
+/* STATUS LABELS */
+
+.ark-admin-main .status-success,
+.ark-admin-main .badge-success {
+  color: #d9ffe2;
+  border: 1px solid #267341;
+  background: #12351f;
+}
+
+.ark-admin-main .status-pending,
+.ark-admin-main .badge-warning {
+  color: #ffe4a3;
+  border: 1px solid #96702c;
+  background: #382711;
+}
+
+.ark-admin-main .status-danger,
+.ark-admin-main .badge-danger {
+  color: #ffc0b9;
+  border: 1px solid #923b3b;
+  background: #471c1d;
+}
+
+/* DIVIDERS */
+
+.ark-admin-main hr {
+  border: 0;
+  border-top: 1px solid rgba(222,174,82,0.22);
+}
+
+/* SCROLLBARS */
+
+.ark-admin-main ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.ark-admin-main ::-webkit-scrollbar-track {
+  background: #101315;
+}
+
+.ark-admin-main ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #76531e;
+}
+
+.ark-admin-main ::-webkit-scrollbar-thumb:hover {
+  background: #c18b35;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .ark-admin-main {
+    min-width: 0;
+  }
+
+  .ark-admin-main table {
+    min-width: 650px;
+  }
+}

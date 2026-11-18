@@ -1,0 +1,1348 @@
+/* ARK MARBLES - LUXURY NAVBAR */
+
+.store-navbar {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background: #03111f;
+  border-bottom: 1px solid rgba(213, 165, 73, 0.55);
+  color: #f8f2e7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.store-navbar-main {
+  width: 100%;
+  background: linear-gradient(105deg, #020d18, #071827 55%, #020d18);
+}
+
+.store-navbar-inner {
+  width: 100%;
+  min-height: 76px;
+  padding: 10px 3.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.store-brand {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #f5c66d;
+  text-decoration: none;
+}
+
+.store-brand-mark {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d7a94f;
+  color: #f5c66d;
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.store-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.store-brand-text strong {
+  color: #f3c66d;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.store-brand-text small {
+  color: #d0c2a8;
+  font-size: 9px;
+  letter-spacing: .3px;
+}
+
+.store-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.7vw, 27px);
+  flex: 1 1 auto;
+}
+
+.store-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 0;
+  color: #f3eee5;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color .2s ease;
+}
+
+.store-nav-link:hover,
+.store-nav-link.active {
+  color: #f2bd50;
+}
+
+.store-nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e8b54d;
+}
+
+.nav-chevron {
+  color: #e5bd6c;
+}
+
+.store-navbar-search {
+  flex: 0 1 235px;
+  min-width: 165px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  padding: 0 7px 0 14px;
+  background: #f8f5ef;
+  border: 1px solid #d5aa55;
+  border-radius: 30px;
+}
+
+.store-navbar-search input,
+.store-navbar-mobile-search input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #1d1a15;
+  font-size: 11px;
+}
+
+.store-navbar-search input::placeholder,
+.store-navbar-mobile-search input::placeholder {
+  color: #81796e;
+}
+
+.store-navbar-search button,
+.store-navbar-mobile-search button {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #071827;
+  cursor: pointer;
+}
+
+.store-navbar-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.store-icon-link,
+.store-search-mobile {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: #f5e8cf;
+  border: 1px solid rgba(219, 176, 91, .55);
+  border-radius: 50%;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.store-icon-link:hover,
+.store-search-mobile:hover {
+  color: #f3c66d;
+  border-color: #e8b54d;
+  background: rgba(225, 177, 82, .1);
+}
+
+.store-icon-count {
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: #b91f2b;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.store-account-link {
+  min-height: 36px;
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #d7a94f;
+  border-radius: 7px;
+  background: linear-gradient(110deg, #ffe09a, #d99c2c);
+  color: #17120a;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.store-account-link:hover {
+  filter: brightness(1.07);
+}
+
+.store-search-mobile,
+.store-navbar-mobile-search {
+  display: none;
+}
+
+.store-menu-toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: #f5d28c;
+  border: 1px solid rgba(219, 176, 91, .55);
+  border-radius: 6px;
+  background: transparent;
+}
+
+@media (max-width: 1150px) {
+  .store-navbar-inner {
+    gap: 13px;
+    padding-inline: 2%;
+  }
+
+  .store-navigation {
+    gap: 12px;
+  }
+
+  .store-nav-link {
+    font-size: 11px;
+  }
+
+  .store-navbar-search {
+    flex-basis: 190px;
+  }
+
+  .store-navbar-actions {
+    gap: 7px;
+  }
+}
+
+@media (max-width: 900px) {
+  .store-navbar-inner {
+    min-height: 70px;
+  }
+
+  .store-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 5%;
+    background: #041321;
+    border-top: 1px solid rgba(213, 165, 73, .35);
+    border-bottom: 1px solid #bd8d3c;
+    box-shadow: 0 12px 25px rgba(0,0,0,.35);
+  }
+
+  .store-navigation.is-open {
+    display: flex;
+  }
+
+  .store-nav-link {
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    font-size: 13px;
+  }
+
+  .store-nav-link.active::after {
+    display: none;
+  }
+
+  .store-navbar-search {
+    display: none;
+  }
+
+  .store-search-mobile,
+  .store-menu-toggle {
+    display: grid;
+  }
+
+  .store-navbar-mobile-search {
+    display: flex;
+    width: min(92%, 560px);
+    height: 42px;
+    margin: 0 auto 12px;
+    padding: 0 8px 0 14px;
+    border: 1px solid #d5aa55;
+    border-radius: 30px;
+    background: #f8f5ef;
+  }
+}
+
+@media (max-width: 520px) {
+  .store-navbar-inner {
+    padding: 9px 12px;
+    gap: 8px;
+  }
+
+  .store-brand {
+    gap: 7px;
+  }
+
+  .store-brand-mark {
+    width: 37px;
+    height: 37px;
+    font-size: 25px;
+  }
+
+  .store-brand-text strong {
+    font-size: 13px;
+  }
+
+  .store-brand-text small {
+    font-size: 8px;
+  }
+
+  .store-navbar-actions {
+    gap: 5px;
+  }
+
+  .store-icon-link,
+  .store-search-mobile {
+    width: 32px;
+    height: 32px;
+  }
+
+  .store-account-link {
+    width: 34px;
+    min-height: 34px;
+    padding: 0;
+  }
+
+  .store-account-link span {
+    display: none;
+  }
+
+  .store-menu-toggle {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* =====================================
+   NAVBAR OVERLAP FIX
+===================================== */
+
+.store-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 10px 4%;
+  min-width: 0;
+}
+
+/* BRAND */
+.store-brand {
+  flex: 0 0 245px;
+  min-width: 0;
+}
+
+/* NAVIGATION */
+.store-navigation {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.5vw, 24px);
+}
+
+/* SEARCH */
+.store-navbar-search {
+  flex: 0 0 235px;
+  width: 235px;
+  min-width: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px 0 14px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.store-navbar-search input {
+  flex: 1 1 auto;
+  width: 0;
+  min-width: 0;
+}
+
+.store-navbar-search button {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ACTION ICONS */
+.store-navbar-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.store-icon-link {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  margin: 0;
+}
+
+.store-account-link {
+  flex: 0 0 auto;
+  min-width: 112px;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* TABLET */
+@media (max-width: 1250px) {
+  .store-navbar-inner {
+    gap: 12px;
+    padding-inline: 2%;
+  }
+
+  .store-brand {
+    flex-basis: 190px;
+  }
+
+  .store-navigation {
+    gap: 10px;
+  }
+
+  .store-navbar-search {
+    flex-basis: 190px;
+    width: 190px;
+  }
+
+  .store-account-link {
+    min-width: 40px;
+    padding: 0 9px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .store-navbar-inner {
+    gap: 8px;
+  }
+
+  .store-brand {
+    flex: 1 1 auto;
+  }
+
+  .store-navigation {
+    flex: initial;
+  }
+}
+
+/* =========================================
+   ARK MARBLES - FINAL HEADER ALIGNMENT FIX
+========================================= */
+
+.store-navbar-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 22px !important;
+}
+
+/* Search container */
+.store-navbar-search {
+  position: relative !important;
+  display: flex !important;
+  flex: 0 0 230px !important;
+  width: 230px !important;
+  min-width: 230px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  padding: 0 8px 0 14px !important;
+  border-radius: 30px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Search input */
+.store-navbar-search input {
+  position: static !important;
+  flex: 1 1 auto !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  height: 38px !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Search button - no extra circle border */
+.store-navbar-search button {
+  position: static !important;
+  flex: 0 0 30px !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Right-side icons */
+.store-navbar-actions {
+  position: static !important;
+  display: flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.store-navbar-actions .store-icon-link {
+  position: relative !important;
+  flex: 0 0 36px !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.store-navbar-actions .store-account-link {
+  position: static !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Hide mobile search toggle on desktop */
+.store-search-mobile {
+  display: none !important;
+}
+
+/* Tablet */
+@media (max-width: 1250px) and (min-width: 901px) {
+  .store-navbar-inner {
+    gap: 12px !important;
+  }
+
+  .store-navbar-search {
+    flex-basis: 190px !important;
+    width: 190px !important;
+    min-width: 190px !important;
+  }
+
+  .store-navbar-actions {
+    gap: 8px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .store-navbar-search {
+    display: none !important;
+  }
+
+  .store-search-mobile {
+    display: grid !important;
+  }
+}
+
+/* ==========================================
+   ARK MARBLES - DEFINITIVE NAVBAR FIX
+   ========================================== */
+
+.store-navbar .store-navbar-inner {
+  display: grid !important;
+  grid-template-columns: max-content minmax(0, 1fr) 235px max-content !important;
+  align-items: center !important;
+  justify-content: initial !important;
+  gap: 22px !important;
+  width: calc(100% - 80px) !important;
+  max-width: 1600px !important;
+  min-height: 76px !important;
+  margin: 0 auto !important;
+  padding: 8px 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* BRAND */
+.store-navbar .store-brand {
+  display: flex !important;
+  flex: initial !important;
+  min-width: max-content !important;
+  white-space: nowrap !important;
+}
+
+/* NAVIGATION */
+.store-navbar .store-navigation {
+  display: flex !important;
+  flex: initial !important;
+  min-width: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(12px, 1.3vw, 22px) !important;
+  white-space: nowrap !important;
+}
+
+.store-navbar .store-nav-link {
+  flex-shrink: 0 !important;
+}
+
+/* SEARCH */
+.store-navbar .store-navbar-search {
+  position: relative !important;
+  display: flex !important;
+  flex: initial !important;
+  width: 235px !important;
+  min-width: 0 !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  margin: 0 !important;
+  padding: 0 8px 0 14px !important;
+  align-items: center !important;
+  gap: 5px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.store-navbar .store-navbar-search input {
+  position: static !important;
+  display: block !important;
+  flex: 1 1 0 !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.store-navbar .store-navbar-search button {
+  position: static !important;
+  display: grid !important;
+  flex: 0 0 30px !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  place-items: center !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* WISHLIST, CART AND ACCOUNT */
+.store-navbar .store-navbar-actions {
+  position: static !important;
+  display: flex !important;
+  flex: initial !important;
+  width: max-content !important;
+  min-width: max-content !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.store-navbar .store-navbar-actions .store-icon-link {
+  position: relative !important;
+  display: inline-flex !important;
+  flex: 0 0 38px !important;
+  width: 38px !important;
+  min-width: 38px !important;
+  height: 38px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.store-navbar .store-navbar-actions .store-account-link {
+  position: static !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: max-content !important;
+  height: 38px !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* TABLET */
+@media (max-width: 1150px) and (min-width: 901px) {
+  .store-navbar .store-navbar-inner {
+    grid-template-columns: max-content minmax(0, 1fr) 190px max-content !important;
+    gap: 12px !important;
+    width: calc(100% - 32px) !important;
+  }
+
+  .store-navbar .store-navbar-search {
+    width: 190px !important;
+  }
+
+  .store-navbar .store-navigation {
+    gap: 10px !important;
+  }
+
+  .store-navbar .store-navigation .store-nav-link {
+    font-size: 10px !important;
+  }
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width: 900px) {
+  .store-navbar .store-navbar-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    width: calc(100% - 28px) !important;
+  }
+
+  .store-navbar .store-navigation {
+    display: none !important;
+  }
+
+  .store-navbar .store-navigation.is-open {
+    display: flex !important;
+  }
+
+  .store-navbar .store-navbar-search {
+    display: none !important;
+  }
+
+  .store-navbar .store-menu-toggle {
+    display: inline-flex !important;
+  }
+}
+/* =========================================================
+   ARK MARBLES - CLEAN LUXURY NAVBAR
+   Layout: Brand | Center Navigation | Search | Actions
+   ========================================================= */
+
+.store-navbar {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  color: #f8f2e7;
+  background: #03111f;
+  border-bottom: 1px solid rgba(213, 165, 73, 0.55);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.store-navbar-main {
+  width: 100%;
+  background: linear-gradient(105deg, #020d18, #071827 55%, #020d18);
+}
+
+.store-navbar-inner {
+  width: min(100% - 64px, 1800px);
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 9px 0;
+  display: grid;
+  grid-template-columns: 245px minmax(360px, 1fr) 235px max-content;
+  align-items: center;
+  column-gap: 24px;
+  box-sizing: border-box;
+}
+
+/* BRAND */
+.store-brand {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 11px;
+  color: #f5c66d;
+  text-decoration: none;
+}
+
+.store-brand-mark {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d7a94f;
+  color: #f5c66d;
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.store-brand-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.store-brand-text strong {
+  color: #f3c66d;
+  font-size: 17px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.store-brand-text small {
+  color: #d0c2a8;
+  font-size: 9px;
+  letter-spacing: .3px;
+  white-space: nowrap;
+}
+
+/* CENTER NAVIGATION */
+.store-navigation {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(13px, 1.55vw, 25px);
+}
+
+.store-nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 0;
+  color: #f3eee5;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color .2s ease;
+}
+
+.store-nav-link:hover,
+.store-nav-link.active {
+  color: #f2bd50;
+}
+
+.store-nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e8b54d;
+}
+
+.nav-chevron {
+  color: #e5bd6c;
+}
+
+/* DESKTOP SEARCH */
+.store-navbar-search {
+  width: 235px;
+  min-width: 0;
+  height: 40px;
+  margin: 0;
+  padding: 0 8px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-sizing: border-box;
+  background: #f8f5ef;
+  border: 1px solid #d5aa55;
+  border-radius: 30px;
+}
+
+.store-navbar-search input,
+.store-navbar-mobile-search input {
+  flex: 1 1 auto;
+  width: 0;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  background: transparent;
+  color: #1d1a15;
+  font-size: 11px;
+}
+
+.store-navbar-search input::placeholder,
+.store-navbar-mobile-search input::placeholder {
+  color: #81796e;
+}
+
+.store-navbar-search button,
+.store-navbar-mobile-search button {
+  flex: 0 0 30px;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #071827;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* RIGHT-SIDE ACTIONS */
+.store-navbar-actions {
+  min-width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.store-icon-link,
+.store-search-mobile {
+  position: relative;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  color: #f5e8cf;
+  border: 1px solid rgba(219, 176, 91, .55);
+  border-radius: 50%;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.store-icon-link:hover,
+.store-search-mobile:hover {
+  color: #f3c66d;
+  border-color: #e8b54d;
+  background: rgba(225, 177, 82, .1);
+}
+
+.store-icon-count {
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: #b91f2b;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.store-account-link {
+  min-height: 38px;
+  width: auto;
+  min-width: max-content;
+  margin: 0;
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #d7a94f;
+  border-radius: 7px;
+  background: linear-gradient(110deg, #ffe09a, #d99c2c);
+  color: #17120a;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.store-account-link:hover {
+  filter: brightness(1.07);
+}
+
+.store-search-mobile,
+.store-navbar-mobile-search {
+  display: none;
+}
+
+.store-menu-toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  place-items: center;
+  color: #f5d28c;
+  border: 1px solid rgba(219, 176, 91, .55);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* COMPACT DESKTOP / LAPTOP */
+@media (max-width: 1350px) and (min-width: 901px) {
+  .store-navbar-inner {
+    width: calc(100% - 36px);
+    grid-template-columns: 205px minmax(300px, 1fr) 200px max-content;
+    column-gap: 14px;
+  }
+
+  .store-navigation {
+    gap: clamp(9px, 1.1vw, 15px);
+  }
+
+  .store-nav-link {
+    font-size: 11px;
+  }
+
+  .store-navbar-search {
+    width: 200px;
+  }
+
+  .store-navbar-actions {
+    gap: 7px;
+  }
+
+  .store-icon-link {
+    flex-basis: 35px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .store-account-link {
+    padding-inline: 10px;
+  }
+}
+
+/* TABLET AND MOBILE */
+@media (max-width: 900px) {
+  .store-navbar-inner {
+    position: relative;
+    width: calc(100% - 28px);
+    min-height: 70px;
+    padding: 9px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .store-brand {
+    flex: 1 1 auto;
+  }
+
+  .store-navigation {
+    position: absolute;
+    top: 100%;
+    left: -14px;
+    right: -14px;
+    z-index: 110;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 5%;
+    background: #041321;
+    border-top: 1px solid rgba(213, 165, 73, .35);
+    border-bottom: 1px solid #bd8d3c;
+    box-shadow: 0 12px 25px rgba(0,0,0,.35);
+  }
+
+  .store-navigation.is-open {
+    display: flex;
+  }
+
+  .store-nav-link {
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    font-size: 13px;
+  }
+
+  .store-nav-link.active::after {
+    display: none;
+  }
+
+  .store-navbar-search {
+    display: none;
+  }
+
+  .store-search-mobile,
+  .store-menu-toggle {
+    display: grid;
+  }
+
+  .store-navbar-mobile-search {
+    width: min(92%, 560px);
+    height: 42px;
+    margin: 0 auto 12px;
+    padding: 0 8px 0 14px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #d5aa55;
+    border-radius: 30px;
+    background: #f8f5ef;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 520px) {
+  .store-navbar-inner {
+    width: calc(100% - 24px);
+    gap: 7px;
+  }
+
+  .store-brand {
+    gap: 7px;
+  }
+
+  .store-brand-mark {
+    width: 37px;
+    height: 37px;
+    flex-basis: 37px;
+    font-size: 25px;
+  }
+
+  .store-brand-text strong {
+    font-size: 13px;
+  }
+
+  .store-brand-text small {
+    font-size: 8px;
+  }
+
+  .store-navbar-actions {
+    gap: 5px;
+  }
+
+  .store-icon-link,
+  .store-search-mobile {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .store-account-link {
+    width: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    padding: 0;
+  }
+
+  .store-account-link span {
+    display: none;
+  }
+
+  .store-menu-toggle {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* INCREASE NAVIGATION MENU SIZE */
+
+.store-navbar .store-nav-link {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 14px 0 !important;
+  gap: 7px !important;
+}
+
+.store-navbar .store-navigation {
+  gap: 30px !important;
+}
+
+.store-navbar .nav-chevron {
+  width: 16px;
+  height: 16px;
+}
+
+/* Tablet */
+@media (max-width: 1350px) and (min-width: 901px) {
+  .store-navbar .store-nav-link {
+    font-size: 13px !important;
+  }
+
+  .store-navbar .store-navigation {
+    gap: 18px !important;
+  }
+}
+/* Shift navigation slightly to the right */
+.store-navbar .store-navigation {
+  transform: translateX(45px) !important;
+}
+
+/* Laptop adjustment */
+@media (max-width: 1350px) and (min-width: 901px) {
+  .store-navbar .store-navigation {
+    transform: translateX(20px) !important;
+  }
+}
+
+/* Mobile: keep original position */
+@media (max-width: 900px) {
+  .store-navbar .store-navigation {
+    transform: none !important;
+  }
+}
+
+/* REQUEST QUOTE BUTTON */
+
+.store-nav-quote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid #d7a94f;
+  border-radius: 6px;
+  background: linear-gradient(110deg, #ffe09a, #d99c2c);
+  color: #17120a;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.store-nav-quote:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .store-nav-quote {
+    width: 100%;
+    min-height: 42px;
+    margin-top: 10px;
+  }
+}
+
+/* =====================================
+   REQUEST QUOTE POSITION FIX
+   ===================================== */
+
+.store-navbar .store-nav-quote {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 38px;
+  padding: 0 13px;
+
+  border: 1px solid #d7a94f;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    110deg,
+    #ffe09a,
+    #d99c2c
+  );
+
+  color: #17120a;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.store-navbar .store-nav-quote:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* Hide mobile quote on desktop */
+.store-navbar .mobile-quote {
+  display: none;
+}
+
+/* Desktop quote stays between cart and account */
+.store-navbar .desktop-quote {
+  display: inline-flex;
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+  .store-navbar .desktop-quote {
+    display: none;
+  }
+
+  .store-navbar .mobile-quote {
+    display: inline-flex;
+    width: 100%;
+    min-height: 42px;
+    margin-top: 10px;
+  }
+}

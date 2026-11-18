@@ -1,0 +1,605 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
+/* =========================================================
+   ARK MARBLES — PRODUCT DETAILS
+   Matches the exact black / antique-gold collection palette.
+   Scoped to .product-details-page; does not style the header.
+   Works with the ProductDetails.jsx supplied in chat.
+========================================================= */
+
+.product-details-page,
+.product-details-page * {
+  box-sizing: border-box;
+}
+
+.product-details-page {
+  --pd-bg: #100d0b;
+  --pd-card: #1b1411;
+  --pd-card-soft: #211711;
+  --pd-gold: #d5a94f;
+  --pd-gold-light: #f0cf7c;
+  --pd-cream: #f8f1e6;
+  --pd-muted: #c1b3a3;
+  --pd-border: rgba(213, 169, 79, .42);
+
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding: 34px 0 76px;
+  overflow: hidden;
+  color: var(--pd-cream);
+  background:
+    radial-gradient(ellipse at 13% 8%, rgba(107, 73, 27, .13), transparent 36%),
+    radial-gradient(ellipse at 88% 88%, rgba(107, 73, 27, .08), transparent 34%),
+    var(--pd-bg);
+  font-family: "DM Sans", sans-serif;
+}
+
+.product-details-page img {
+  display: block;
+  max-width: 100%;
+}
+
+.product-details-page button,
+.product-details-page input {
+  font: inherit;
+}
+
+.product-details-container {
+  width: min(1320px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* Back link */
+.product-details-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 28px;
+  color: var(--pd-gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.product-details-back:hover {
+  color: var(--pd-cream);
+  transform: translateX(-3px);
+}
+
+/* Main two-column composition */
+.product-details-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+  align-items: start;
+  gap: clamp(32px, 4vw, 58px);
+}
+
+.product-details-image {
+  position: relative;
+  min-width: 0;
+  height: clamp(430px, 43vw, 610px);
+  overflow: hidden;
+  border: 1px solid var(--pd-border);
+  border-radius: 10px;
+  background: var(--pd-card-soft);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .28);
+}
+
+.product-details-image::after {
+  position: absolute;
+  inset: 55% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(16, 13, 11, .58));
+  content: "";
+  pointer-events: none;
+}
+
+.product-details-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-details-category {
+  position: absolute;
+  z-index: 1;
+  bottom: 18px;
+  left: 18px;
+  max-width: calc(100% - 36px);
+  padding: 9px 14px;
+  overflow: hidden;
+  border: 1px solid rgba(213, 169, 79, .72);
+  border-radius: 24px;
+  background: rgba(16, 13, 11, .9);
+  color: var(--pd-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.35px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Product information */
+.product-details-info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 8px 0 0;
+}
+
+.product-details-eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  margin: 0 0 15px;
+  padding: 8px 12px;
+  border: 1px solid var(--pd-border);
+  border-radius: 3px;
+  background: rgba(213, 169, 79, .07);
+  color: var(--pd-gold-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.product-details-info h1 {
+  margin: 0;
+  color: var(--pd-cream);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.6px;
+  overflow-wrap: anywhere;
+}
+
+.product-details-description {
+  max-width: 650px;
+  margin: 17px 0 22px;
+  color: #d1c3b5;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Price and stock */
+.product-details-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 18px 0 17px;
+  border-top: 1px solid rgba(213, 169, 79, .3);
+  border-bottom: 1px solid rgba(213, 169, 79, .3);
+}
+
+.product-details-price strong {
+  color: var(--pd-gold-light);
+  font-size: clamp(28px, 2.8vw, 39px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.7px;
+}
+
+.product-details-price span {
+  color: var(--pd-muted);
+  font-size: 12px;
+}
+
+.product-details-stock {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 15px 0 20px;
+  color: #d8cabb;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-stock-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+}
+
+.product-stock-dot.is-available {
+  background: #83bd70;
+  box-shadow: 0 0 9px rgba(131, 189, 112, .38);
+}
+
+.product-stock-dot.is-unavailable {
+  background: #d46b59;
+  box-shadow: 0 0 8px rgba(212, 107, 89, .28);
+}
+
+/* Specifications */
+.product-details-specifications {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--pd-border);
+  border-radius: 7px;
+  background: linear-gradient(145deg, #211711, #17100d);
+}
+
+.product-details-specifications > div {
+  display: flex;
+  min-width: 0;
+  min-height: 91px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.product-details-specifications > div + div {
+  border-left: 1px solid rgba(213, 169, 79, .25);
+}
+
+.product-details-specifications span {
+  color: var(--pd-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .45px;
+  text-transform: uppercase;
+}
+
+.product-details-specifications strong {
+  color: var(--pd-cream);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* Quantity control */
+.product-details-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 24px 0 20px;
+}
+
+.product-details-quantity label {
+  color: var(--pd-cream);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.product-quantity-control {
+  display: grid;
+  grid-template-columns: 42px minmax(48px, 66px) 42px;
+  align-items: center;
+  min-height: 43px;
+  overflow: hidden;
+  border: 1px solid var(--pd-border);
+  border-radius: 5px;
+  background: #15100d;
+}
+
+.product-quantity-control button {
+  display: grid;
+  width: 42px;
+  height: 41px;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--pd-gold-light);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.product-quantity-control button:hover:not(:disabled) {
+  background: rgba(213, 169, 79, .13);
+  color: var(--pd-cream);
+}
+
+.product-quantity-control button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.product-quantity-control input {
+  width: 100%;
+  min-width: 0;
+  height: 41px;
+  padding: 0 4px;
+  border: 0;
+  border-right: 1px solid rgba(213, 169, 79, .2);
+  border-left: 1px solid rgba(213, 169, 79, .2);
+  outline: none;
+  background: transparent;
+  color: var(--pd-cream);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.product-quantity-control input::-webkit-inner-spin-button,
+.product-quantity-control input::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+/* Actions — two aligned controls, matching the supplied JSX */
+.product-details-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 58px;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.product-details-actions button {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease, background .2s ease;
+}
+
+.product-add-cart {
+  padding: 0 20px;
+  border: 1px solid var(--pd-gold-light);
+  background: linear-gradient(110deg, #f0cf7c 0%, #d5a94f 55%, #bd8730 100%);
+  box-shadow: 0 6px 18px rgba(201, 151, 56, .13);
+  color: #17100a;
+}
+
+.product-add-cart:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.product-add-cart:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  filter: grayscale(.4);
+}
+
+.product-wishlist-button {
+  width: 58px;
+  padding: 0;
+  border: 1px solid var(--pd-gold);
+  background: rgba(213, 169, 79, .06);
+  color: var(--pd-gold-light);
+}
+
+.product-wishlist-button:hover {
+  transform: translateY(-2px);
+  background: rgba(213, 169, 79, .16);
+}
+
+.product-details-feedback {
+  margin: 13px 0 0;
+  padding: 11px 13px;
+  border: 1px solid rgba(213, 169, 79, .28);
+  border-radius: 4px;
+  background: rgba(213, 169, 79, .07);
+  color: var(--pd-gold-light);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Assurance and quotation */
+.product-details-assurance {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 15px 16px;
+  border: 1px solid rgba(213, 169, 79, .3);
+  border-radius: 6px;
+  background: linear-gradient(145deg, #211711, #17100d);
+  color: var(--pd-gold-light);
+}
+
+.product-details-assurance svg {
+  flex: 0 0 auto;
+}
+
+.product-details-assurance span {
+  color: #d8cabb;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.product-quote-link {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 17px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(240, 207, 124, .55);
+  color: var(--pd-gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.product-quote-link:hover {
+  border-color: var(--pd-cream);
+  color: var(--pd-cream);
+}
+
+/* Loading / unavailable states */
+.product-details-message {
+  display: flex;
+  width: min(700px, calc(100% - 40px));
+  min-height: 48vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: var(--pd-cream);
+  background: var(--pd-bg);
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+}
+
+.product-details-message h2 {
+  margin: 0;
+  color: var(--pd-cream);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.product-details-message p {
+  margin: 0;
+  color: var(--pd-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.product-details-message a {
+  margin-top: 8px;
+  color: var(--pd-gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Keyboard focus */
+.product-details-page button:focus-visible,
+.product-details-page a:focus-visible,
+.product-details-page input:focus-visible {
+  outline: 2px solid var(--pd-gold-light);
+  outline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .product-details-container {
+    width: min(100% - 48px, 850px);
+  }
+
+  .product-details-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .product-details-image {
+    height: 460px;
+  }
+
+  .product-details-info h1 {
+    font-size: clamp(34px, 4vw, 46px);
+  }
+
+  .product-details-specifications > div {
+    padding: 12px 6px;
+  }
+
+  .product-details-specifications strong {
+    font-size: 11px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .product-details-page {
+    padding: 22px 0 48px;
+  }
+
+  .product-details-container {
+    width: calc(100% - 34px);
+  }
+
+  .product-details-back {
+    margin-bottom: 19px;
+  }
+
+  .product-details-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .product-details-image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .product-details-info {
+    padding-top: 0;
+  }
+
+  .product-details-info h1 {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .product-details-description {
+    margin: 13px 0 18px;
+  }
+
+  .product-details-price {
+    padding: 15px 0;
+  }
+
+  .product-details-price strong {
+    font-size: 31px;
+  }
+
+  .product-details-specifications > div {
+    min-height: 84px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 440px) {
+  .product-details-specifications {
+    grid-template-columns: 1fr;
+  }
+
+  .product-details-specifications > div {
+    min-height: 66px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 15px;
+    text-align: left;
+  }
+
+  .product-details-specifications > div + div {
+    border-top: 1px solid rgba(213, 169, 79, .22);
+    border-left: 0;
+  }
+
+  .product-details-quantity {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-details-actions {
+    grid-template-columns: minmax(0, 1fr) 54px;
+    gap: 9px;
+  }
+
+  .product-details-actions button {
+    min-height: 50px;
+  }
+
+  .product-wishlist-button {
+    width: 54px;
+  }
+
+  .product-details-assurance {
+    align-items: flex-start;
+  }
+}

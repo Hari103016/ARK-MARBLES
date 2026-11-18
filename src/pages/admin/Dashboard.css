@@ -1,0 +1,8337 @@
+/* =========================================================
+
+
+
+   ARK MARBLES — BUSINESS DASHBOARD
+
+
+
+   Reference-inspired black / charcoal / champagne-gold UI
+
+
+
+   ========================================================= */
+
+
+
+.ark-dashboard,
+
+
+
+.ark-dashboard * {
+
+
+
+  box-sizing: border-box;
+
+
+
+}
+
+
+
+.ark-dashboard {
+
+
+
+  --ark-gold: #f4bd4f;
+
+
+
+  --ark-gold-light: #ffdc8b;
+
+
+
+  --ark-gold-dark: #a8782d;
+
+
+
+  --ark-panel: #15191c;
+
+
+
+  --ark-panel-deep: #0e1114;
+
+
+
+  --ark-muted: #aeb2b5;
+
+
+
+  --ark-border: rgba(222, 174, 82, 0.42);
+
+
+
+  width: 100%;
+
+
+
+  min-width: 0;
+
+
+
+  padding: 16px 0 28px;
+
+
+
+  color: #f7f4ec;
+
+
+
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+
+
+  background:
+
+
+
+    radial-gradient(ellipse at 28% 0%, rgba(137, 91, 34, 0.15), transparent 38%),
+
+
+
+    radial-gradient(ellipse at 90% 25%, rgba(70, 75, 79, 0.13), transparent 36%),
+
+
+
+    #080b0e;
+
+
+
+}
+
+
+
+.ark-dashboard-container {
+
+
+
+  width: 100%;
+
+
+
+  max-width: 1740px;
+
+
+
+  margin: 0 auto;
+
+
+
+  padding: 0 22px;
+
+
+
+}
+
+
+
+.ark-dashboard button,
+
+
+
+.ark-dashboard select {
+
+
+
+  font: inherit;
+
+
+
+}
+
+
+
+.ark-dashboard button {
+
+
+
+  cursor: pointer;
+
+
+
+}
+
+
+
+.ark-dashboard-toolbar {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: space-between;
+
+
+
+  gap: 18px;
+
+
+
+  margin-bottom: 15px;
+
+
+
+}
+
+
+
+.ark-dashboard-title-group .ark-eyebrow {
+
+
+
+  display: block;
+
+
+
+  margin-bottom: 6px;
+
+
+
+  color: var(--ark-gold);
+
+
+
+  font-size: 10px;
+
+
+
+  font-weight: 800;
+
+
+
+  letter-spacing: 2px;
+
+
+
+}
+
+
+
+.ark-dashboard-toolbar h2 {
+
+
+
+  margin: 0 0 4px;
+
+
+
+  color: #fff;
+
+
+
+  font-family: Georgia, "Times New Roman", serif;
+
+
+
+  font-size: clamp(24px, 2vw, 31px);
+
+
+
+  line-height: 1.15;
+
+
+
+  letter-spacing: -0.5px;
+
+
+
+}
+
+
+
+.ark-dashboard-toolbar p {
+
+
+
+  margin: 0;
+
+
+
+  color: #c0c1c1;
+
+
+
+  font-size: 12px;
+
+
+
+}
+
+
+
+.ark-dashboard-controls {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: flex-end;
+
+
+
+  flex-wrap: wrap;
+
+
+
+  gap: 8px;
+
+
+
+}
+
+
+
+.ark-period-select,
+
+
+
+.ark-button {
+
+
+
+  height: 39px;
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 8px;
+
+
+
+  padding: 0 13px;
+
+
+
+  border: 1px solid var(--ark-border);
+
+
+
+  border-radius: 8px;
+
+
+
+  color: #f5ead1;
+
+
+
+  background: #17191b;
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-period-select select {
+
+
+
+  max-width: 145px;
+
+
+
+  border: 0;
+
+
+
+  outline: 0;
+
+
+
+  color: #fff;
+
+
+
+  background: transparent;
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-period-select option {
+
+
+
+  color: #fff;
+
+
+
+  background: #17191b;
+
+
+
+}
+
+
+
+.ark-button-outline:hover,
+
+
+
+.ark-period-select:hover {
+
+
+
+  border-color: var(--ark-gold-light);
+
+
+
+  background: #211d16;
+
+
+
+}
+
+
+
+.ark-button-gold {
+
+
+
+  border-color: #e7b64f;
+
+
+
+  color: #19130a;
+
+
+
+  background: linear-gradient(120deg, #ffe19b, #d9a13c);
+
+
+
+  font-weight: 750;
+
+
+
+}
+
+
+
+.ark-button-gold:hover {
+
+
+
+  filter: brightness(1.08);
+
+
+
+}
+
+
+
+.ark-button:disabled {
+
+
+
+  opacity: 0.55;
+
+
+
+  cursor: wait;
+
+
+
+}
+
+
+
+.ark-spin {
+
+
+
+  animation: arkSpin 1s linear infinite;
+
+
+
+}
+
+
+
+@keyframes arkSpin {
+
+
+
+  to { transform: rotate(360deg); }
+
+
+
+}
+
+
+
+.ark-dashboard-error {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  gap: 9px;
+
+
+
+  margin-bottom: 13px;
+
+
+
+  padding: 11px 13px;
+
+
+
+  border: 1px solid #b64d4d;
+
+
+
+  border-radius: 8px;
+
+
+
+  color: #ffd5d5;
+
+
+
+  background: #39191c;
+
+
+
+  font-size: 12px;
+
+
+
+}
+
+
+
+/* KPI cards */
+
+
+
+.ark-stats-grid {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+
+
+  gap: 10px;
+
+
+
+  margin-bottom: 13px;
+
+
+
+}
+
+
+
+.ark-stat-card {
+
+
+
+  min-width: 0;
+
+
+
+  min-height: 94px;
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  gap: 10px;
+
+
+
+  padding: 12px 11px;
+
+
+
+  border: 1px solid rgba(224, 205, 165, 0.35);
+
+
+
+  border-radius: 12px;
+
+
+
+  background: linear-gradient(140deg, #292b2e, #15181a 65%, #242527);
+
+
+
+  box-shadow: inset 0 1px rgba(255,255,255,.1), 0 6px 18px #0008;
+
+
+
+}
+
+
+
+.ark-stat-card:first-child {
+
+
+
+  border-color: var(--ark-gold);
+
+
+
+  box-shadow: 0 0 13px #e6a83642, inset 0 1px #ffffff30;
+
+
+
+}
+
+
+
+.ark-stat-card.is-danger {
+
+
+
+  border-color: rgba(231, 81, 81, .55);
+
+
+
+  background: linear-gradient(135deg, #4b2429, #201a1d);
+
+
+
+}
+
+
+
+.ark-stat-icon {
+
+
+
+  flex: 0 0 45px;
+
+
+
+  width: 45px;
+
+
+
+  height: 45px;
+
+
+
+  display: grid;
+
+
+
+  place-items: center;
+
+
+
+  border: 1px solid #b38b43;
+
+
+
+  border-radius: 50%;
+
+
+
+  color: #ffcf5b;
+
+
+
+  background: radial-gradient(circle at 30% 20%, #69563a, #272727 70%);
+
+
+
+}
+
+
+
+.ark-stat-card.is-danger .ark-stat-icon {
+
+
+
+  border-color: #e95353;
+
+
+
+  color: #ff5353;
+
+
+
+  background: #5d272c;
+
+
+
+}
+
+
+
+.ark-stat-content {
+
+
+
+  min-width: 0;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  gap: 4px;
+
+
+
+}
+
+
+
+.ark-stat-content > span {
+
+
+
+  color: #e7e7e7;
+
+
+
+  font-size: 10px;
+
+
+
+  font-weight: 700;
+
+
+
+}
+
+
+
+.ark-stat-content strong {
+
+
+
+  overflow: hidden;
+
+
+
+  color: #fff;
+
+
+
+  font-size: clamp(16px, 1.35vw, 24px);
+
+
+
+  line-height: 1.1;
+
+
+
+  letter-spacing: -0.5px;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-stat-content small {
+
+
+
+  color: #e8bc64;
+
+
+
+  font-size: 8px;
+
+
+
+  line-height: 1.3;
+
+
+
+}
+
+
+
+/* Shared panels */
+
+
+
+.ark-panel {
+
+
+
+  min-width: 0;
+
+
+
+  overflow: hidden;
+
+
+
+  padding: 13px 14px;
+
+
+
+  border: 1px solid rgba(208, 200, 182, .28);
+
+
+
+  border-radius: 12px;
+
+
+
+  background: linear-gradient(145deg, #24272a 0%, #111417 52%, #17191c 100%);
+
+
+
+  box-shadow: inset 0 1px #ffffff17, 0 9px 20px #0007;
+
+
+
+}
+
+
+
+.ark-panel-heading {
+
+
+
+  display: flex;
+
+
+
+  align-items: flex-start;
+
+
+
+  justify-content: space-between;
+
+
+
+  gap: 9px;
+
+
+
+  padding-bottom: 9px;
+
+
+
+  border-bottom: 1px solid #ffffff24;
+
+
+
+}
+
+
+
+.ark-panel-heading h3 {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  gap: 7px;
+
+
+
+  margin: 0;
+
+
+
+  color: #f8f8f8;
+
+
+
+  font-size: 15px;
+
+
+
+  font-weight: 750;
+
+
+
+  letter-spacing: -.25px;
+
+
+
+}
+
+
+
+.ark-panel-heading h3 svg {
+
+
+
+  flex-shrink: 0;
+
+
+
+  color: #ffca45;
+
+
+
+}
+
+
+
+.ark-panel-heading p {
+
+
+
+  margin: 4px 0 0;
+
+
+
+  color: #aeb0b2;
+
+
+
+  font-size: 9px;
+
+
+
+}
+
+
+
+.ark-panel-tag {
+
+
+
+  flex-shrink: 0;
+
+
+
+  padding: 5px 7px;
+
+
+
+  border: 1px solid #ffffff4d;
+
+
+
+  border-radius: 6px;
+
+
+
+  color: #f6d58f;
+
+
+
+  font-size: 9px;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-view-link {
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  gap: 4px;
+
+
+
+  color: #f4f4f4;
+
+
+
+  text-decoration: none;
+
+
+
+  font-size: 10px;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-view-link:hover {
+
+
+
+  color: var(--ark-gold-light);
+
+
+
+}
+
+
+
+/* Main three-column row */
+
+
+
+.ark-dashboard-main-grid {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1.08fr) minmax(0, .9fr);
+
+
+
+  align-items: stretch;
+
+
+
+  gap: 12px;
+
+
+
+  margin-bottom: 12px;
+
+
+
+}
+
+
+
+.ark-dashboard-main-grid > .ark-panel {
+
+
+
+  min-height: 300px;
+
+
+
+}
+
+
+
+/* Business operations orbit: eight nodes */
+
+
+
+.ark-operations-panel {
+
+
+
+  padding: 12px 11px 8px;
+
+
+
+  border-color: rgba(208, 160, 75, .3);
+
+
+
+  background: radial-gradient(circle at 50% 53%, #342719 0%, #17191b 55%, #111417 100%);
+
+
+
+}
+
+
+
+.ark-operations-panel .ark-panel-heading {
+
+
+
+  padding: 0 3px 2px;
+
+
+
+  border: 0;
+
+
+
+}
+
+
+
+.ark-operations-panel .ark-panel-heading h3 {
+
+
+
+  font-size: 15px;
+
+
+
+}
+
+
+
+.ark-operations-panel .ark-panel-heading p {
+
+
+
+  font-size: 9px;
+
+
+
+}
+
+
+
+.ark-operations-orbit {
+
+
+
+  position: relative;
+
+
+
+  width: min(100%, 420px);
+
+
+
+  height: 258px;
+
+
+
+  margin: 3px auto 0;
+
+
+
+  isolation: isolate;
+
+
+
+}
+
+
+
+.ark-orbit-ring {
+
+
+
+  position: absolute;
+
+
+
+  top: 50%;
+
+
+
+  left: 50%;
+
+
+
+  width: 65%;
+
+
+
+  height: 72%;
+
+
+
+  border: 2px solid #f4bd58;
+
+
+
+  border-radius: 50%;
+
+
+
+  transform: translate(-50%, -50%);
+
+
+
+  box-shadow: 0 0 14px #f4ae44b0, inset 0 0 13px #f4ae4455;
+
+
+
+  pointer-events: none;
+
+
+
+}
+
+
+
+.ark-orbit-center {
+
+
+
+  position: absolute;
+
+
+
+  z-index: 2;
+
+
+
+  top: 50%;
+
+
+
+  left: 50%;
+
+
+
+  width: 122px;
+
+
+
+  height: 122px;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 3px;
+
+
+
+  border: 3px solid #ffcf71;
+
+
+
+  border-radius: 50%;
+
+
+
+  color: #fff;
+
+
+
+  background: radial-gradient(circle at 45% 30%, #353230, #101113 70%);
+
+
+
+  box-shadow: 0 0 0 4px #a65e2b77, 0 0 25px #ffac42c4, inset 0 0 22px #f2b34b44;
+
+
+
+  text-align: center;
+
+
+
+  transform: translate(-50%, -50%);
+
+
+
+}
+
+
+
+.ark-orbit-center strong {
+
+
+
+  color: #ffcf63;
+
+
+
+  font: 700 27px Georgia, serif;
+
+
+
+}
+
+
+
+.ark-orbit-center span,
+
+
+
+.ark-orbit-center b {
+
+
+
+  font-size: 12px;
+
+
+
+  line-height: 1.05;
+
+
+
+  text-transform: uppercase;
+
+
+
+}
+
+
+
+.ark-operation-node {
+
+
+
+  position: absolute;
+
+
+
+  z-index: 3;
+
+
+
+  width: 82px;
+
+
+
+  height: 69px;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 2px;
+
+
+
+  padding: 4px;
+
+
+
+  border: 1px solid #c4a773;
+
+
+
+  border-radius: 50%;
+
+
+
+  color: #fff;
+
+
+
+  background: radial-gradient(circle at 45% 35%, #2d2b26, #0c0d0e 77%);
+
+
+
+  box-shadow: 0 0 11px #dba84d55;
+
+
+
+  text-align: center;
+
+
+
+  transition: transform .2s ease, box-shadow .2s ease;
+
+
+
+}
+
+
+
+.ark-operation-node:hover {
+
+
+
+  box-shadow: 0 0 20px #f6bd65aa;
+
+
+
+}
+
+
+
+.ark-operation-node-icon {
+
+
+
+  color: #ffcb3d;
+
+
+
+  line-height: 0;
+
+
+
+}
+
+
+
+.ark-operation-node-icon svg {
+
+
+
+  width: 19px;
+
+
+
+  height: 19px;
+
+
+
+}
+
+
+
+.ark-operation-node strong {
+
+
+
+  max-width: 95%;
+
+
+
+  overflow: hidden;
+
+
+
+  font-size: 9px;
+
+
+
+  line-height: 1.05;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-operation-node small {
+
+
+
+  max-width: 95%;
+
+
+
+  overflow: hidden;
+
+
+
+  color: #dedbd4;
+
+
+
+  font-size: 7px;
+
+
+
+  line-height: 1.05;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+}
+
+
+
+.ark-operation-node-1 { top: 0; left: 50%; transform: translateX(-50%); }
+
+
+
+.ark-operation-node-1:hover { transform: translateX(-50%) scale(1.06); }
+
+
+
+.ark-operation-node-2 { top: 11%; right: 2%; }
+
+
+
+.ark-operation-node-3 { top: 38%; right: 0; }
+
+
+
+.ark-operation-node-4 { right: 2%; bottom: 7%; }
+
+
+
+.ark-operation-node-5 { bottom: 0; left: 50%; transform: translateX(-50%); }
+
+
+
+.ark-operation-node-5:hover { transform: translateX(-50%) scale(1.06); }
+
+
+
+.ark-operation-node-6 { bottom: 7%; left: 2%; }
+
+
+
+.ark-operation-node-7 { top: 38%; left: 0; }
+
+
+
+.ark-operation-node-8 { top: 11%; left: 2%; }
+
+
+
+/* Revenue line chart */
+
+
+
+.ark-sales-summary {
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  gap: 4px;
+
+
+
+  margin: 12px 0 7px;
+
+
+
+}
+
+
+
+.ark-sales-summary strong {
+
+
+
+  color: #fff;
+
+
+
+  font-size: 26px;
+
+
+
+  line-height: 1.15;
+
+
+
+}
+
+
+
+.ark-sales-summary span {
+
+
+
+  color: #58e453;
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-sales-chart {
+
+
+
+  display: flex;
+
+
+
+  height: 190px;
+
+
+
+  gap: 7px;
+
+
+
+  margin-top: 7px;
+
+
+
+  padding-top: 5px;
+
+
+
+}
+
+
+
+.ark-chart-y-labels {
+
+
+
+  width: 46px;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  justify-content: space-between;
+
+
+
+  padding: 0 0 23px;
+
+
+
+  color: #d5d1c8;
+
+
+
+  font-size: 8px;
+
+
+
+  text-align: right;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-chart-plot {
+
+
+
+  position: relative;
+
+
+
+  min-width: 0;
+
+
+
+  flex: 1;
+
+
+
+  height: 100%;
+
+
+
+  padding-bottom: 23px;
+
+
+
+}
+
+
+
+.ark-chart-grid {
+
+
+
+  position: absolute;
+
+
+
+  inset: 4px 0 23px;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  justify-content: space-between;
+
+
+
+  pointer-events: none;
+
+
+
+}
+
+
+
+.ark-chart-grid span {
+
+
+
+  width: 100%;
+
+
+
+  border-top: 1px solid #ffffff20;
+
+
+
+}
+
+
+
+.ark-sales-svg {
+
+
+
+  position: absolute;
+
+
+
+  inset: 3px 0 23px;
+
+
+
+  width: 100%;
+
+
+
+  height: calc(100% - 26px);
+
+
+
+  overflow: visible;
+
+
+
+}
+
+
+
+.ark-chart-months {
+
+
+
+  position: absolute;
+
+
+
+  right: 0;
+
+
+
+  bottom: 0;
+
+
+
+  left: 0;
+
+
+
+  display: flex;
+
+
+
+  justify-content: space-around;
+
+
+
+  gap: 3px;
+
+
+
+}
+
+
+
+.ark-chart-months span {
+
+
+
+  color: #dedbd4;
+
+
+
+  font-size: 9px;
+
+
+
+}
+
+
+
+.ark-chart-empty {
+
+
+
+  position: absolute;
+
+
+
+  inset: 0 0 23px;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 8px;
+
+
+
+  padding: 12px;
+
+
+
+  color: #bcb7aa;
+
+
+
+  text-align: center;
+
+
+
+}
+
+
+
+.ark-chart-empty svg {
+
+
+
+  color: var(--ark-gold);
+
+
+
+}
+
+
+
+.ark-chart-empty strong {
+
+
+
+  color: #f4e8ce;
+
+
+
+  font-size: 12px;
+
+
+
+}
+
+
+
+.ark-chart-empty span {
+
+
+
+  max-width: 260px;
+
+
+
+  font-size: 10px;
+
+
+
+  line-height: 1.45;
+
+
+
+}
+
+
+
+/* Category donut */
+
+
+
+.ark-distribution-content {
+
+
+
+  min-height: 235px;
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 12px;
+
+
+
+}
+
+
+
+.ark-donut {
+
+
+
+  width: clamp(125px, 11vw, 170px);
+
+
+
+  aspect-ratio: 1;
+
+
+
+  flex-shrink: 0;
+
+
+
+  display: grid;
+
+
+
+  place-items: center;
+
+
+
+  border-radius: 50%;
+
+
+
+  box-shadow: 0 0 10px #0005;
+
+
+
+}
+
+
+
+.ark-donut-center {
+
+
+
+  width: 68%;
+
+
+
+  height: 68%;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  border-radius: 50%;
+
+
+
+  background: #15171a;
+
+
+
+  text-align: center;
+
+
+
+}
+
+
+
+.ark-donut-center strong {
+
+
+
+  font-size: 22px;
+
+
+
+}
+
+
+
+.ark-donut-center span {
+
+
+
+  margin-top: 4px;
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-category-legend {
+
+
+
+  min-width: 0;
+
+
+
+  flex: 1;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  gap: 13px;
+
+
+
+}
+
+
+
+.ark-category-legend > div {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  gap: 6px;
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-category-legend > div > span:nth-child(2) {
+
+
+
+  min-width: 0;
+
+
+
+  flex: 1;
+
+
+
+  overflow: hidden;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+}
+
+
+
+.ark-category-legend strong {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-legend-dot {
+
+
+
+  width: 10px;
+
+
+
+  height: 10px;
+
+
+
+  flex-shrink: 0;
+
+
+
+  border-radius: 50%;
+
+
+
+}
+
+
+
+/* Quick actions and delivery updates */
+
+
+
+.ark-dashboard-secondary-grid {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+
+
+
+  gap: 12px;
+
+
+
+  margin-bottom: 12px;
+
+
+
+}
+
+
+
+.ark-quick-panel,
+
+
+
+.ark-delivery-panel {
+
+
+
+  border-color: #c69b4b;
+
+
+
+}
+
+
+
+.ark-quick-grid {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+
+
+
+  gap: 7px;
+
+
+
+  margin-top: 11px;
+
+
+
+}
+
+
+
+.ark-quick-action {
+
+
+
+  min-width: 0;
+
+
+
+  min-height: 88px;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 7px;
+
+
+
+  padding: 8px 3px;
+
+
+
+  border: 1px solid #f3c261;
+
+
+
+  border-radius: 10px;
+
+
+
+  color: #fff;
+
+
+
+  background: linear-gradient(145deg, #2b2418, #0c0e11 75%);
+
+
+
+  box-shadow: inset 0 0 10px #e5a53426, 0 0 8px #e5a53445;
+
+
+
+  transition: transform .2s ease, background .2s ease;
+
+
+
+}
+
+
+
+.ark-quick-action:hover {
+
+
+
+  transform: translateY(-3px);
+
+
+
+  background: #352918;
+
+
+
+}
+
+
+
+.ark-quick-action svg {
+
+
+
+  flex-shrink: 0;
+
+
+
+  color: #ffcb39;
+
+
+
+}
+
+
+
+.ark-quick-action span {
+
+
+
+  font-size: 9px;
+
+
+
+  line-height: 1.2;
+
+
+
+  text-align: center;
+
+
+
+}
+
+
+
+.ark-delivery-list {
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  margin-top: 7px;
+
+
+
+}
+
+
+
+.ark-delivery-row {
+
+
+
+  min-width: 0;
+
+
+
+  min-height: 38px;
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: 42px 68px minmax(75px, 1fr) 55px auto 55px;
+
+
+
+  align-items: center;
+
+
+
+  gap: 7px;
+
+
+
+  padding: 5px 0;
+
+
+
+  border-bottom: 1px solid #ffffff1c;
+
+
+
+  font-size: 9px;
+
+
+
+}
+
+
+
+.ark-delivery-thumb,
+
+
+
+.ark-inventory-thumb {
+
+
+
+  width: 40px;
+
+
+
+  height: 29px;
+
+
+
+  display: grid;
+
+
+
+  place-items: center;
+
+
+
+  overflow: hidden;
+
+
+
+  border-radius: 5px;
+
+
+
+  color: var(--ark-gold);
+
+
+
+  background: #303236;
+
+
+
+}
+
+
+
+.ark-delivery-thumb img,
+
+
+
+.ark-inventory-thumb img {
+
+
+
+  width: 100%;
+
+
+
+  height: 100%;
+
+
+
+  object-fit: cover;
+
+
+
+}
+
+
+
+.ark-delivery-id {
+
+
+
+  overflow: hidden;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-delivery-product {
+
+
+
+  overflow: hidden;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-delivery-quantity,
+
+
+
+.ark-delivery-date {
+
+
+
+  color: #ddd;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-delivery-status,
+
+
+
+.ark-order-status,
+
+
+
+.ark-stock-badge {
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  padding: 5px 8px;
+
+
+
+  border-radius: 20px;
+
+
+
+  color: #fff;
+
+
+
+  background: #4b3290;
+
+
+
+  font-size: 9px;
+
+
+
+  font-weight: 700;
+
+
+
+  line-height: 1.1;
+
+
+
+  text-align: center;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.delivery-delivered,
+
+
+
+.status-success,
+
+
+
+.ark-stock-badge.in-stock {
+
+
+
+  color: #e8ffe7;
+
+
+
+  background: #0c6420;
+
+
+
+}
+
+
+
+.delivery-in-transit,
+
+
+
+.status-processing {
+
+
+
+  background: #12518d;
+
+
+
+}
+
+
+
+.delivery-out-for-delivery,
+
+
+
+.status-pending,
+
+
+
+.ark-stock-badge.low {
+
+
+
+  background: #956000;
+
+
+
+}
+
+
+
+.delivery-scheduled {
+
+
+
+  background: #4d267e;
+
+
+
+}
+
+
+
+.delivery-cancelled,
+
+
+
+.status-danger {
+
+
+
+  background: #842c2c;
+
+
+
+}
+
+
+
+.ark-stock-badge.unknown {
+
+
+
+  color: #e4e0d8;
+
+
+
+  background: #55585c;
+
+
+
+}
+
+
+
+/* Bottom three panels */
+
+
+
+.ark-dashboard-bottom {
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, .96fr);
+
+
+
+  align-items: stretch;
+
+
+
+  gap: 12px;
+
+
+
+}
+
+
+
+.ark-dashboard-bottom > .ark-panel {
+
+
+
+  min-height: 215px;
+
+
+
+}
+
+
+
+.ark-table-scroll {
+
+
+
+  width: 100%;
+
+
+
+  overflow-x: auto;
+
+
+
+}
+
+
+
+.ark-orders-table {
+
+
+
+  width: 100%;
+
+
+
+  border-collapse: collapse;
+
+
+
+  table-layout: fixed;
+
+
+
+  font-size: 9px;
+
+
+
+  text-align: left;
+
+
+
+}
+
+
+
+.ark-orders-table th {
+
+
+
+  padding: 9px 5px;
+
+
+
+  border-bottom: 1px solid #ffffff24;
+
+
+
+  color: #dedbd4;
+
+
+
+  font-size: 9px;
+
+
+
+  font-weight: 700;
+
+
+
+}
+
+
+
+.ark-orders-table td {
+
+
+
+  padding: 9px 5px;
+
+
+
+  overflow: hidden;
+
+
+
+  border-bottom: 1px solid #ffffff1b;
+
+
+
+  color: #f4f4f4;
+
+
+
+  font-size: 9px;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-orders-table tbody tr:hover {
+
+
+
+  background: #ffffff0a;
+
+
+
+}
+
+
+
+.ark-orders-table th:nth-child(1),
+
+
+
+.ark-orders-table td:nth-child(1) { width: 20%; }
+
+
+
+.ark-orders-table th:nth-child(2),
+
+
+
+.ark-orders-table td:nth-child(2) { width: 25%; }
+
+
+
+.ark-orders-table th:nth-child(3),
+
+
+
+.ark-orders-table td:nth-child(3) { width: 15%; }
+
+
+
+.ark-orders-table th:nth-child(4),
+
+
+
+.ark-orders-table td:nth-child(4) { width: 20%; }
+
+
+
+.ark-orders-table th:nth-child(5),
+
+
+
+.ark-orders-table td:nth-child(5) { width: 20%; }
+
+
+
+.ark-empty-state {
+
+
+
+  min-height: 130px;
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+  gap: 7px;
+
+
+
+  padding: 15px;
+
+
+
+  color: #c9c9c9;
+
+
+
+  font-size: 10px;
+
+
+
+  text-align: center;
+
+
+
+}
+
+
+
+.ark-empty-state svg {
+
+
+
+  color: var(--ark-gold);
+
+
+
+}
+
+
+
+.ark-empty-state strong {
+
+
+
+  color: #fff;
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-empty-state span {
+
+
+
+  max-width: 290px;
+
+
+
+  color: #bcbcbc;
+
+
+
+  line-height: 1.45;
+
+
+
+}
+
+
+
+.ark-orders-empty {
+
+
+
+  min-height: 165px;
+
+
+
+  margin-top: 8px;
+
+
+
+  border: 1px dashed rgba(233, 185, 79, .28);
+
+
+
+  border-radius: 9px;
+
+
+
+}
+
+
+
+.ark-projects-empty {
+
+
+
+  min-height: 175px;
+
+
+
+}
+
+
+
+.ark-empty-action {
+
+
+
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+
+
+  gap: 5px;
+
+
+
+  margin-top: 3px;
+
+
+
+  padding: 7px 10px;
+
+
+
+  border: 1px solid rgba(233, 185, 79, .45);
+
+
+
+  border-radius: 7px;
+
+
+
+  color: #f5d58f;
+
+
+
+  text-decoration: none;
+
+
+
+  font-size: 9px;
+
+
+
+}
+
+
+
+.ark-empty-action:hover {
+
+
+
+  background: rgba(233, 185, 79, .1);
+
+
+
+}
+
+
+
+/* Inventory preview */
+
+
+
+.ark-inventory-list {
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+}
+
+
+
+.ark-inventory-row {
+
+
+
+  min-width: 0;
+
+
+
+  min-height: 42px;
+
+
+
+  display: grid;
+
+
+
+  grid-template-columns: 42px minmax(0, 1fr) auto auto;
+
+
+
+  align-items: center;
+
+
+
+  gap: 7px;
+
+
+
+  padding: 6px 0;
+
+
+
+  border-bottom: 1px solid #ffffff21;
+
+
+
+}
+
+
+
+.ark-inventory-thumb {
+
+
+
+  width: 40px;
+
+
+
+  height: 32px;
+
+
+
+}
+
+
+
+.ark-inventory-name {
+
+
+
+  min-width: 0;
+
+
+
+  overflow: hidden;
+
+
+
+  color: #f3f1eb;
+
+
+
+  font-size: 9px;
+
+
+
+  font-weight: 650;
+
+
+
+  text-overflow: ellipsis;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-inventory-stock {
+
+
+
+  color: #dedbd4;
+
+
+
+  font-size: 8px;
+
+
+
+  white-space: nowrap;
+
+
+
+}
+
+
+
+.ark-stock-badge {
+
+
+
+  font-size: 8px;
+
+
+
+}
+
+
+
+/* Footer */
+
+
+
+.ark-dashboard-footer {
+
+
+
+  display: flex;
+
+
+
+  align-items: center;
+
+
+
+  justify-content: space-between;
+
+
+
+  gap: 10px;
+
+
+
+  margin-top: 15px;
+
+
+
+  padding-top: 11px;
+
+
+
+  border-top: 1px solid #d2a75633;
+
+
+
+  color: #a5a5a5;
+
+
+
+  font-size: 9px;
+
+
+
+}
+
+
+
+.ark-dashboard-footer strong {
+
+
+
+  color: #dbb667;
+
+
+
+  letter-spacing: 1px;
+
+
+
+}
+
+
+
+/* Responsive */
+
+
+
+@media (min-width: 1500px) {
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-right: 28px;
+
+
+
+    padding-left: 28px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid > .ark-panel {
+
+
+
+    min-height: 330px;
+
+
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+
+
+    height: 278px;
+
+
+
+  }
+
+
+
+  .ark-stat-card {
+
+
+
+    min-height: 100px;
+
+
+
+  }
+
+
+
+  .ark-quick-action {
+
+
+
+    min-height: 95px;
+
+
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 1250px) {
+
+
+
+  .ark-stats-grid {
+
+
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid {
+
+
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+
+
+  }
+
+
+
+  .ark-operations-panel {
+
+
+
+    grid-column: 1 / -1;
+
+
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+
+
+    width: min(100%, 500px);
+
+
+
+    height: 280px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-bottom {
+
+
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+
+
+  }
+
+
+
+  .ark-inventory-panel {
+
+
+
+    grid-column: 1 / -1;
+
+
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 900px) {
+
+
+
+  .ark-dashboard-toolbar {
+
+
+
+    align-items: flex-start;
+
+
+
+    flex-direction: column;
+
+
+
+  }
+
+
+
+  .ark-dashboard-controls {
+
+
+
+    justify-content: flex-start;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid,
+
+
+
+  .ark-dashboard-secondary-grid,
+
+
+
+  .ark-dashboard-bottom {
+
+
+
+    grid-template-columns: 1fr;
+
+
+
+  }
+
+
+
+  .ark-operations-panel,
+
+
+
+  .ark-inventory-panel {
+
+
+
+    grid-column: auto;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid > .ark-panel {
+
+
+
+    min-height: auto;
+
+
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+
+
+    height: 285px;
+
+
+
+  }
+
+
+
+  .ark-quick-grid {
+
+
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+
+
+  }
+
+
+
+  .ark-dashboard-bottom > .ark-panel {
+
+
+
+    min-height: 200px;
+
+
+
+  }
+
+
+
+  .ark-delivery-row {
+
+
+
+    grid-template-columns: 42px 70px minmax(90px, 1fr) 55px auto 55px;
+
+
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 600px) {
+
+
+
+  .ark-dashboard {
+
+
+
+    padding: 10px 0 20px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-right: 10px;
+
+
+
+    padding-left: 10px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-toolbar h2 {
+
+
+
+    font-size: 22px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-controls {
+
+
+
+    width: 100%;
+
+
+
+  }
+
+
+
+  .ark-period-select {
+
+
+
+    flex: 1;
+
+
+
+  }
+
+
+
+  .ark-stats-grid {
+
+
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+
+    gap: 8px;
+
+
+
+  }
+
+
+
+  .ark-stat-card {
+
+
+
+    min-height: 83px;
+
+
+
+    gap: 7px;
+
+
+
+    padding: 9px 8px;
+
+
+
+  }
+
+
+
+  .ark-stat-icon {
+
+
+
+    width: 35px;
+
+
+
+    height: 35px;
+
+
+
+    flex-basis: 35px;
+
+
+
+  }
+
+
+
+  .ark-stat-icon svg {
+
+
+
+    width: 19px;
+
+
+
+    height: 19px;
+
+
+
+  }
+
+
+
+  .ark-stat-content > span {
+
+
+
+    font-size: 9px;
+
+
+
+  }
+
+
+
+  .ark-stat-content strong {
+
+
+
+    font-size: 15px;
+
+
+
+  }
+
+
+
+  .ark-stat-content small {
+
+
+
+    font-size: 7px;
+
+
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+
+
+    height: 255px;
+
+
+
+  }
+
+
+
+  .ark-orbit-center {
+
+
+
+    width: 110px;
+
+
+
+    height: 110px;
+
+
+
+  }
+
+
+
+  .ark-operation-node {
+
+
+
+    width: 74px;
+
+
+
+    height: 64px;
+
+
+
+  }
+
+
+
+  .ark-operation-node strong {
+
+
+
+    font-size: 8px;
+
+
+
+  }
+
+
+
+  .ark-operation-node small {
+
+
+
+    font-size: 6px;
+
+
+
+  }
+
+
+
+  .ark-quick-grid {
+
+
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+
+
+  }
+
+
+
+  .ark-quick-action {
+
+
+
+    min-height: 75px;
+
+
+
+  }
+
+
+
+  .ark-quick-action svg {
+
+
+
+    width: 21px;
+
+
+
+    height: 21px;
+
+
+
+  }
+
+
+
+  .ark-quick-action span {
+
+
+
+    font-size: 8px;
+
+
+
+  }
+
+
+
+  .ark-delivery-row {
+
+
+
+    grid-template-columns: 35px minmax(52px, .65fr) minmax(75px, 1fr) auto;
+
+
+
+    gap: 5px;
+
+
+
+  }
+
+
+
+  .ark-delivery-thumb {
+
+
+
+    width: 34px;
+
+
+
+    height: 27px;
+
+
+
+  }
+
+
+
+  .ark-delivery-quantity,
+
+
+
+  .ark-delivery-date {
+
+
+
+    display: none;
+
+
+
+  }
+
+
+
+  .ark-delivery-status {
+
+
+
+    font-size: 8px;
+
+
+
+  }
+
+
+
+  .ark-distribution-content {
+
+
+
+    min-height: 195px;
+
+
+
+  }
+
+
+
+  .ark-donut {
+
+
+
+    width: 130px;
+
+
+
+  }
+
+
+
+  .ark-category-legend {
+
+
+
+    gap: 10px;
+
+
+
+  }
+
+
+
+  .ark-orders-table {
+
+
+
+    min-width: 500px;
+
+
+
+  }
+
+
+
+  .ark-inventory-row {
+
+
+
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+
+
+
+  }
+
+
+
+  .ark-inventory-thumb {
+
+
+
+    width: 36px;
+
+
+
+  }
+
+
+
+  .ark-inventory-stock {
+
+
+
+    display: none;
+
+
+
+  }
+
+
+
+  .ark-dashboard-footer {
+
+
+
+    align-items: flex-start;
+
+
+
+    flex-direction: column;
+
+
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 380px) {
+
+
+
+  .ark-operations-orbit {
+
+
+
+    transform: scale(.9);
+
+
+
+    transform-origin: top center;
+
+
+
+    margin-bottom: -25px;
+
+
+
+  }
+
+
+
+  .ark-quick-grid {
+
+
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+
+  }
+
+
+
+}
+
+
+
+/* =========================================================
+
+
+
+   DESKTOP SCREEN-FIT + READABILITY UPDATE
+
+
+
+   Keeps the existing layout and improves text legibility.
+
+
+
+   ========================================================= */
+
+
+
+.ark-dashboard-container {
+
+
+
+  max-width: none;
+
+
+
+  padding-right: clamp(14px, 2.4vw, 42px);
+
+
+
+  padding-left: clamp(14px, 2.4vw, 42px);
+
+
+
+}
+
+
+
+.ark-dashboard-title-group .ark-eyebrow {
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-dashboard-toolbar h2 {
+
+
+
+  font-size: clamp(27px, 2vw, 34px);
+
+
+
+}
+
+
+
+.ark-dashboard-toolbar p {
+
+
+
+  font-size: 13px;
+
+
+
+}
+
+
+
+.ark-stat-content > span {
+
+
+
+  font-size: 12px;
+
+
+
+}
+
+
+
+.ark-stat-content strong {
+
+
+
+  font-size: clamp(19px, 1.45vw, 27px);
+
+
+
+}
+
+
+
+.ark-stat-content small {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-panel-heading h3 {
+
+
+
+  font-size: 17px;
+
+
+
+}
+
+
+
+.ark-panel-heading p {
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-operation-node strong {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-operation-node small {
+
+
+
+  font-size: 8px;
+
+
+
+}
+
+
+
+.ark-sales-summary span {
+
+
+
+  font-size: 12px;
+
+
+
+}
+
+
+
+.ark-chart-y-labels,
+
+
+
+.ark-chart-months span {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-category-legend > div,
+
+
+
+.ark-category-legend strong {
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-quick-action span {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-delivery-row,
+
+
+
+.ark-orders-table th,
+
+
+
+.ark-orders-table td {
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-delivery-status,
+
+
+
+.ark-order-status,
+
+
+
+.ark-stock-badge {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-inventory-name {
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-inventory-stock {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+.ark-empty-state {
+
+
+
+  font-size: 11px;
+
+
+
+}
+
+
+
+.ark-empty-state strong {
+
+
+
+  font-size: 13px;
+
+
+
+}
+
+
+
+.ark-dashboard-footer {
+
+
+
+  font-size: 10px;
+
+
+
+}
+
+
+
+/* At common desktop/laptop resolutions, show the dashboard
+
+
+
+   as a compact overview without shrinking its typography. */
+
+
+
+@media (min-width: 1200px) and (min-height: 760px) {
+
+
+
+  .ark-dashboard {
+
+
+
+    padding-top: 7px;
+
+
+
+    padding-bottom: 9px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-right: 22px;
+
+
+
+    padding-left: 22px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-toolbar {
+
+
+
+    margin-bottom: 9px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-toolbar h2 {
+
+
+
+    font-size: 29px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-toolbar p {
+
+
+
+    font-size: 12px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-title-group .ark-eyebrow {
+
+
+
+    margin-bottom: 3px;
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-stats-grid {
+
+
+
+    gap: 8px;
+
+
+
+    margin-bottom: 9px;
+
+
+
+  }
+
+
+
+  .ark-stat-card {
+
+
+
+    min-height: 76px;
+
+
+
+    padding: 8px 10px;
+
+
+
+    gap: 9px;
+
+
+
+  }
+
+
+
+  .ark-stat-icon {
+
+
+
+    width: 39px;
+
+
+
+    height: 39px;
+
+
+
+    flex-basis: 39px;
+
+
+
+  }
+
+
+
+  .ark-stat-icon svg {
+
+
+
+    width: 22px;
+
+
+
+    height: 22px;
+
+
+
+  }
+
+
+
+  .ark-stat-content > span {
+
+
+
+    font-size: 11px;
+
+
+
+  }
+
+
+
+  .ark-stat-content strong {
+
+
+
+    font-size: 21px;
+
+
+
+  }
+
+
+
+  .ark-stat-content small {
+
+
+
+    font-size: 9px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid {
+
+
+
+    gap: 9px;
+
+
+
+    margin-bottom: 9px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid > .ark-panel {
+
+
+
+    min-height: 258px;
+
+
+
+  }
+
+
+
+  .ark-panel {
+
+
+
+    padding: 10px 12px;
+
+
+
+  }
+
+
+
+  .ark-panel-heading {
+
+
+
+    padding-bottom: 7px;
+
+
+
+  }
+
+
+
+  .ark-panel-heading h3 {
+
+
+
+    font-size: 15px;
+
+
+
+  }
+
+
+
+  .ark-panel-heading p {
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+
+
+    height: 213px;
+
+
+
+    max-width: 390px;
+
+
+
+  }
+
+
+
+  .ark-orbit-center {
+
+
+
+    width: 105px;
+
+
+
+    height: 105px;
+
+
+
+  }
+
+
+
+  .ark-orbit-center strong {
+
+
+
+    font-size: 24px;
+
+
+
+  }
+
+
+
+  .ark-operation-node {
+
+
+
+    width: 76px;
+
+
+
+    height: 64px;
+
+
+
+  }
+
+
+
+  .ark-operation-node-icon svg {
+
+
+
+    width: 18px;
+
+
+
+    height: 18px;
+
+
+
+  }
+
+
+
+  .ark-operation-node strong {
+
+
+
+    font-size: 9px;
+
+
+
+  }
+
+
+
+  .ark-operation-node small {
+
+
+
+    font-size: 7px;
+
+
+
+  }
+
+
+
+  .ark-sales-summary {
+
+
+
+    margin: 8px 0 4px;
+
+
+
+  }
+
+
+
+  .ark-sales-summary strong {
+
+
+
+    font-size: 24px;
+
+
+
+  }
+
+
+
+  .ark-sales-summary span {
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-sales-chart {
+
+
+
+    height: 154px;
+
+
+
+    margin-top: 3px;
+
+
+
+  }
+
+
+
+  .ark-distribution-content {
+
+
+
+    min-height: 195px;
+
+
+
+  }
+
+
+
+  .ark-donut {
+
+
+
+    width: clamp(112px, 9vw, 145px);
+
+
+
+  }
+
+
+
+  .ark-category-legend {
+
+
+
+    gap: 10px;
+
+
+
+  }
+
+
+
+  .ark-category-legend > div,
+
+
+
+  .ark-category-legend strong {
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-secondary-grid {
+
+
+
+    gap: 9px;
+
+
+
+    margin-bottom: 9px;
+
+
+
+  }
+
+
+
+  .ark-quick-grid {
+
+
+
+    gap: 6px;
+
+
+
+    margin-top: 8px;
+
+
+
+  }
+
+
+
+  .ark-quick-action {
+
+
+
+    min-height: 69px;
+
+
+
+    gap: 5px;
+
+
+
+    padding: 5px 2px;
+
+
+
+  }
+
+
+
+  .ark-quick-action svg {
+
+
+
+    width: 22px;
+
+
+
+    height: 22px;
+
+
+
+  }
+
+
+
+  .ark-quick-action span {
+
+
+
+    font-size: 9px;
+
+
+
+  }
+
+
+
+  .ark-delivery-list {
+
+
+
+    margin-top: 4px;
+
+
+
+  }
+
+
+
+  .ark-delivery-row {
+
+
+
+    min-height: 33px;
+
+
+
+    padding: 3px 0;
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-bottom {
+
+
+
+    gap: 9px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-bottom > .ark-panel {
+
+
+
+    min-height: 176px;
+
+
+
+  }
+
+
+
+  .ark-orders-table th,
+
+
+
+  .ark-orders-table td {
+
+
+
+    padding-top: 7px;
+
+
+
+    padding-bottom: 7px;
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-empty-state {
+
+
+
+    min-height: 115px;
+
+
+
+    gap: 5px;
+
+
+
+    padding: 9px;
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-empty-state strong {
+
+
+
+    font-size: 11px;
+
+
+
+  }
+
+
+
+  .ark-projects-empty {
+
+
+
+    min-height: 125px;
+
+
+
+  }
+
+
+
+  .ark-orders-empty {
+
+
+
+    min-height: 130px;
+
+
+
+    margin-top: 5px;
+
+
+
+  }
+
+
+
+  .ark-inventory-row {
+
+
+
+    min-height: 34px;
+
+
+
+    padding: 3px 0;
+
+
+
+  }
+
+
+
+  .ark-inventory-thumb {
+
+
+
+    height: 27px;
+
+
+
+  }
+
+
+
+  .ark-inventory-name {
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-inventory-stock,
+
+
+
+  .ark-stock-badge {
+
+
+
+    font-size: 9px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-footer {
+
+
+
+    margin-top: 8px;
+
+
+
+    padding-top: 7px;
+
+
+
+    font-size: 9px;
+
+
+
+  }
+
+
+
+}
+
+
+
+/* Shorter desktop screens: retain readable type and use a
+
+
+
+   two-row layout rather than forcing tiny text. */
+
+
+
+@media (min-width: 1200px) and (max-height: 759px) {
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-right: 16px;
+
+
+
+    padding-left: 16px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid {
+
+
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+
+
+  }
+
+
+
+  .ark-operations-panel {
+
+
+
+    grid-column: 1 / -1;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid > .ark-panel {
+
+
+
+    min-height: 245px;
+
+
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+
+
+    height: 205px;
+
+
+
+  }
+
+
+
+  .ark-dashboard-bottom {
+
+
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+
+
+  }
+
+
+
+  .ark-inventory-panel {
+
+
+
+    grid-column: 1 / -1;
+
+
+
+  }
+
+
+
+}
+
+
+
+/* Keep tablet and mobile layouts readable. */
+
+
+
+@media (max-width: 900px) {
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-right: 12px;
+
+
+
+    padding-left: 12px;
+
+
+
+  }
+
+
+
+  .ark-stat-content > span {
+
+
+
+    font-size: 10px;
+
+
+
+  }
+
+
+
+  .ark-stat-content small {
+
+
+
+    font-size: 8px;
+
+
+
+  }
+
+
+
+  .ark-panel-heading h3 {
+
+
+
+    font-size: 15px;
+
+
+
+  }
+
+
+
+}
+
+
+
+/* =========================================================
+
+
+
+   FINAL FIX — TRUE FULL-WIDTH DASHBOARD + LEGIBLE TYPE
+
+
+
+   This deliberately overrides the earlier compact rules.
+
+
+
+   ========================================================= */
+
+
+
+/* Break out of any centered/narrow admin content wrapper.
+
+
+
+   The dashboard itself now spans the complete browser width. */
+
+
+
+.ark-dashboard {
+
+
+
+  width: 100vw !important;
+
+
+
+  max-width: 100vw !important;
+
+
+
+  min-width: 0 !important;
+
+
+
+  margin-left: calc(50% - 50vw) !important;
+
+
+
+  margin-right: 0 !important;
+
+
+
+  padding: 18px 0 24px !important;
+
+
+
+  overflow-x: clip;
+
+
+
+  font-size: 14px !important;
+
+
+
+}
+
+
+
+.ark-dashboard-container {
+
+
+
+  width: 100% !important;
+
+
+
+  max-width: none !important;
+
+
+
+  margin: 0 !important;
+
+
+
+  padding-left: clamp(16px, 1.7vw, 30px) !important;
+
+
+
+  padding-right: clamp(16px, 1.7vw, 30px) !important;
+
+
+
+}
+
+
+
+/* Remove the narrow centered content constraint from the admin
+
+
+
+   main area only when this dashboard is inside it. */
+
+
+
+.ark-admin-main:has(.ark-dashboard) {
+
+
+
+  width: 100% !important;
+
+
+
+  max-width: none !important;
+
+
+
+  min-width: 0 !important;
+
+
+
+  margin: 0 !important;
+
+
+
+  padding-left: 0 !important;
+
+
+
+  padding-right: 0 !important;
+
+
+
+}
+
+
+
+/* Main heading and toolbar */
+
+
+
+.ark-dashboard-toolbar {
+
+
+
+  margin-bottom: 16px !important;
+
+
+
+  gap: 20px !important;
+
+
+
+}
+
+
+
+.ark-dashboard-title-group .ark-eyebrow {
+
+
+
+  font-size: 12px !important;
+
+
+
+  letter-spacing: 2px;
+
+
+
+}
+
+
+
+.ark-dashboard-toolbar h2 {
+
+
+
+  font-size: clamp(30px, 2.2vw, 38px) !important;
+
+
+
+  line-height: 1.12;
+
+
+
+}
+
+
+
+.ark-dashboard-toolbar p {
+
+
+
+  font-size: 15px !important;
+
+
+
+}
+
+
+
+.ark-period-select,
+
+
+
+.ark-period-select select,
+
+
+
+.ark-button {
+
+
+
+  min-height: 43px;
+
+
+
+  font-size: 13px !important;
+
+
+
+}
+
+
+
+/* Metric cards */
+
+
+
+.ark-stats-grid {
+
+
+
+  gap: 12px !important;
+
+
+
+  margin-bottom: 14px !important;
+
+
+
+}
+
+
+
+.ark-stat-card {
+
+
+
+  min-height: 96px !important;
+
+
+
+  padding: 13px 14px !important;
+
+
+
+  gap: 12px !important;
+
+
+
+}
+
+
+
+.ark-stat-icon {
+
+
+
+  width: 48px !important;
+
+
+
+  height: 48px !important;
+
+
+
+  flex-basis: 48px !important;
+
+
+
+}
+
+
+
+.ark-stat-icon svg {
+
+
+
+  width: 26px !important;
+
+
+
+  height: 26px !important;
+
+
+
+}
+
+
+
+.ark-stat-content > span {
+
+
+
+  font-size: 13px !important;
+
+
+
+  line-height: 1.25;
+
+
+
+}
+
+
+
+.ark-stat-content strong {
+
+
+
+  font-size: clamp(22px, 1.55vw, 29px) !important;
+
+
+
+  line-height: 1.15;
+
+
+
+}
+
+
+
+.ark-stat-content small {
+
+
+
+  font-size: 11px !important;
+
+
+
+  line-height: 1.3;
+
+
+
+}
+
+
+
+/* Main dashboard panels */
+
+
+
+.ark-dashboard-main-grid,
+
+
+
+.ark-dashboard-secondary-grid,
+
+
+
+.ark-dashboard-bottom {
+
+
+
+  gap: 12px !important;
+
+
+
+  margin-bottom: 12px !important;
+
+
+
+}
+
+
+
+.ark-panel {
+
+
+
+  padding: 14px 16px !important;
+
+
+
+}
+
+
+
+.ark-panel-heading {
+
+
+
+  padding-bottom: 10px !important;
+
+
+
+}
+
+
+
+.ark-panel-heading h3 {
+
+
+
+  font-size: 19px !important;
+
+
+
+  line-height: 1.25;
+
+
+
+}
+
+
+
+.ark-panel-heading p {
+
+
+
+  font-size: 12px !important;
+
+
+
+  line-height: 1.4;
+
+
+
+}
+
+
+
+.ark-panel-tag,
+
+
+
+.ark-view-link {
+
+
+
+  font-size: 12px !important;
+
+
+
+}
+
+
+
+/* Operations diagram */
+
+
+
+.ark-operations-orbit {
+
+
+
+  width: min(100%, 540px) !important;
+
+
+
+  max-width: 540px !important;
+
+
+
+  height: 280px !important;
+
+
+
+  margin: 5px auto 0 !important;
+
+
+
+}
+
+
+
+.ark-orbit-center {
+
+
+
+  width: 124px !important;
+
+
+
+  height: 124px !important;
+
+
+
+}
+
+
+
+.ark-orbit-center strong {
+
+
+
+  font-size: 27px !important;
+
+
+
+}
+
+
+
+.ark-orbit-center span {
+
+
+
+  font-size: 13px !important;
+
+
+
+}
+
+
+
+.ark-operation-node {
+
+
+
+  width: 88px !important;
+
+
+
+  height: 76px !important;
+
+
+
+  gap: 3px !important;
+
+
+
+}
+
+
+
+.ark-operation-node-icon svg {
+
+
+
+  width: 22px !important;
+
+
+
+  height: 22px !important;
+
+
+
+}
+
+
+
+.ark-operation-node strong {
+
+
+
+  font-size: 11px !important;
+
+
+
+  line-height: 1.15;
+
+
+
+}
+
+
+
+.ark-operation-node small {
+
+
+
+  font-size: 9px !important;
+
+
+
+  line-height: 1.15;
+
+
+
+}
+
+
+
+/* Revenue chart and category chart */
+
+
+
+.ark-sales-summary {
+
+
+
+  margin: 12px 0 7px !important;
+
+
+
+}
+
+
+
+.ark-sales-summary strong {
+
+
+
+  font-size: 29px !important;
+
+
+
+}
+
+
+
+.ark-sales-summary span {
+
+
+
+  font-size: 13px !important;
+
+
+
+}
+
+
+
+.ark-sales-chart {
+
+
+
+  min-height: 175px;
+
+
+
+}
+
+
+
+.ark-chart-y-labels,
+
+
+
+.ark-chart-months span {
+
+
+
+  font-size: 11px !important;
+
+
+
+}
+
+
+
+.ark-chart-empty {
+
+
+
+  font-size: 12px !important;
+
+
+
+}
+
+
+
+.ark-chart-empty strong {
+
+
+
+  font-size: 14px !important;
+
+
+
+}
+
+
+
+.ark-distribution-content {
+
+
+
+  min-height: 220px !important;
+
+
+
+  gap: 18px !important;
+
+
+
+}
+
+
+
+.ark-donut {
+
+
+
+  width: clamp(130px, 10vw, 170px) !important;
+
+
+
+}
+
+
+
+.ark-donut-center strong {
+
+
+
+  font-size: 24px !important;
+
+
+
+}
+
+
+
+.ark-donut-center span {
+
+
+
+  font-size: 11px !important;
+
+
+
+}
+
+
+
+.ark-category-legend {
+
+
+
+  gap: 13px !important;
+
+
+
+}
+
+
+
+.ark-category-legend > div,
+
+
+
+.ark-category-legend strong {
+
+
+
+  font-size: 13px !important;
+
+
+
+}
+
+
+
+/* Quick actions */
+
+
+
+.ark-quick-grid {
+
+
+
+  gap: 9px !important;
+
+
+
+  margin-top: 10px !important;
+
+
+
+}
+
+
+
+.ark-quick-action {
+
+
+
+  min-height: 86px !important;
+
+
+
+  padding: 9px 5px !important;
+
+
+
+  gap: 8px !important;
+
+
+
+}
+
+
+
+.ark-quick-action svg {
+
+
+
+  width: 26px !important;
+
+
+
+  height: 26px !important;
+
+
+
+}
+
+
+
+.ark-quick-action span {
+
+
+
+  font-size: 12px !important;
+
+
+
+  line-height: 1.25;
+
+
+
+}
+
+
+
+/* Delivery rows, order table and inventory list */
+
+
+
+.ark-delivery-row {
+
+
+
+  min-height: 43px !important;
+
+
+
+  gap: 9px !important;
+
+
+
+  font-size: 12px !important;
+
+
+
+}
+
+
+
+.ark-delivery-status,
+
+
+
+.ark-order-status,
+
+
+
+.ark-stock-badge {
+
+
+
+  font-size: 11px !important;
+
+
+
+  padding: 5px 9px !important;
+
+
+
+}
+
+
+
+.ark-orders-table th,
+
+
+
+.ark-orders-table td {
+
+
+
+  padding: 10px 8px !important;
+
+
+
+  font-size: 12px !important;
+
+
+
+  line-height: 1.35;
+
+
+
+}
+
+
+
+.ark-inventory-row {
+
+
+
+  min-height: 43px !important;
+
+
+
+  gap: 10px !important;
+
+
+
+}
+
+
+
+.ark-inventory-thumb {
+
+
+
+  width: 42px !important;
+
+
+
+  height: 34px !important;
+
+
+
+}
+
+
+
+.ark-inventory-name {
+
+
+
+  font-size: 12px !important;
+
+
+
+  line-height: 1.3;
+
+
+
+}
+
+
+
+.ark-inventory-stock {
+
+
+
+  font-size: 11px !important;
+
+
+
+}
+
+
+
+.ark-empty-state {
+
+
+
+  font-size: 13px !important;
+
+
+
+  line-height: 1.5;
+
+
+
+}
+
+
+
+.ark-empty-state strong {
+
+
+
+  font-size: 15px !important;
+
+
+
+}
+
+
+
+.ark-empty-action {
+
+
+
+  font-size: 12px !important;
+
+
+
+}
+
+
+
+.ark-dashboard-footer {
+
+
+
+  font-size: 11px !important;
+
+
+
+  margin-top: 12px !important;
+
+
+
+}
+
+
+
+/* Large desktop: use the available width, without tiny type. */
+
+
+
+@media (min-width: 1500px) {
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-left: 28px !important;
+
+
+
+    padding-right: 28px !important;
+
+
+
+  }
+
+
+
+  .ark-dashboard-main-grid > .ark-panel {
+
+
+
+    min-height: 320px !important;
+
+
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+
+
+    height: 285px !important;
+
+
+
+  }
+
+
+
+  .ark-stat-card {
+
+
+
+    min-height: 100px !important;
+
+
+
+  }
+
+
+
+  .ark-quick-action {
+
+
+
+    min-height: 92px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+/* Smaller screens: maintain readable text and allow vertical scroll. */
+
+
+
+@media (max-width: 900px) {
+
+
+
+  .ark-dashboard {
+
+
+
+    padding-top: 14px !important;
+
+
+
+  }
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-left: 14px !important;
+
+
+
+    padding-right: 14px !important;
+
+
+
+  }
+
+
+
+  .ark-dashboard-toolbar h2 {
+
+
+
+    font-size: 29px !important;
+
+
+
+  }
+
+
+
+  .ark-dashboard-toolbar p {
+
+
+
+    font-size: 14px !important;
+
+
+
+  }
+
+
+
+  .ark-stat-content > span {
+
+
+
+    font-size: 12px !important;
+
+
+
+  }
+
+
+
+  .ark-stat-content small {
+
+
+
+    font-size: 10px !important;
+
+
+
+  }
+
+
+
+  .ark-panel-heading h3 {
+
+
+
+    font-size: 18px !important;
+
+
+
+  }
+
+
+
+  .ark-panel-heading p {
+
+
+
+    font-size: 12px !important;
+
+
+
+  }
+
+
+
+  .ark-quick-action span {
+
+
+
+    font-size: 11px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 600px) {
+
+
+
+  .ark-dashboard-container {
+
+
+
+    padding-left: 10px !important;
+
+
+
+    padding-right: 10px !important;
+
+
+
+  }
+
+
+
+  .ark-dashboard-toolbar h2 {
+
+
+
+    font-size: 25px !important;
+
+
+
+  }
+
+
+
+  .ark-stat-content strong {
+
+
+
+    font-size: 21px !important;
+
+
+
+  }
+
+
+
+  .ark-operation-node strong {
+
+
+
+    font-size: 10px !important;
+
+
+
+  }
+
+
+
+  .ark-operation-node small {
+
+
+
+    font-size: 8px !important;
+
+
+
+  }
+
+
+
+}
+
+
+
+/* =========================================================
+
+   ARK DASHBOARD — DESKTOP READABILITY & SPACING REFINEMENT
+
+   Keeps the existing component structure and black/gold theme.
+
+   ========================================================= */
+
+
+
+/* Use the admin content width naturally; avoid 100vw breakout
+
+   which can create horizontal overflow inside the admin layout. */
+
+.ark-dashboard {
+
+  width: 100% !important;
+
+  max-width: 100% !important;
+
+  min-width: 0 !important;
+
+  margin: 0 !important;
+
+  padding: 18px 0 30px !important;
+
+  overflow-x: clip;
+
+}
+
+
+
+.ark-dashboard-container {
+
+  width: 100% !important;
+
+  max-width: none !important;
+
+  margin: 0 auto !important;
+
+  padding-left: clamp(18px, 1.8vw, 32px) !important;
+
+  padding-right: clamp(18px, 1.8vw, 32px) !important;
+
+}
+
+
+
+.ark-admin-main:has(.ark-dashboard) {
+
+  width: 100% !important;
+
+  max-width: none !important;
+
+  min-width: 0 !important;
+
+  margin: 0 !important;
+
+  padding-left: 0 !important;
+
+  padding-right: 0 !important;
+
+}
+
+
+
+.ark-dashboard-toolbar {
+
+  align-items: center;
+
+  gap: 22px !important;
+
+  margin-bottom: 18px !important;
+
+}
+
+
+
+.ark-dashboard-toolbar h2 {
+
+  font-size: clamp(30px, 2.15vw, 38px) !important;
+
+}
+
+
+
+.ark-dashboard-toolbar p {
+
+  font-size: 14px !important;
+
+}
+
+
+
+.ark-dashboard-controls {
+
+  gap: 10px !important;
+
+}
+
+
+
+.ark-period-select,
+
+.ark-period-select select,
+
+.ark-button {
+
+  min-height: 44px !important;
+
+  font-size: 13px !important;
+
+}
+
+
+
+/* KPI cards: prevent labels and values from feeling cramped. */
+
+.ark-stats-grid {
+
+  gap: 12px !important;
+
+  margin-bottom: 16px !important;
+
+}
+
+
+
+.ark-stat-card {
+
+  min-height: 104px !important;
+
+  padding: 14px !important;
+
+  gap: 12px !important;
+
+  border-radius: 14px !important;
+
+}
+
+
+
+.ark-stat-icon {
+
+  width: 52px !important;
+
+  height: 52px !important;
+
+  flex-basis: 52px !important;
+
+}
+
+
+
+.ark-stat-icon svg {
+
+  width: 27px !important;
+
+  height: 27px !important;
+
+}
+
+
+
+.ark-stat-content {
+
+  gap: 5px !important;
+
+}
+
+
+
+.ark-stat-content > span {
+
+  font-size: 13px !important;
+
+  line-height: 1.3 !important;
+
+}
+
+
+
+.ark-stat-content strong {
+
+  font-size: clamp(22px, 1.55vw, 30px) !important;
+
+}
+
+
+
+.ark-stat-content small {
+
+  font-size: 11px !important;
+
+  line-height: 1.35 !important;
+
+}
+
+
+
+/* Panels get more breathing room and consistent visual height. */
+
+.ark-dashboard-main-grid,
+
+.ark-dashboard-secondary-grid,
+
+.ark-dashboard-bottom {
+
+  gap: 14px !important;
+
+  margin-bottom: 14px !important;
+
+}
+
+
+
+.ark-panel {
+
+  padding: 16px 17px !important;
+
+  border-radius: 15px !important;
+
+}
+
+
+
+.ark-panel-heading {
+
+  padding-bottom: 11px !important;
+
+}
+
+
+
+.ark-panel-heading h3 {
+
+  font-size: 19px !important;
+
+}
+
+
+
+.ark-panel-heading p {
+
+  font-size: 12px !important;
+
+}
+
+
+
+.ark-dashboard-main-grid > .ark-panel {
+
+  min-height: 340px !important;
+
+}
+
+
+
+/* Operations diagram: enlarge the orbit and its labels together. */
+
+.ark-operations-panel {
+
+  padding: 15px 14px 12px !important;
+
+}
+
+
+
+.ark-operations-orbit {
+
+  width: min(100%, 560px) !important;
+
+  max-width: 560px !important;
+
+  height: 292px !important;
+
+  margin-top: 8px !important;
+
+}
+
+
+
+.ark-orbit-center {
+
+  width: 132px !important;
+
+  height: 132px !important;
+
+}
+
+
+
+.ark-orbit-center strong {
+
+  font-size: 29px !important;
+
+}
+
+
+
+.ark-orbit-center span,
+
+.ark-orbit-center b {
+
+  font-size: 13px !important;
+
+}
+
+
+
+.ark-operation-node {
+
+  width: 91px !important;
+
+  height: 79px !important;
+
+  gap: 4px !important;
+
+}
+
+
+
+.ark-operation-node-icon svg {
+
+  width: 23px !important;
+
+  height: 23px !important;
+
+}
+
+
+
+.ark-operation-node strong {
+
+  font-size: 11px !important;
+
+}
+
+
+
+.ark-operation-node small {
+
+  font-size: 9px !important;
+
+}
+
+
+
+/* Revenue chart: use more of the panel's vertical space. */
+
+.ark-sales-summary {
+
+  margin: 14px 0 9px !important;
+
+}
+
+
+
+.ark-sales-summary strong {
+
+  font-size: 31px !important;
+
+}
+
+
+
+.ark-sales-summary span {
+
+  font-size: 13px !important;
+
+}
+
+
+
+.ark-sales-chart {
+
+  height: 215px !important;
+
+  min-height: 215px !important;
+
+  margin-top: 9px !important;
+
+}
+
+
+
+.ark-chart-y-labels,
+
+.ark-chart-months span {
+
+  font-size: 11px !important;
+
+}
+
+
+
+.ark-chart-empty strong {
+
+  font-size: 14px !important;
+
+}
+
+
+
+.ark-chart-empty span {
+
+  font-size: 11px !important;
+
+}
+
+
+
+/* Category chart and legend. */
+
+.ark-distribution-content {
+
+  min-height: 250px !important;
+
+  gap: 20px !important;
+
+}
+
+
+
+.ark-donut {
+
+  width: clamp(145px, 10.5vw, 180px) !important;
+
+}
+
+
+
+.ark-donut-center strong {
+
+  font-size: 26px !important;
+
+}
+
+
+
+.ark-donut-center span {
+
+  font-size: 11px !important;
+
+}
+
+
+
+.ark-category-legend {
+
+  gap: 15px !important;
+
+}
+
+
+
+.ark-category-legend > div,
+
+.ark-category-legend strong {
+
+  font-size: 12px !important;
+
+}
+
+
+
+/* Quick actions and delivery rows. */
+
+.ark-quick-grid {
+
+  gap: 9px !important;
+
+  margin-top: 12px !important;
+
+}
+
+
+
+.ark-quick-action {
+
+  min-height: 92px !important;
+
+  gap: 8px !important;
+
+  padding: 10px 5px !important;
+
+}
+
+
+
+.ark-quick-action svg {
+
+  width: 27px !important;
+
+  height: 27px !important;
+
+}
+
+
+
+.ark-quick-action span {
+
+  font-size: 11px !important;
+
+  line-height: 1.3 !important;
+
+}
+
+
+
+.ark-delivery-row {
+
+  min-height: 46px !important;
+
+  gap: 9px !important;
+
+  font-size: 12px !important;
+
+}
+
+
+
+.ark-delivery-thumb,
+
+.ark-inventory-thumb {
+
+  width: 44px !important;
+
+  height: 34px !important;
+
+}
+
+
+
+.ark-delivery-status,
+
+.ark-order-status,
+
+.ark-stock-badge {
+
+  font-size: 10px !important;
+
+}
+
+
+
+/* Tables and bottom panels should remain readable. */
+
+.ark-dashboard-bottom > .ark-panel {
+
+  min-height: 225px !important;
+
+}
+
+
+
+.ark-orders-table {
+
+  font-size: 12px !important;
+
+}
+
+
+
+.ark-orders-table th,
+
+.ark-orders-table td {
+
+  padding: 11px 8px !important;
+
+  font-size: 11px !important;
+
+}
+
+
+
+.ark-inventory-row {
+
+  min-height: 46px !important;
+
+  gap: 10px !important;
+
+}
+
+
+
+.ark-inventory-name {
+
+  font-size: 12px !important;
+
+}
+
+
+
+.ark-inventory-stock {
+
+  font-size: 10px !important;
+
+}
+
+
+
+.ark-empty-state {
+
+  font-size: 12px !important;
+
+}
+
+
+
+.ark-empty-state strong {
+
+  font-size: 14px !important;
+
+}
+
+
+
+/* Wide desktop: preserve three columns without shrinking the content. */
+
+@media (min-width: 1500px) {
+
+  .ark-dashboard-main-grid {
+
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 1.08fr) minmax(0, .9fr);
+
+  }
+
+
+
+  .ark-dashboard-main-grid > .ark-panel {
+
+    min-height: 350px !important;
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+    height: 300px !important;
+
+  }
+
+
+
+  .ark-stat-card {
+
+    min-height: 108px !important;
+
+  }
+
+
+
+  .ark-quick-action {
+
+    min-height: 96px !important;
+
+  }
+
+}
+
+
+
+/* Mid-size screens: reflow rather than squeeze three panels. */
+
+@media (max-width: 1250px) {
+
+  .ark-stats-grid {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  }
+
+
+
+  .ark-dashboard-main-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  }
+
+
+
+  .ark-operations-panel {
+
+    grid-column: 1 / -1;
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+    width: min(100%, 560px) !important;
+
+    height: 290px !important;
+
+  }
+
+
+
+  .ark-dashboard-bottom {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  }
+
+
+
+  .ark-inventory-panel {
+
+    grid-column: 1 / -1;
+
+  }
+
+}
+
+
+
+/* Tablet and mobile: keep a clean single-column reading flow. */
+
+@media (max-width: 900px) {
+
+  .ark-dashboard-toolbar {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+
+
+  .ark-dashboard-controls {
+
+    justify-content: flex-start;
+
+  }
+
+
+
+  .ark-dashboard-main-grid,
+
+  .ark-dashboard-secondary-grid,
+
+  .ark-dashboard-bottom {
+
+    grid-template-columns: minmax(0, 1fr) !important;
+
+  }
+
+
+
+  .ark-operations-panel,
+
+  .ark-inventory-panel {
+
+    grid-column: auto;
+
+  }
+
+
+
+  .ark-dashboard-main-grid > .ark-panel {
+
+    min-height: auto !important;
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+    height: 285px !important;
+
+  }
+
+
+
+  .ark-quick-grid {
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  }
+
+
+
+  .ark-dashboard-bottom > .ark-panel {
+
+    min-height: 200px !important;
+
+  }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+  .ark-dashboard {
+
+    padding-top: 12px !important;
+
+  }
+
+
+
+  .ark-dashboard-container {
+
+    padding-left: 10px !important;
+
+    padding-right: 10px !important;
+
+  }
+
+
+
+  .ark-dashboard-toolbar h2 {
+
+    font-size: 25px !important;
+
+  }
+
+
+
+  .ark-stats-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px !important;
+
+  }
+
+
+
+  .ark-stat-card {
+
+    min-height: 86px !important;
+
+    padding: 9px !important;
+
+    gap: 7px !important;
+
+  }
+
+
+
+  .ark-stat-icon {
+
+    width: 36px !important;
+
+    height: 36px !important;
+
+    flex-basis: 36px !important;
+
+  }
+
+
+
+  .ark-stat-content > span {
+
+    font-size: 10px !important;
+
+  }
+
+
+
+  .ark-stat-content strong {
+
+    font-size: 17px !important;
+
+  }
+
+
+
+  .ark-stat-content small {
+
+    font-size: 8px !important;
+
+  }
+
+
+
+  .ark-operations-orbit {
+
+    height: 255px !important;
+
+  }
+
+
+
+  .ark-orbit-center {
+
+    width: 108px !important;
+
+    height: 108px !important;
+
+  }
+
+
+
+  .ark-operation-node {
+
+    width: 74px !important;
+
+    height: 64px !important;
+
+  }
+
+
+
+  .ark-operation-node strong {
+
+    font-size: 9px !important;
+
+  }
+
+
+
+  .ark-operation-node small {
+
+    font-size: 7px !important;
+
+  }
+
+
+
+  .ark-quick-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  }
+
+
+
+  .ark-quick-action {
+
+    min-height: 78px !important;
+
+  }
+
+
+
+  .ark-distribution-content {
+
+    min-height: 205px !important;
+
+    gap: 12px !important;
+
+  }
+
+
+
+  .ark-donut {
+
+    width: 125px !important;
+
+  }
+
+
+
+  .ark-category-legend {
+
+    gap: 10px !important;
+
+  }
+
+
+
+  .ark-delivery-row {
+
+    grid-template-columns: 35px minmax(52px, .65fr) minmax(75px, 1fr) auto;
+
+    gap: 5px !important;
+
+  }
+
+
+
+  .ark-delivery-quantity,
+
+  .ark-delivery-date {
+
+    display: none;
+
+  }
+
+
+
+  .ark-orders-table {
+
+    min-width: 500px;
+
+  }
+
+
+
+  .ark-dashboard-footer {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+   ARK DASHBOARD — CARD BALANCE REFINEMENT
+
+   Smooths panel spacing, aligns the bottom cards and reduces
+
+   the overly sharp/glowing appearance of the action cards.
+
+   ========================================================= */
+
+
+
+.ark-dashboard-main-grid > .ark-panel,
+
+.ark-dashboard-secondary-grid > .ark-panel,
+
+.ark-dashboard-bottom > .ark-panel {
+
+  min-width: 0;
+
+  border: 1px solid rgba(207, 169, 94, 0.34) !important;
+
+  border-radius: 16px !important;
+
+  background: linear-gradient(145deg, #1b1e21 0%, #121619 58%, #171a1d 100%) !important;
+
+  box-shadow:
+
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+
+    0 7px 18px rgba(0, 0, 0, 0.22) !important;
+
+}
+
+
+
+.ark-dashboard-main-grid > .ark-panel {
+
+  min-height: 330px !important;
+
+}
+
+
+
+.ark-dashboard-secondary-grid > .ark-panel {
+
+  min-height: 190px !important;
+
+}
+
+
+
+.ark-dashboard-bottom {
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 0.96fr) !important;
+
+  align-items: stretch !important;
+
+  gap: 14px !important;
+
+}
+
+
+
+.ark-dashboard-bottom > .ark-panel {
+
+  min-height: 245px !important;
+
+  padding: 16px 17px !important;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+
+.ark-panel-heading {
+
+  min-width: 0;
+
+  min-height: 48px;
+
+  align-items: center !important;
+
+  gap: 12px !important;
+
+  padding: 0 0 11px !important;
+
+  margin-bottom: 2px;
+
+}
+
+
+
+.ark-panel-heading > div {
+
+  min-width: 0;
+
+}
+
+
+
+.ark-panel-heading h3 {
+
+  min-width: 0;
+
+  line-height: 1.25 !important;
+
+  overflow-wrap: anywhere;
+
+}
+
+
+
+.ark-panel-heading p {
+
+  line-height: 1.4 !important;
+
+}
+
+
+
+.ark-view-link {
+
+  flex-shrink: 0;
+
+  padding: 5px 0 5px 6px;
+
+}
+
+
+
+.ark-quick-panel,
+
+.ark-delivery-panel {
+
+  border-color: rgba(207, 169, 94, 0.42) !important;
+
+}
+
+
+
+.ark-quick-grid {
+
+  grid-template-columns: repeat(8, minmax(78px, 1fr)) !important;
+
+  gap: 9px !important;
+
+}
+
+
+
+.ark-quick-action {
+
+  min-width: 0;
+
+  min-height: 88px !important;
+
+  border: 1px solid rgba(220, 174, 77, 0.72) !important;
+
+  border-radius: 12px !important;
+
+  background: linear-gradient(150deg, #28231a, #17191b 72%) !important;
+
+  box-shadow: inset 0 1px rgba(255,255,255,.06), 0 3px 9px rgba(0,0,0,.2) !important;
+
+}
+
+
+
+.ark-quick-action:hover {
+
+  transform: translateY(-2px);
+
+  border-color: #f2c76c !important;
+
+  background: linear-gradient(150deg, #342a1b, #1b1d1f 72%) !important;
+
+  box-shadow: 0 5px 13px rgba(0,0,0,.28) !important;
+
+}
+
+
+
+.ark-quick-action span {
+
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
+
+  font-size: 10px !important;
+
+}
+
+
+
+.ark-delivery-list {
+
+  flex: 1;
+
+}
+
+
+
+.ark-empty-state {
+
+  flex: 1;
+
+  min-height: 145px !important;
+
+  justify-content: center;
+
+  padding: 18px !important;
+
+}
+
+
+
+.ark-orders-empty,
+
+.ark-projects-empty {
+
+  min-height: 150px !important;
+
+  margin-top: 10px !important;
+
+  border: 1px dashed rgba(220, 174, 77, 0.28) !important;
+
+  border-radius: 11px !important;
+
+  background: rgba(255,255,255,0.012);
+
+}
+
+
+
+.ark-inventory-panel .ark-inventory-list {
+
+  flex: 1;
+
+  margin-top: 5px;
+
+}
+
+
+
+.ark-inventory-row {
+
+  grid-template-columns: 42px minmax(0, 1fr) auto auto !important;
+
+  min-height: 43px !important;
+
+  gap: 9px !important;
+
+  padding: 6px 0 !important;
+
+}
+
+
+
+.ark-inventory-name {
+
+  white-space: normal !important;
+
+  overflow-wrap: anywhere;
+
+}
+
+
+
+.ark-stock-badge {
+
+  min-width: 74px;
+
+  padding: 6px 9px !important;
+
+}
+
+
+
+.ark-dashboard-footer {
+
+  margin-top: 14px !important;
+
+  padding: 12px 4px 4px !important;
+
+}
+
+
+
+@media (max-width: 1250px) {
+
+  .ark-dashboard-bottom {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+  }
+
+
+
+  .ark-inventory-panel {
+
+    grid-column: 1 / -1;
+
+  }
+
+
+
+  .ark-quick-grid {
+
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+  }
+
+}
+
+
+
+@media (max-width: 900px) {
+
+  .ark-dashboard-bottom {
+
+    grid-template-columns: minmax(0, 1fr) !important;
+
+  }
+
+
+
+  .ark-inventory-panel {
+
+    grid-column: auto;
+
+  }
+
+
+
+  .ark-dashboard-bottom > .ark-panel {
+
+    min-height: 210px !important;
+
+  }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+  .ark-quick-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+  }
+
+
+
+  .ark-panel-heading {
+
+    align-items: flex-start !important;
+
+  }
+
+
+
+  .ark-dashboard-bottom > .ark-panel {
+
+    padding: 13px !important;
+
+  }
+
+}
+
+/* =========================================================
+   FORCE STOREFRONT-MATCHED WARM ESPRESSO / GOLD DASHBOARD
+   Keep this block at the VERY END of Dashboard.css.
+   ========================================================= */
+
+.ark-dashboard {
+  --ark-gold: #F4C34F !important;
+  --ark-gold-light: #FFE08A !important;
+  --ark-gold-dark: #C78B22 !important;
+  --ark-panel: #17120E !important;
+  --ark-panel-deep: #100C0A !important;
+  --ark-muted: #C8BDAA !important;
+  --ark-border: rgba(198, 145, 48, 0.55) !important;
+  color: #F3E6C8 !important;
+  background: #100C0A !important;
+}
+
+/* Analytics layout after removing Business Operations */
+.ark-dashboard .ark-dashboard-main-grid-two {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) !important;
+  gap: 14px !important;
+}
+
+.ark-dashboard .ark-dashboard-main-grid-two > .ark-panel {
+  min-height: 300px !important;
+}
+
+/* KPI cards */
+.ark-dashboard .ark-stat-card {
+  color: #F3E6C8 !important;
+  background: linear-gradient(145deg, #21180F 0%, #19130E 58%, #120E0B 100%) !important;
+  border: 1px solid rgba(198, 145, 48, 0.62) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 232, 181, 0.06), 0 6px 16px rgba(0,0,0,.24) !important;
+}
+
+.ark-dashboard .ark-stat-card:first-child {
+  border-color: #DDAA3D !important;
+}
+
+.ark-dashboard .ark-stat-card.is-danger {
+  background: linear-gradient(145deg, #2A1714, #1B100E) !important;
+  border-color: #A9473E !important;
+}
+
+.ark-dashboard .ark-stat-icon {
+  color: #F4C34F !important;
+  background: linear-gradient(145deg, #392713, #1A140F) !important;
+  border-color: #B98228 !important;
+}
+
+.ark-dashboard .ark-stat-card.is-danger .ark-stat-icon {
+  color: #F08A78 !important;
+  background: #321B18 !important;
+  border-color: #A9473E !important;
+}
+
+.ark-dashboard .ark-stat-content > span,
+.ark-dashboard .ark-stat-content strong {
+  color: #F3E6C8 !important;
+}
+
+.ark-dashboard .ark-stat-content small {
+  color: #D9A83D !important;
+}
+
+/* Force every main dashboard card to match the storefront */
+.ark-dashboard .ark-panel,
+.ark-dashboard .ark-dashboard-main-grid > .ark-panel,
+.ark-dashboard .ark-dashboard-secondary-grid > .ark-panel,
+.ark-dashboard .ark-dashboard-bottom > .ark-panel {
+  color: #F3E6C8 !important;
+  background: linear-gradient(145deg, #1B1510 0%, #15100D 62%, #120E0B 100%) !important;
+  border: 1px solid rgba(198, 145, 48, 0.52) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 232, 181, 0.04), 0 7px 18px rgba(0,0,0,.22) !important;
+}
+
+.ark-dashboard .ark-panel-heading {
+  border-bottom-color: rgba(219, 180, 108, 0.20) !important;
+}
+
+.ark-dashboard .ark-panel-heading h3,
+.ark-dashboard .ark-panel-heading h3 svg,
+.ark-dashboard .ark-view-link,
+.ark-dashboard .ark-panel-tag {
+  color: #F4C34F !important;
+}
+
+.ark-dashboard .ark-panel-heading p {
+  color: #C8BDAA !important;
+}
+
+.ark-dashboard .ark-panel-tag {
+  background: #21170F !important;
+  border-color: rgba(198, 145, 48, 0.58) !important;
+}
+
+/* Quick action cards */
+.ark-dashboard .ark-quick-action {
+  color: #F3E6C8 !important;
+  background: linear-gradient(145deg, #2A1D12, #17120E 78%) !important;
+  border: 1px solid rgba(198, 145, 48, 0.76) !important;
+}
+
+.ark-dashboard .ark-quick-action svg {
+  color: #F4C34F !important;
+}
+
+.ark-dashboard .ark-quick-action:hover {
+  color: #FFF0C8 !important;
+  background: linear-gradient(145deg, #3A2815, #21170F 78%) !important;
+  border-color: #F4C34F !important;
+}
+
+/* Chart and category areas */
+.ark-dashboard .ark-sales-summary strong,
+.ark-dashboard .ark-donut-center strong,
+.ark-dashboard .ark-chart-empty strong {
+  color: #F3E6C8 !important;
+}
+
+.ark-dashboard .ark-sales-summary span {
+  color: #24C879 !important;
+}
+
+.ark-dashboard .ark-chart-grid span {
+  border-top-color: rgba(225, 205, 169, 0.16) !important;
+}
+
+.ark-dashboard .ark-chart-empty,
+.ark-dashboard .ark-category-legend {
+  color: #C8BDAA !important;
+}
+
+.ark-dashboard .ark-chart-empty svg,
+.ark-dashboard .ark-legend-dot {
+  color: #F4C34F !important;
+}
+
+.ark-dashboard .ark-donut-center {
+  color: #F3E6C8 !important;
+  background: #17120E !important;
+}
+
+/* Delivery, orders and inventory */
+.ark-dashboard .ark-delivery-row,
+.ark-dashboard .ark-inventory-row {
+  border-bottom-color: rgba(225, 205, 169, 0.15) !important;
+}
+
+.ark-dashboard .ark-delivery-id,
+.ark-dashboard .ark-delivery-product,
+.ark-dashboard .ark-inventory-name,
+.ark-dashboard .ark-orders-table td {
+  color: #F3E6C8 !important;
+}
+
+.ark-dashboard .ark-delivery-quantity,
+.ark-dashboard .ark-delivery-date,
+.ark-dashboard .ark-inventory-stock,
+.ark-dashboard .ark-empty-state {
+  color: #C8BDAA !important;
+}
+
+.ark-dashboard .ark-orders-table th {
+  color: #DCC69B !important;
+  border-bottom-color: rgba(225, 205, 169, 0.20) !important;
+}
+
+.ark-dashboard .ark-orders-table td {
+  border-bottom-color: rgba(225, 205, 169, 0.13) !important;
+}
+
+.ark-dashboard .ark-orders-empty,
+.ark-dashboard .ark-projects-empty {
+  background: rgba(16, 12, 10, 0.62) !important;
+  border-color: rgba(198, 145, 48, 0.42) !important;
+}
+
+.ark-dashboard .ark-empty-state svg {
+  color: #F4C34F !important;
+}
+
+.ark-dashboard .ark-empty-action {
+  color: #F4C34F !important;
+  background: #1A140F !important;
+  border-color: rgba(198, 145, 48, 0.65) !important;
+}
+
+.ark-dashboard .ark-empty-action:hover {
+  color: #211506 !important;
+  background: #F4C34F !important;
+}
+
+/* Status colours */
+.ark-dashboard .delivery-delivered,
+.ark-dashboard .status-success,
+.ark-dashboard .ark-stock-badge.in-stock {
+  color: #CFF7DF !important;
+  background: #087A43 !important;
+}
+
+.ark-dashboard .delivery-in-transit,
+.ark-dashboard .status-processing {
+  color: #DDEBFF !important;
+  background: #315675 !important;
+}
+
+.ark-dashboard .delivery-out-for-delivery,
+.ark-dashboard .status-pending,
+.ark-dashboard .ark-stock-badge.low {
+  color: #FFE8B0 !important;
+  background: #805719 !important;
+}
+
+.ark-dashboard .delivery-scheduled {
+  color: #EADFFF !important;
+  background: #503A69 !important;
+}
+
+.ark-dashboard .delivery-cancelled,
+.ark-dashboard .status-danger {
+  color: #FFE0DC !important;
+  background: #842F38 !important;
+}
+
+.ark-dashboard .ark-stock-badge.unknown {
+  color: #E8DCC7 !important;
+  background: #4B4032 !important;
+}
+
+/* Footer */
+.ark-dashboard .ark-dashboard-footer {
+  color: #B9AA91 !important;
+  border-top-color: rgba(198, 145, 48, 0.30) !important;
+}
+
+.ark-dashboard .ark-dashboard-footer strong {
+  color: #F4C34F !important;
+}
+
+@media (max-width: 900px) {
+  .ark-dashboard .ark-dashboard-main-grid-two {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}

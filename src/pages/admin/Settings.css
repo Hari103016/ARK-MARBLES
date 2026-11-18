@@ -1,0 +1,713 @@
+
+/* ==========================================
+   ARK MARBLES - SETTINGS MANAGEMENT
+   Luxury Black / Gold / Burgundy Theme
+   ========================================== */
+
+.ark-settings-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 18px 4px 25px;
+  color: #f7f0e4;
+  background: #080b0d;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.ark-settings-page * {
+  box-sizing: border-box;
+}
+
+/* PAGE BANNER */
+
+.ark-settings-banner {
+  min-height: 118px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 28px;
+  overflow: hidden;
+  border: 1px solid #bd8e25;
+  border-radius: 17px;
+  background:
+    linear-gradient(90deg, rgba(20, 15, 12, .97), rgba(35, 9, 15, .78), rgba(5, 9, 11, .48)),
+    url("/images/settings-marble-banner.jpg") center 48% / cover,
+    #17100f;
+}
+
+.ark-settings-banner-icon {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #f4c84c;
+  border: 1px solid rgba(235, 181, 43, .45);
+  border-radius: 50%;
+  background: rgba(180, 125, 25, .18);
+}
+
+.ark-settings-kicker {
+  display: block;
+  margin-bottom: 6px;
+  color: #f4d14e;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ark-settings-banner h1 {
+  margin: 0;
+  color: #fff7e9;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 2.5vw, 34px);
+}
+
+.ark-settings-banner p {
+  margin: 7px 0 0;
+  color: #e2d8cb;
+  font-size: 14px;
+}
+
+/* MAIN LAYOUT */
+
+.ark-settings-layout {
+  display: grid;
+  grid-template-columns: 285px minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+  align-items: stretch;
+}
+
+/* SIDEBAR */
+
+.ark-settings-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  padding: 14px 11px;
+  border: 1px solid #a87921;
+  border-radius: 17px;
+  background: linear-gradient(160deg, #101619, #090d0f);
+}
+
+.ark-settings-nav-item {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 11px;
+  color: #eee6d9;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: #151a1c;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ark-settings-nav-item:hover {
+  border-color: rgba(215, 166, 49, .4);
+  background: #201b12;
+}
+
+.ark-settings-nav-item.active {
+  color: #fff2ce;
+  border-color: #d7a631;
+  background: linear-gradient(110deg, #382a12, #191817);
+  box-shadow: 0 0 13px rgba(205, 156, 43, .08);
+}
+
+.ark-settings-nav-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #efc33d;
+  border-radius: 50%;
+  background: rgba(211, 166, 50, .1);
+}
+
+.ark-settings-nav-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.ark-settings-nav-text strong {
+  font-size: 14px;
+}
+
+.ark-settings-nav-text small {
+  color: #bcb5a9;
+  font-size: 11px;
+}
+
+/* CONTENT */
+
+.ark-settings-content {
+  min-width: 0;
+  padding: 0 14px;
+  border: 1px solid #a87921;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #101719, #080d0f);
+}
+
+.ark-settings-content-heading {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 9px 3px;
+  border-bottom: 1px solid rgba(199, 149, 44, .4);
+}
+
+.ark-settings-heading-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.ark-settings-heading-icon {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #f0c53e;
+  border-radius: 50%;
+  background: rgba(199, 153, 45, .15);
+}
+
+.ark-settings-content-heading h2 {
+  margin: 0;
+  color: #fff3df;
+  font-family: Georgia, serif;
+  font-size: 25px;
+}
+
+.ark-settings-content-heading p {
+  margin: 6px 0 0;
+  color: #b6b0a7;
+  font-size: 12px;
+}
+
+.ark-settings-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ark-settings-reset,
+.ark-settings-save {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ark-settings-reset {
+  color: #f0c54a;
+  border: 1px solid #b9891f;
+  background: transparent;
+}
+
+.ark-settings-save {
+  color: #211606;
+  border: 1px solid #f1c94c;
+  background: linear-gradient(120deg, #f8dc75, #e9ad22);
+}
+
+.ark-settings-reset:hover,
+.ark-settings-save:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+/* CARD GRID */
+
+.ark-settings-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.ark-settings-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.ark-settings-card {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid rgba(190, 133, 32, .72);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #11191b, #0b1113);
+}
+
+.ark-settings-card-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 15px;
+  color: #edc33f;
+}
+
+.ark-settings-card-title h3 {
+  margin: 0;
+  color: #fff0d9;
+  font-family: Georgia, serif;
+  font-size: 19px;
+}
+
+/* FORM FIELDS */
+
+.ark-settings-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 17px;
+}
+
+.ark-settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.ark-settings-field > span {
+  color: #e9e0d1;
+  font-size: 12px;
+}
+
+.ark-settings-input-wrap {
+  height: 39px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 10px;
+  color: #edc33f;
+  border: 1px solid #59564d;
+  border-radius: 7px;
+  background: #080e10;
+}
+
+.ark-settings-input-wrap:focus-within {
+  border-color: #d5a32e;
+  box-shadow: 0 0 0 2px rgba(213, 163, 46, .1);
+}
+
+.ark-settings-input-wrap input,
+.ark-settings-input-wrap select {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  color: #f4ebdc;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 12px;
+}
+
+.ark-settings-input-wrap select option {
+  color: #f4ebdc;
+  background: #101719;
+}
+
+/* LOGO */
+
+.ark-settings-logo-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ark-settings-logo-preview {
+  width: 100%;
+  height: 142px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #a77d2c;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at center, #29251b, #0b1012 70%);
+}
+
+.ark-settings-logo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ark-settings-logo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f2cc68;
+  text-align: center;
+}
+
+.ark-settings-logo-placeholder span {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.ark-settings-logo-placeholder strong {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  letter-spacing: 5px;
+}
+
+.ark-settings-logo-placeholder small {
+  margin-top: 4px;
+  color: #f4ead7;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.ark-settings-logo-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ark-settings-logo-actions button {
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 7px;
+  color: #f4ce51;
+  border: 1px solid #bd8d21;
+  border-radius: 7px;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ark-settings-logo-actions button.remove {
+  color: #e7dfd2;
+  border-color: #777064;
+}
+
+.ark-settings-logo-note {
+  margin-top: 10px;
+  color: #b9b1a5;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* APPEARANCE */
+
+.ark-settings-description {
+  margin: -7px 0 15px;
+  color: #b7b0a4;
+  font-size: 12px;
+}
+
+.ark-settings-themes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ark-settings-theme-option {
+  min-width: 0;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 5px;
+  color: #e7dfd2;
+  border: 1px solid #514d43;
+  border-radius: 10px;
+  background: #101719;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ark-settings-theme-option svg {
+  color: #f1c84d;
+}
+
+.ark-settings-theme-option strong {
+  font-size: 12px;
+}
+
+.ark-settings-theme-option small {
+  color: #aaa49a;
+  font-size: 9px;
+  text-align: center;
+}
+
+.ark-settings-theme-option.selected {
+  color: #ffe9b4;
+  border-color: #e2b333;
+  background: linear-gradient(145deg, #34260f, #171614);
+  box-shadow: 0 0 12px rgba(222, 173, 53, .1);
+}
+
+/* PREFERENCES */
+
+.ark-setting-toggle-row {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(198, 153, 51, .18);
+}
+
+.ark-setting-toggle-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #f0c53e;
+  border-radius: 50%;
+  background: rgba(205, 161, 47, .11);
+}
+
+.ark-setting-toggle-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.ark-setting-toggle-copy h4 {
+  margin: 0;
+  color: #f0e7d9;
+  font-size: 12px;
+}
+
+.ark-setting-toggle-copy p {
+  margin: 5px 0 0;
+  color: #aaa49a;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.ark-setting-switch {
+  width: 45px;
+  height: 24px;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 1px solid #61594b;
+  border-radius: 30px;
+  background: #343331;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ark-setting-switch span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #d1c6b4;
+  transition: .2s ease;
+}
+
+.ark-setting-switch.is-on {
+  border-color: #f1c33f;
+  background: #c9981e;
+}
+
+.ark-setting-switch.is-on span {
+  transform: translateX(20px);
+  background: #fff8e7;
+}
+
+/* OTHER SETTINGS SECTIONS */
+
+.ark-settings-coming-soon {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.ark-settings-coming-soon h3 {
+  margin: 15px 0 5px;
+  color: #f4dfb8;
+  font-family: Georgia, serif;
+  font-size: 21px;
+}
+
+.ark-settings-coming-soon p {
+  max-width: 400px;
+  color: #aaa49a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+
+.ark-settings-status {
+  min-height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #a9b49b;
+  font-size: 11px;
+}
+
+.ark-settings-status span:last-child {
+  color: #b9954c;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .ark-settings-layout {
+    grid-template-columns: 245px minmax(0, 1fr);
+  }
+
+  .ark-settings-top-grid {
+    grid-template-columns: minmax(0, 1fr) 245px;
+  }
+
+  .ark-settings-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .ark-settings-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ark-settings-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ark-settings-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ark-settings-logo-card {
+    max-width: 100%;
+  }
+
+  .ark-settings-logo-preview {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ark-settings-page {
+    padding: 10px 3px 20px;
+  }
+
+  .ark-settings-banner {
+    min-height: 100px;
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .ark-settings-banner-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .ark-settings-banner-icon svg {
+    width: 25px;
+  }
+
+  .ark-settings-banner h1 {
+    font-size: 21px;
+  }
+
+  .ark-settings-banner p {
+    font-size: 11px;
+  }
+
+  .ark-settings-sidebar {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .ark-settings-nav-item {
+    width: auto;
+    min-width: 175px;
+  }
+
+  .ark-settings-content {
+    padding: 0 10px;
+  }
+
+  .ark-settings-content-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 13px 0;
+  }
+
+  .ark-settings-heading-actions {
+    width: 100%;
+  }
+
+  .ark-settings-reset,
+  .ark-settings-save {
+    flex: 1;
+  }
+
+  .ark-settings-content-heading h2 {
+    font-size: 21px;
+  }
+
+  .ark-settings-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .ark-settings-themes {
+    grid-template-columns: 1fr;
+  }
+
+  .ark-settings-theme-option {
+    min-height: 85px;
+  }
+
+  .ark-setting-toggle-row {
+    gap: 8px;
+  }
+
+  .ark-setting-toggle-copy p {
+    font-size: 9px;
+  }
+
+  .ark-settings-status {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+  }
+}

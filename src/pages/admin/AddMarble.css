@@ -1,0 +1,904 @@
+/*
+  ARK MARBLES - ADD PRODUCT
+  Palette aligned with Business Dashboard / Inventory:
+  Page: #0D0A08 | Cards: #17110D | Raised panels: #1D1510
+  Gold: #F4BD4E | Champagne: #D6A84F | Text: #FFF4DF
+  Original component selectors, layout, and responsive rules preserved.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+.ark-add-product-page {
+  width: 100%;
+  min-height: calc(100vh - 138px);
+  padding: 22px clamp(16px, 1.5vw, 26px) 36px;
+  color: #FFF4DF;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(244, 189, 78, .08), transparent 38%),
+    radial-gradient(ellipse at 90% 35%, rgba(214, 168, 79, .045), transparent 35%),
+    #0D0A08;
+  font-family: "DM Sans", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.ark-add-product-page *,
+.ark-add-product-page *::before,
+.ark-add-product-page *::after {
+  box-sizing: border-box;
+}
+
+.ark-add-product-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 22px;
+  margin: 0 0 20px;
+}
+
+.ark-add-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #F4BD4E;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ark-add-product-heading h1 {
+  margin: 0;
+  color: #FFF4DF;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(35px, 3vw, 48px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.ark-add-product-heading p {
+  margin: 7px 0 0;
+  color: #c8cbd0;
+  font-size: 15px;
+}
+
+.ark-product-mode-switch {
+  display: flex;
+  gap: 7px;
+  padding: 5px;
+  border: 1px solid rgba(214, 168, 79, .38);
+  border-radius: 12px;
+  background: #17110D;
+}
+
+.ark-product-mode-switch button {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 16px;
+  color: #e8d7b7;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  font: 700 14px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ark-product-mode-switch button svg {
+  color: #F4BD4E;
+}
+
+.ark-product-mode-switch button.active {
+  color: #17120a;
+  border-color: #F4BD4E;
+  background: linear-gradient(135deg, #F4BD4E, #D6A84F);
+  box-shadow: 0 3px 15px rgba(226, 174, 67, .2);
+}
+
+.ark-product-mode-switch button.active svg {
+  color: #251908;
+}
+
+.ark-add-product-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.62fr) minmax(380px, 1fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.ark-add-form-card,
+.ark-add-gallery-card,
+.ark-add-info-card,
+.ark-add-side-note {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(214, 168, 79, .58);
+  border-radius: 17px;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(244, 189, 78, .055), transparent 42%),
+    linear-gradient(145deg, #1D1510, #17110D 75%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .22), inset 0 1px rgba(255,255,255,.025);
+}
+
+.ark-add-form-card-heading {
+  min-height: 83px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(214, 168, 79, .24);
+  background: linear-gradient(90deg, rgba(255,255,255,.035), transparent);
+}
+
+.ark-add-heading-icon {
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+  display: grid;
+  place-items: center;
+  color: #F4BD4E;
+  border: 1px solid rgba(232, 180, 73, .55);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 189, 78, .16), rgba(244, 189, 78, .025));
+  box-shadow: 0 0 18px rgba(230, 176, 67, .12);
+}
+
+.ark-add-form-card-heading h2 {
+  margin: 0;
+  color: #FFF4DF;
+  font: 700 clamp(24px, 2vw, 30px)/1.1 "Cormorant Garamond", Georgia, serif;
+}
+
+.ark-add-form-card-heading p {
+  margin: 5px 0 0;
+  color: #c6cbd0;
+  font-size: 14px;
+}
+
+.ark-add-fields-wrap {
+  padding: 17px 19px 18px;
+}
+
+.ark-add-field-grid {
+  display: grid;
+  gap: 16px 20px;
+  margin-bottom: 17px;
+}
+
+.ark-add-field-grid.two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ark-add-field-grid.three-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ark-add-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 7px;
+}
+
+.ark-add-field label,
+.ark-add-image-label-row label {
+  color: #f3f1ed;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ark-add-field label b {
+  color: #ff6969;
+}
+
+.ark-add-field input,
+.ark-add-field select,
+.ark-add-field textarea {
+  width: 100%;
+  min-width: 0;
+  color: #FFF4DF;
+  border: 1px solid rgba(214, 168, 79, .42);
+  border-radius: 10px;
+  outline: none;
+  background: linear-gradient(180deg, #0D0A08, #17110D);
+  font: 500 14px "DM Sans", sans-serif;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.ark-add-field input,
+.ark-add-field select {
+  height: 43px;
+  padding: 0 13px;
+}
+
+.ark-add-field textarea {
+  min-height: 76px;
+  resize: vertical;
+  padding: 11px 13px;
+  line-height: 1.5;
+}
+
+.ark-add-field input::placeholder,
+.ark-add-field textarea::placeholder {
+  color: #a2a4a6;
+}
+
+.ark-add-field select {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.ark-add-field input:focus,
+.ark-add-field select:focus,
+.ark-add-field textarea:focus {
+  border-color: #F4BD4E;
+  box-shadow: 0 0 0 3px rgba(229, 182, 78, .12);
+}
+
+.ark-add-description {
+  margin: 0 0 15px;
+}
+
+.ark-add-image-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ark-add-image-label-row span {
+  color: #c9a75d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ark-add-image-strip {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+}
+
+.ark-add-upload-tile,
+.ark-add-more-tile {
+  min-height: 100px;
+  flex: 0 0 31%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+  color: #F4BD4E;
+  border: 1.5px dashed #D6A84F;
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(32, 28, 21, .92), rgba(9, 12, 14, .96));
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ark-add-upload-tile:hover,
+.ark-add-more-tile:hover {
+  border-color: #F4BD4E;
+  background: rgba(218, 165, 65, .1);
+}
+
+.ark-add-upload-tile:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.ark-add-upload-tile strong {
+  color: #F4BD4E;
+  font-size: 12px;
+}
+
+.ark-add-upload-tile small {
+  color: #c4c0b9;
+  font-size: 10px;
+  text-align: center;
+}
+
+.ark-add-thumb {
+  position: relative;
+  flex: 0 0 108px;
+  width: 108px;
+  height: 100px;
+  border: 1px solid rgba(214, 168, 79, .55);
+  border-radius: 10px;
+  background: #0D0A08;
+}
+
+.ark-add-thumb.selected {
+  outline: 2px solid #F4BD4E;
+  outline-offset: 2px;
+}
+
+.ark-add-thumb-preview {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ark-add-thumb-preview img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.ark-add-thumb-remove {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: white;
+  border: 1px solid #ff7777;
+  border-radius: 50%;
+  background: #e54848;
+  cursor: pointer;
+}
+
+.ark-add-more-tile {
+  flex: 0 0 90px;
+  min-height: 100px;
+  color: #F4BD4E;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ark-add-availability {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 7px 0 15px;
+  padding: 11px 13px;
+  border: 1px solid rgba(214, 168, 79, .22);
+  border-radius: 10px;
+  background: rgba(255,255,255,.025);
+  cursor: pointer;
+}
+
+.ark-add-availability input {
+  width: 17px;
+  height: 17px;
+  accent-color: #F4BD4E;
+}
+
+.ark-add-availability > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ark-add-availability strong {
+  color: #f5e7c9;
+  font-size: 13px;
+}
+
+.ark-add-availability small {
+  color: #aeb2b5;
+  font-size: 11px;
+}
+
+.ark-add-form-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .8fr);
+  gap: 13px;
+}
+
+.ark-add-save-btn,
+.ark-add-reset-btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 17px;
+  border-radius: 10px;
+  font: 700 15px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ark-add-save-btn {
+  color: #191207;
+  border: 1px solid #f1c45e;
+  background: linear-gradient(135deg, #F4BD4E, #D6A84F);
+  box-shadow: 0 4px 16px rgba(244, 189, 78, .12);
+}
+
+.ark-add-save-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 20px rgba(244, 189, 78, .18);
+}
+
+.ark-add-reset-btn {
+  color: #FFF4DF;
+  border: 1px solid #D6A84F;
+  background: #17110D;
+}
+
+.ark-add-reset-btn:hover:not(:disabled) {
+  color: #1b1308;
+  background: #F4BD4E;
+}
+
+.ark-add-save-btn:disabled,
+.ark-add-reset-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.ark-add-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ark-add-gallery-card {
+  padding: 19px;
+}
+
+.ark-add-gallery-main {
+  position: relative;
+  width: 100%;
+  height: clamp(230px, 23vw, 330px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at center, rgba(201, 157, 83, .12), transparent 65%),
+    #0D0A08;
+}
+
+.ark-add-gallery-main > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.ark-add-gallery-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  color: #d9aa4c;
+  text-align: center;
+}
+
+.ark-add-gallery-placeholder strong {
+  color: #FFF4DF;
+  font: 700 25px "Cormorant Garamond", Georgia, serif;
+}
+
+.ark-add-gallery-placeholder span {
+  color: #aeb3b6;
+  font-size: 13px;
+}
+
+.ark-add-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: #f4c85d;
+  border: 1px solid #e1ad3d;
+  border-radius: 50%;
+  background: rgba(5, 8, 10, .9);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.ark-add-gallery-arrow:hover {
+  color: #171007;
+  background: #efc45f;
+}
+
+.ark-add-gallery-arrow.previous { left: -10px; }
+.ark-add-gallery-arrow.next { right: -10px; }
+
+.ark-add-gallery-dots {
+  min-height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding-top: 12px;
+}
+
+.ark-add-gallery-dots button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 1.5px solid #D6A84F;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ark-add-gallery-dots button.active {
+  border-color: #ffdc76;
+  background: #ffdc76;
+  box-shadow: 0 0 10px rgba(255, 220, 118, .45);
+}
+
+.ark-add-info-card {
+  border-color: #D6A84F;
+  box-shadow: 0 0 18px rgba(214, 161, 55, .12);
+}
+
+.ark-add-info-heading {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(214, 168, 79, .24);
+  background: linear-gradient(90deg, rgba(218, 165, 65, .09), transparent);
+}
+
+.ark-add-info-heading svg {
+  flex: 0 0 auto;
+  color: #f0bd4d;
+}
+
+.ark-add-info-heading h2 {
+  margin: 0;
+  color: #FFF4DF;
+  font: 700 25px "Cormorant Garamond", Georgia, serif;
+}
+
+.ark-add-info-rows {
+  padding: 7px 18px 12px;
+}
+
+.ark-add-info-row {
+  min-height: 39px;
+  display: grid;
+  grid-template-columns: minmax(105px, .8fr) 12px minmax(0, 1.45fr);
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+  font-size: 13px;
+}
+
+.ark-add-info-row:last-child {
+  border-bottom: 0;
+}
+
+.ark-add-info-row span {
+  color: #d9dce0;
+}
+
+.ark-add-info-row b {
+  color: #F4BD4E;
+}
+
+.ark-add-info-row strong {
+  color: #f3f2ef;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.ark-add-side-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 14px 16px;
+  border-color: rgba(218, 165, 65, .28);
+  background: rgba(244, 189, 78, .035);
+}
+
+.ark-add-side-note svg {
+  flex: 0 0 auto;
+  color: #F4BD4E;
+}
+
+.ark-add-side-note p {
+  margin: 0;
+  color: #c1c4c5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ark-add-product-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 13px 15px;
+  color: #ffd7d7;
+  border: 1px solid rgba(239, 83, 83, .5);
+  border-radius: 10px;
+  background: rgba(130, 26, 26, .2);
+  font-size: 14px;
+}
+
+.ark-add-product-error > button {
+  margin-left: auto;
+  padding: 3px;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ark-add-spin {
+  animation: arkAddSpin 1s linear infinite;
+}
+
+@keyframes arkAddSpin {
+  to { transform: rotate(360deg); }
+}
+
+.ark-add-success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(7px);
+}
+
+.ark-add-success-modal {
+  position: relative;
+  width: min(100%, 540px);
+  padding: 38px 30px 30px;
+  color: #FFF4DF;
+  border: 1px solid #D6A84F;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1D1510, #0D0A08);
+  box-shadow: 0 20px 70px rgba(0,0,0,.55), 0 0 28px rgba(218,165,65,.15);
+  text-align: center;
+}
+
+.ark-add-success-icon {
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  color: #09110a;
+  border-radius: 50%;
+  background: #62d879;
+}
+
+.ark-add-success-modal h2 {
+  margin: 0 0 10px;
+  color: #f5d17b;
+  font: 700 32px "Cormorant Garamond", Georgia, serif;
+}
+
+.ark-add-success-modal p {
+  color: #d2d3d2;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ark-add-success-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 20px 0;
+  padding: 14px 8px;
+  border: 1px solid rgba(218,165,65,.25);
+  border-radius: 10px;
+  background: rgba(255,255,255,.035);
+}
+
+.ark-add-success-summary span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #aaa;
+  font-size: 11px;
+}
+
+.ark-add-success-summary b {
+  color: #f4e5c6;
+  font-size: 13px;
+}
+
+.ark-add-success-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ark-add-success-actions button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #d9a943;
+  border-radius: 9px;
+  color: #171007;
+  background: linear-gradient(135deg, #F4BD4E, #D6A84F);
+  font: 700 13px "DM Sans", sans-serif;
+  cursor: pointer;
+}
+
+.ark-add-success-actions button + button {
+  color: #f4d18a;
+  background: transparent;
+}
+
+.ark-add-success-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: #f4e8d0;
+  border: 1px solid rgba(218,165,65,.3);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (min-width: 1600px) {
+  .ark-add-product-layout {
+    grid-template-columns: minmax(0, 1.62fr) minmax(470px, 1fr);
+    gap: 20px;
+  }
+
+  .ark-add-fields-wrap {
+    padding: 18px 22px 20px;
+  }
+
+  .ark-add-field input,
+  .ark-add-field select {
+    height: 46px;
+    font-size: 15px;
+  }
+
+  .ark-add-field label {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .ark-add-product-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ark-add-side-column {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .ark-add-gallery-card {
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 760px) {
+  .ark-add-product-page {
+    padding: 18px 12px 28px;
+  }
+
+  .ark-add-product-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ark-product-mode-switch {
+    width: 100%;
+  }
+
+  .ark-product-mode-switch button {
+    flex: 1;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+
+  .ark-add-field-grid.three-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ark-add-side-column {
+    display: flex;
+  }
+
+  .ark-add-gallery-main {
+    height: 270px;
+  }
+}
+
+@media (max-width: 520px) {
+  .ark-add-field-grid.two-columns,
+  .ark-add-field-grid.three-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ark-add-form-card-heading {
+    padding: 13px;
+  }
+
+  .ark-add-fields-wrap {
+    padding: 14px;
+  }
+
+  .ark-add-form-actions,
+  .ark-add-success-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .ark-add-upload-tile {
+    flex-basis: 145px;
+  }
+
+  .ark-add-thumb {
+    flex-basis: 88px;
+    width: 88px;
+    height: 88px;
+  }
+
+  .ark-add-more-tile {
+    flex-basis: 78px;
+    min-height: 88px;
+  }
+
+  .ark-add-info-row {
+    grid-template-columns: minmax(90px, .8fr) 10px minmax(0, 1.4fr);
+    font-size: 11px;
+  }
+
+  .ark-add-success-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   ADD MARBLE - FIX DROPDOWN OPTION COLORS
+   ========================================== */
+
+.ark-add-product-page .ark-add-field select {
+  color: #FFF4DF !important;
+  background-color: #17110D !important;
+  color-scheme: dark !important;
+  border: 1px solid rgba(214, 168, 79, 0.55) !important;
+}
+
+/* Dropdown options */
+.ark-add-product-page .ark-add-field select option {
+  color: #FFF4DF !important;
+  background-color: #17110D !important;
+}
+
+/* Dropdown groups */
+.ark-add-product-page .ark-add-field select optgroup {
+  color: #F4BD4E !important;
+  background-color: #17110D !important;
+}
+
+/* Focused dropdown */
+.ark-add-product-page .ark-add-field select:focus {
+  border-color: #F4BD4E !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(244, 189, 78, 0.14) !important;
+}

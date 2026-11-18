@@ -1,0 +1,815 @@
+/* =========================================
+   ARK MARBLES - ORDER CONFIRMATION
+   Reference layout: ivory / white
+   No background photograph
+   Existing popup styles are not modified
+========================================= */
+
+.ark-confirm-page {
+  --oc-page: #f5eee5;
+  --oc-card: #fffaf4;
+  --oc-card-border: #e9dfd2;
+  --oc-text: #171411;
+  --oc-muted: #625b53;
+  --oc-green: #00623d;
+  --oc-green-dark: #00452f;
+  --oc-icon-bg: #f2eae0;
+  --oc-icon-border: #d9cbbb;
+
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 0 1px;
+  color: var(--oc-text);
+  background: var(--oc-page);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ark-confirm-page *,
+.ark-confirm-page *::before,
+.ark-confirm-page *::after {
+  box-sizing: border-box;
+}
+
+.ark-confirm-page a {
+  text-decoration: none;
+}
+
+/* =========================================
+   SUCCESS HERO
+========================================= */
+
+.ark-confirm-hero {
+  width: 100%;
+  min-height: 278px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0;
+  background: #f8f2e9;
+  border-bottom: 1px solid #e8ded1;
+}
+
+.ark-confirm-hero-inner {
+  width: min(1372px, calc(100% - 64px));
+  max-width: 1372px;
+  margin: 0 auto;
+  padding-left: 42%;
+}
+
+.ark-confirm-success-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #111;
+  font-size: 23px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.ark-confirm-check {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  display: grid;
+  place-items: center;
+  color: white;
+  border-radius: 50%;
+  background: #087747;
+}
+
+.ark-confirm-hero h1 {
+  margin: 9px 0 8px;
+  color: #111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 3.25vw, 52px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.ark-confirm-hero-message {
+  margin: 0;
+  color: #29241f;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.ark-confirm-order-id {
+  width: fit-content;
+  min-width: 378px;
+  min-height: 62px;
+  margin-top: 16px;
+  padding: 8px 12px 8px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #171411;
+  background: #fffaf4;
+  border: 2px solid #d5c9b7;
+  border-radius: 40px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.ark-confirm-order-id strong {
+  color: #111;
+}
+
+.ark-confirm-order-id button {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: #171411;
+  border: 0;
+  border-radius: 50%;
+  background: #f0e8de;
+  cursor: pointer;
+}
+
+.ark-confirm-order-id button:hover {
+  background: #e5d9ca;
+}
+
+/* =========================================
+   MAIN CONTENT WIDTH
+========================================= */
+
+.ark-confirm-container {
+  width: min(1372px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 18px 0 24px;
+}
+
+/* =========================================
+   ORDER SUMMARY + PRICE DETAILS
+========================================= */
+
+.ark-confirm-top-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  align-items: stretch;
+  gap: 22px;
+}
+
+.ark-confirm-card {
+  min-width: 0;
+  color: var(--oc-text);
+  border: 1px solid var(--oc-card-border);
+  border-radius: 18px;
+  background: var(--oc-card);
+  box-shadow: 0 5px 18px rgba(65, 45, 25, 0.08);
+}
+
+.ark-confirm-summary-card,
+.ark-confirm-price-card {
+  min-height: 267px;
+  height: 100%;
+  padding: 18px 25px;
+}
+
+.ark-confirm-card h2 {
+  margin: 0;
+  color: #171411;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.ark-confirm-summary-card > h2,
+.ark-confirm-price-card > h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5dbce;
+}
+
+/* =========================================
+   PRODUCT ROWS
+========================================= */
+
+.ark-confirm-item-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ark-confirm-item {
+  min-height: 96px;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 22px;
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1px solid #e5dbce;
+}
+
+.ark-confirm-item:last-child {
+  border-bottom: 0;
+}
+
+.ark-confirm-item-icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  color: #171411;
+  border: 2px solid var(--oc-icon-border);
+  border-radius: 17px;
+  background: var(--oc-icon-bg);
+}
+
+.ark-confirm-item-description {
+  min-width: 0;
+}
+
+.ark-confirm-item-description h3 {
+  margin: 0 0 6px;
+  color: #171411;
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.ark-confirm-item-description p {
+  margin: 0;
+  color: #29241f;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.ark-confirm-item-price {
+  color: #171411;
+  font-size: 20px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ark-confirm-no-items {
+  margin: 18px 0 0;
+  color: var(--oc-muted);
+}
+
+/* =========================================
+   PRICE DETAILS
+========================================= */
+
+.ark-confirm-price-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ark-confirm-price-row {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: #29241f;
+  border-bottom: 1px solid #e5dbce;
+  font-size: 17px;
+}
+
+.ark-confirm-price-row strong {
+  color: #171411;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.ark-confirm-total-row {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 12px;
+  padding: 10px 25px;
+  color: #fff;
+  border: 1px solid var(--oc-green);
+  border-radius: 12px;
+  background: linear-gradient(
+    105deg,
+    var(--oc-green),
+    var(--oc-green-dark)
+  );
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.ark-confirm-total-row strong {
+  color: white;
+  font-size: 27px;
+  white-space: nowrap;
+}
+
+/* =========================================
+   ORDER DATE / PAYMENT / ITEMS STRIP
+========================================= */
+
+.ark-confirm-info-strip {
+  min-height: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  margin-top: 16px;
+  padding: 13px 34px;
+  color: var(--oc-text);
+  border: 1px solid var(--oc-card-border);
+  border-radius: 18px;
+  background: var(--oc-card);
+  box-shadow: 0 5px 18px rgba(65, 45, 25, 0.07);
+}
+
+.ark-confirm-info-item {
+  min-width: 0;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 0 28px;
+  border-right: 1px solid #d8cbb9;
+}
+
+.ark-confirm-info-item:first-child {
+  padding-left: 5px;
+}
+
+.ark-confirm-info-item:last-child {
+  padding-right: 5px;
+  border-right: 0;
+}
+
+.ark-confirm-info-icon {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  display: grid;
+  place-items: center;
+  color: #171411;
+  border: 0;
+  border-radius: 50%;
+  background: #f1e9df;
+}
+
+.ark-confirm-info-item > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ark-confirm-info-item > div > span {
+  color: #29241f;
+  font-size: 17px;
+}
+
+.ark-confirm-info-item > div > strong {
+  color: #171411;
+  font-size: 20px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   DELIVERY CARDS
+========================================= */
+
+.ark-confirm-delivery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 22px;
+  margin-top: 16px;
+}
+
+.ark-confirm-delivery-card {
+  min-height: 126px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 19px 27px;
+}
+
+.ark-confirm-delivery-icon {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  display: grid;
+  place-items: center;
+  color: #171411;
+  border: 0;
+  border-radius: 50%;
+  background: #f1e9df;
+}
+
+.ark-confirm-delivery-card > div {
+  min-width: 0;
+}
+
+.ark-confirm-delivery-card h2 {
+  margin: 0 0 6px;
+  font-size: 23px;
+}
+
+.ark-confirm-delivery-name,
+.ark-confirm-delivery-date {
+  display: block;
+  margin: 0 0 4px;
+  color: #171411;
+  font-size: 18px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.ark-confirm-delivery-card p {
+  margin: 0;
+  color: #29241f;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.ark-confirm-bottom-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 22px 0 5px;
+}
+
+.ark-confirm-shop-button,
+.ark-confirm-home-button,
+.ark-confirm-browse-button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 23px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: transform 0.2s ease;
+}
+
+.ark-confirm-shop-button,
+.ark-confirm-browse-button {
+  color: white !important;
+  border: 1px solid var(--oc-green);
+  background: var(--oc-green);
+}
+
+.ark-confirm-home-button {
+  color: #171411 !important;
+  border: 1px solid #cbbda9;
+  background: #fffaf4;
+}
+
+.ark-confirm-shop-button:hover,
+.ark-confirm-home-button:hover,
+.ark-confirm-browse-button:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.ark-confirm-footer {
+  width: min(1372px, calc(100% - 64px));
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 0 auto;
+  padding: 17px 0 21px;
+  color: #625b53;
+  border-top: 1px solid #e1d6c9;
+  font-size: 12px;
+}
+
+/* =========================================
+   EMPTY ORDER STATE
+========================================= */
+
+.ark-confirm-empty {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--oc-text);
+  background: var(--oc-page);
+}
+
+.ark-confirm-empty-card {
+  max-width: 430px;
+  padding: 34px;
+  text-align: center;
+  border: 1px solid #e2d6c8;
+  border-radius: 15px;
+  background: var(--oc-card);
+}
+
+.ark-confirm-empty-card > svg {
+  color: var(--oc-green);
+}
+
+.ark-confirm-empty-card h1 {
+  color: #171411;
+  font-family: Georgia, serif;
+}
+
+.ark-confirm-empty-card p {
+  color: var(--oc-muted);
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .ark-confirm-hero-inner {
+    padding-left: 34%;
+  }
+
+  .ark-confirm-hero h1 {
+    white-space: normal;
+  }
+
+  .ark-confirm-info-item {
+    padding: 0 14px;
+    gap: 11px;
+  }
+
+  .ark-confirm-info-icon {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+  .ark-confirm-hero {
+    min-height: auto;
+    padding: 30px 0;
+  }
+
+  .ark-confirm-hero-inner {
+    width: calc(100% - 36px);
+    padding-left: 0;
+  }
+
+  .ark-confirm-hero h1 {
+    font-size: clamp(32px, 8vw, 42px);
+    white-space: normal;
+  }
+
+  .ark-confirm-order-id {
+    min-width: 0;
+    width: min(100%, 380px);
+  }
+
+  .ark-confirm-container {
+    width: calc(100% - 32px);
+    padding-top: 16px;
+  }
+
+  .ark-confirm-top-grid,
+  .ark-confirm-delivery-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ark-confirm-summary-card,
+  .ark-confirm-price-card {
+    min-height: 0;
+    height: auto;
+    padding: 18px;
+  }
+
+  .ark-confirm-info-strip {
+    grid-template-columns: 1fr;
+    padding: 8px 18px;
+  }
+
+  .ark-confirm-info-item,
+  .ark-confirm-info-item:first-child,
+  .ark-confirm-info-item:last-child {
+    min-height: 76px;
+    padding: 9px 0;
+    border-right: 0;
+    border-bottom: 1px solid #e5dbce;
+  }
+
+  .ark-confirm-info-item:last-child {
+    border-bottom: 0;
+  }
+
+  .ark-confirm-delivery-card {
+    min-height: 112px;
+    padding: 17px;
+  }
+
+  .ark-confirm-footer {
+    width: calc(100% - 32px);
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .ark-confirm-success-heading {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .ark-confirm-check {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .ark-confirm-item {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .ark-confirm-item-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .ark-confirm-item-price {
+    grid-column: 2;
+    justify-self: start;
+    font-size: 17px;
+  }
+
+  .ark-confirm-info-item > div > strong {
+    font-size: 15px;
+  }
+
+  .ark-confirm-delivery-icon {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+
+  .ark-confirm-bottom-actions {
+    flex-direction: column;
+  }
+
+  .ark-confirm-shop-button,
+  .ark-confirm-home-button {
+    width: 100%;
+  }
+}
+/* =====================================
+   SUCCESS HERO — CENTER ALIGNMENT FIX
+   Cards and popup remain unchanged
+===================================== */
+
+.ark-confirm-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ark-confirm-hero-inner {
+  width: min(1372px, calc(100% - 64px));
+  max-width: 1372px;
+  margin: 0 auto;
+  padding-left: 0 !important;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ark-confirm-success-heading {
+  justify-content: center;
+}
+
+.ark-confirm-order-id {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 760px) {
+  .ark-confirm-hero-inner {
+    width: calc(100% - 36px);
+  }
+
+  .ark-confirm-hero h1 {
+    white-space: normal;
+  }
+}
+/* ARK MARBLES — Luxury Popup Tick */
+.ark-toast-circle {
+  background: linear-gradient(145deg, #f5d58c, #c18b3c) !important;
+  border: 2px solid #f0c875 !important;
+  box-shadow: 0 0 0 5px rgba(207, 161, 83, 0.15),
+              0 5px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
+.ark-toast-check {
+  color: #451521 !important;
+  stroke: #451521 !important;
+  stroke-width: 3.5px !important;
+}
+
+/* =========================================================
+   SUCCESS ICON — MATCH THE GREEN TICK FROM YOUR POPUP
+   Only changes the small success emblem in the hero.
+   Keeps the existing page layout and card positions intact.
+========================================================= */
+
+.ark-confirm-check {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  border: 2px solid #61f3c0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 25%, #16e5a3, #00a96e 70%);
+  box-shadow:
+    0 0 0 4px rgba(0, 201, 135, 0.12),
+    0 0 0 8px rgba(0, 201, 135, 0.07),
+    0 0 18px rgba(0, 255, 166, 0.48),
+    inset 0 0 10px rgba(255, 255, 255, 0.22);
+  animation: ark-confirm-tick-pulse 2s ease-in-out infinite;
+}
+
+.ark-confirm-check svg {
+  width: 31px;
+  height: 31px;
+  color: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 3.2px;
+  overflow: visible;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.45));
+}
+
+@keyframes ark-confirm-tick-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 4px rgba(0, 201, 135, 0.12),
+      0 0 0 8px rgba(0, 201, 135, 0.07),
+      0 0 18px rgba(0, 255, 166, 0.48),
+      inset 0 0 10px rgba(255, 255, 255, 0.22);
+  }
+  50% {
+    box-shadow:
+      0 0 0 6px rgba(0, 201, 135, 0.16),
+      0 0 0 10px rgba(0, 201, 135, 0.08),
+      0 0 25px rgba(0, 255, 166, 0.68),
+      inset 0 0 13px rgba(255, 255, 255, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ark-confirm-check {
+    animation: none;
+  }
+}
+
+
+/* FINAL TICK FIX: remove the extra circle inside the green emblem.
+   This leaves the same plain white tick used in the popup. */
+.ark-confirm-check svg circle {
+  display: none !important;
+}
+
+.ark-confirm-check svg polyline,
+.ark-confirm-check svg path {
+  stroke: #ffffff !important;
+  stroke-width: 3.2px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+}
+
+.ark-confirm-check svg {
+  width: 31px !important;
+  height: 31px !important;
+}

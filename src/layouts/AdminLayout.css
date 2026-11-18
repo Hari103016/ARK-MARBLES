@@ -1,0 +1,866 @@
+
+:root {
+  --ark-bg: #0D0A08;
+  --ark-panel: #17110D;
+  --ark-burgundy: #300009;
+  --ark-gold: #F4BD4E;
+  --ark-gold-light: #FFE2A0;
+  --ark-border: #8C6428;
+  --ark-text: #FFF4DF;
+  --ark-muted: #B9AA93;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ark-admin-layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  color: var(--ark-text);
+  background: var(--ark-bg);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.ark-admin-header {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 100;
+  background: var(--ark-bg);
+}
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.ark-admin-topbar {
+  width: 100%;
+  min-height: 145px;
+  padding: 15px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(39, 0, 8, 0.88),
+      rgba(48, 0, 9, 0.78),
+      rgba(30, 0, 6, 0.9)
+    ),
+    url("/images/marbles/Burgundy%20Wave%20Marble.png")
+    center / cover no-repeat;
+
+  border-bottom: 3px solid var(--ark-gold);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   LEFT BRAND
+========================= */
+
+.ark-admin-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  flex: 0 0 auto;
+  min-width: 0;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.ark-admin-brand-logo {
+  display: block;
+  width: 150px;
+  height: 112px;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+.ark-admin-brand-divider {
+  width: 2px;
+  height: 82px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--ark-gold-light),
+    var(--ark-gold),
+    transparent
+  );
+}
+
+.ark-admin-brand-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ark-admin-brand-copy strong {
+  color: var(--ark-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(29px, 2.6vw, 46px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.ark-admin-brand-copy sup {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  vertical-align: top;
+  margin-left: 3px;
+}
+
+.ark-admin-brand-copy small {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ark-text);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
+  white-space: nowrap;
+}
+
+.ark-brand-line {
+  width: 25px;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(--ark-gold);
+}
+
+/* =========================
+   RIGHT HEADER ACTIONS
+========================= */
+
+.ark-admin-top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 23px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* SEARCH */
+
+.ark-admin-search {
+  width: clamp(220px, 23vw, 430px);
+  height: 52px;
+  padding: 0 17px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: var(--ark-gold);
+  background: rgba(12, 6, 6, 0.68);
+  border: 1px solid var(--ark-gold);
+  border-radius: 30px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ark-admin-search:focus-within {
+  border-color: var(--ark-gold-light);
+  box-shadow: 0 0 0 3px rgba(244, 189, 78, 0.12);
+}
+
+.ark-admin-search svg {
+  flex-shrink: 0;
+}
+
+.ark-admin-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  color: var(--ark-text);
+  background: transparent;
+  border: 0;
+  outline: none;
+  font-size: 13px;
+}
+
+.ark-admin-search input::placeholder {
+  color: var(--ark-muted);
+  opacity: 1;
+}
+
+/* NOTIFICATIONS */
+
+.ark-admin-notification-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ark-admin-notification {
+  width: 43px;
+  height: 48px;
+  padding: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: var(--ark-gold-light);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.ark-admin-notification:hover {
+  color: var(--ark-gold);
+}
+
+.ark-admin-notification-count {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #D92929;
+  border: 2px solid var(--ark-burgundy);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* VERTICAL DIVIDER */
+
+.ark-admin-action-divider {
+  width: 2px;
+  height: 54px;
+  flex-shrink: 0;
+  background: var(--ark-gold);
+}
+
+/* ADMIN PROFILE */
+
+.ark-admin-profile-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ark-admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0;
+  color: var(--ark-text);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.ark-admin-avatar {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #321900;
+  background: linear-gradient(145deg, #FFF0C4, #DDAA3C);
+  border: 1px solid var(--ark-gold-light);
+  border-radius: 50%;
+}
+
+.ark-admin-profile-text strong {
+  color: var(--ark-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ark-admin-profile > svg {
+  color: var(--ark-gold-light);
+}
+
+/* MAIN WEBSITE */
+
+.ark-admin-store-link {
+  min-height: 45px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  color: var(--ark-gold-light);
+  background: rgba(12, 6, 6, 0.55);
+  border: 1px solid var(--ark-border);
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.ark-admin-store-link:hover {
+  color: #251400;
+  background: var(--ark-gold);
+  border-color: var(--ark-gold);
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.ark-admin-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 500;
+  width: 245px;
+  padding: 10px;
+  background: #17100D;
+  border: 1px solid var(--ark-border);
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+}
+
+.ark-admin-dropdown-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  color: var(--ark-gold);
+  border-bottom: 1px solid rgba(214, 168, 79, 0.2);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ark-admin-dropdown p {
+  margin: 0;
+  padding: 15px 12px;
+  color: var(--ark-muted);
+  font-size: 12px;
+}
+
+.ark-admin-profile-menu a,
+.ark-admin-profile-menu button {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ark-text);
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: left;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ark-admin-profile-menu a:hover,
+.ark-admin-profile-menu button:hover {
+  color: var(--ark-gold);
+  background: rgba(244, 189, 78, 0.08);
+}
+
+.ark-admin-profile-menu button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.ark-admin-navigation {
+  width: 100%;
+  min-height: 59px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  background: #100C09;
+  border-bottom: 1px solid var(--ark-border);
+}
+
+.ark-admin-nav-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8C6428 #100C09;
+}
+
+.ark-admin-nav-links::-webkit-scrollbar {
+  height: 4px;
+}
+
+.ark-admin-nav-links::-webkit-scrollbar-thumb {
+  background: #8C6428;
+  border-radius: 10px;
+}
+
+.ark-admin-nav-link {
+  min-height: 41px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 auto;
+
+  color: var(--ark-text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 650;
+  transition: 0.2s ease;
+}
+
+.ark-admin-nav-link svg {
+  color: var(--ark-gold);
+  flex-shrink: 0;
+}
+
+.ark-admin-nav-link:hover {
+  color: var(--ark-gold-light);
+  background: rgba(244, 189, 78, 0.08);
+  border-color: rgba(214, 168, 79, 0.2);
+}
+
+.ark-admin-nav-link.active {
+  color: #241500;
+  background: linear-gradient(135deg, #FFE3A0, #DDAA3C);
+  border-color: var(--ark-gold);
+}
+
+.ark-admin-nav-link.active svg {
+  color: #241500;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.ark-admin-main {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  background: var(--ark-bg);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.ark-admin-footer {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--ark-muted);
+  background: var(--ark-bg);
+  border-top: 1px solid rgba(214, 168, 79, 0.2);
+  font-size: 10px;
+}
+
+.ark-admin-footer span:first-child {
+  color: var(--ark-gold);
+  font-weight: 700;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.ark-admin-spin {
+  animation: ark-admin-rotate 1s linear infinite;
+}
+
+@keyframes ark-admin-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1250px) {
+  .ark-admin-topbar {
+    min-height: 115px;
+    padding: 12px 20px;
+    gap: 15px;
+  }
+
+  .ark-admin-brand {
+    gap: 13px;
+  }
+
+  .ark-admin-brand-logo {
+    width: 105px;
+    height: 82px;
+  }
+
+  .ark-admin-brand-divider {
+    height: 65px;
+  }
+
+  .ark-admin-brand-copy strong {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+
+  .ark-admin-brand-copy small {
+    font-size: 8px;
+    letter-spacing: 1px;
+    gap: 5px;
+  }
+
+  .ark-brand-line {
+    width: 15px;
+  }
+
+  .ark-admin-top-actions {
+    gap: 12px;
+  }
+
+  .ark-admin-search {
+    width: 240px;
+  }
+
+  .ark-admin-store-link {
+    padding: 0 9px;
+  }
+}
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .ark-admin-topbar {
+    flex-wrap: wrap;
+    min-height: auto;
+    padding: 14px 18px;
+  }
+
+  .ark-admin-brand {
+    width: 100%;
+  }
+
+  .ark-admin-top-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .ark-admin-search {
+    flex: 1;
+    width: auto;
+  }
+
+  .ark-admin-navigation {
+    padding: 0 10px;
+  }
+
+  .ark-admin-nav-links {
+    justify-content: flex-start;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 550px) {
+  .ark-admin-topbar {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .ark-admin-brand {
+    gap: 10px;
+  }
+
+  .ark-admin-brand-logo {
+    width: 65px;
+    height: 55px;
+  }
+
+  .ark-admin-brand-divider {
+    height: 45px;
+  }
+
+  .ark-admin-brand-copy {
+    gap: 7px;
+  }
+
+  .ark-admin-brand-copy strong {
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+
+  .ark-admin-brand-copy small {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+    gap: 4px;
+  }
+
+  .ark-brand-line {
+    width: 9px;
+  }
+
+  .ark-admin-top-actions {
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .ark-admin-search {
+    order: 1;
+    flex-basis: 100%;
+    width: 100%;
+    height: 43px;
+  }
+
+  .ark-admin-avatar {
+    width: 39px;
+    height: 39px;
+  }
+
+  .ark-admin-profile-text strong {
+    font-size: 12px;
+  }
+
+  .ark-admin-store-link {
+    min-height: 38px;
+    font-size: 10px;
+    padding: 0 8px;
+  }
+
+  .ark-admin-navigation {
+    min-height: 50px;
+  }
+
+  .ark-admin-nav-link {
+    min-height: 37px;
+    padding: 0 9px;
+    font-size: 11px;
+  }
+
+  .ark-admin-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+.ark-admin-topbar {
+  width: 100%;
+  min-height: 145px;
+  padding: 15px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background:
+    linear-gradient(rgba(30, 0, 5, 0.12), rgba(30, 0, 5, 0.12)),
+    url("/images/ark-admin-header-banner.png") center / cover no-repeat;
+
+  border-bottom: 3px solid #F4BD4E;
+}
+
+/* ADMIN NAVIGATION - INCREASED SIZE */
+
+.ark-admin-navigation {
+  width: 100%;
+  min-height: 76px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background: #100C09;
+  border-top: 3px solid #F4BD4E;
+  border-bottom: 1px solid #8C6428;
+}
+
+.ark-admin-nav-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.ark-admin-nav-link {
+  min-height: 50px;
+  padding: 0 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 0 0 auto;
+
+  color: #FFF4DF;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.ark-admin-nav-link svg {
+  width: 21px;
+  height: 21px;
+  color: #F4BD4E;
+  flex-shrink: 0;
+}
+
+.ark-admin-nav-link:hover {
+  color: #FFE2A0;
+  background: rgba(244, 189, 78, 0.08);
+}
+
+.ark-admin-nav-link.active {
+  color: #241500;
+  background: linear-gradient(135deg, #FFE3A0, #DDAA3C);
+  border-color: #F4BD4E;
+}
+
+.ark-admin-nav-link.active svg {
+  color: #241500;
+}
+
+@media (max-width: 900px) {
+  .ark-admin-navigation {
+    min-height: 65px;
+    padding: 0 10px;
+  }
+
+  .ark-admin-nav-link {
+    min-height: 45px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   ADMIN NAVIGATION - NO SCROLLBAR
+========================================= */
+
+.ark-admin-navigation {
+  width: 100%;
+  min-height: 62px;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  background: #100C09;
+  border-top: 3px solid #F4BD4E;
+  border-bottom: 1px solid #8C6428;
+  overflow: visible;
+}
+
+.ark-admin-nav-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  flex-wrap: nowrap;
+  overflow: visible;
+}
+
+.ark-admin-nav-link {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 43px;
+  padding: 0 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: #FFF4DF;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+
+  transition: background 0.2s ease;
+}
+
+.ark-admin-nav-link svg {
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  color: #F4BD4E;
+}
+
+.ark-admin-nav-link:hover {
+  background: rgba(244, 189, 78, 0.1);
+}
+
+.ark-admin-nav-link.active {
+  color: #241500;
+  background: linear-gradient(135deg, #FFE3A0, #DDAA3C);
+  border-color: #F4BD4E;
+}
+
+.ark-admin-nav-link.active svg {
+  color: #241500;
+}
+
+/* Smaller laptop screens */
+@media (max-width: 1200px) {
+  .ark-admin-nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .ark-admin-nav-link {
+    flex: 1 1 130px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ark-admin-navigation {
+    padding: 8px;
+  }
+
+  .ark-admin-nav-link {
+    flex: 1 1 110px;
+    justify-content: flex-start;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,251 @@
+
+/* ARK MARBLES — PRODUCTS PAGE */
+
+.products-page {
+  --products-green: #102c25;
+  --products-gold: #c6a66b;
+  --products-cream: #f8f6f0;
+  --products-muted: #737b74;
+
+  min-height: 70vh;
+  padding-bottom: 80px;
+  background: var(--products-cream);
+  color: var(--products-green);
+}
+
+.products-hero {
+  padding: 65px 7% 60px;
+  background: var(--products-green);
+  color: #fff;
+  text-align: center;
+}
+
+.products-eyebrow {
+  color: var(--products-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.products-hero h1 {
+  margin: 17px 0 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.products-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.products-container {
+  width: min(1320px, 88%);
+  margin: 0 auto;
+}
+
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 30px 0;
+  border-bottom: 1px solid #e6e0d5;
+}
+
+.products-search {
+  display: flex;
+  flex: 1 1 280px;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+  padding: 0 15px;
+  border: 1px solid #e0dbd0;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.products-search > svg {
+  flex-shrink: 0;
+  color: var(--products-muted);
+}
+
+.products-search input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--products-green);
+  font: inherit;
+  font-size: 13px;
+}
+
+.products-search input:focus-visible {
+  outline: 2px solid var(--products-gold);
+  outline-offset: 2px;
+}
+
+.products-search input::placeholder {
+  color: #92968f;
+}
+
+.products-clear-search,
+.products-reset-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: var(--products-green);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.products-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--products-green);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.products-category-select {
+  max-width: 220px;
+  min-height: 46px;
+  padding: 0 34px 0 12px;
+  border: 1px solid #e0dbd0;
+  border-radius: 3px;
+  background: #fff;
+  color: var(--products-green);
+  font: inherit;
+  font-size: 12px;
+}
+
+.products-reset-button {
+  padding: 10px 4px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.products-results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0 24px;
+}
+
+.products-results-heading h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.products-results-heading p {
+  margin: 7px 0 0;
+  color: var(--products-muted);
+  font-size: 12px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.products-message {
+  padding: 55px 20px;
+  border: 1px solid #e6e0d5;
+  background: #fff;
+  color: var(--products-muted);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.products-message h3 {
+  margin: 0 0 8px;
+  color: var(--products-green);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
+}
+
+.products-message p {
+  overflow-wrap: anywhere;
+}
+
+.products-message button {
+  padding: 11px 18px;
+  border: 1px solid var(--products-gold);
+  border-radius: 3px;
+  background: var(--products-green);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.products-message button:hover {
+  background: #194236;
+}
+
+.products-error {
+  color: #a52b2b;
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .products-hero {
+    padding: 48px 6%;
+  }
+
+  .products-hero p {
+    font-size: 13px;
+  }
+
+  .products-container {
+    width: 90%;
+  }
+
+  .products-toolbar {
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .products-search {
+    flex-basis: 100%;
+  }
+
+  .products-filter-label {
+    align-self: center;
+  }
+
+  .products-category-select {
+    flex: 1;
+    max-width: none;
+  }
+
+  .products-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .products-results-heading h2 {
+    font-size: 29px;
+  }
+}

@@ -1,0 +1,608 @@
+/* =====================================================
+   ARK MARBLES — LUXURY ACCOUNT LAYOUT
+   Emerald Marble • Champagne Gold • Turquoise
+===================================================== */
+
+.account-layout,
+.account-layout *,
+.account-layout *::before,
+.account-layout *::after {
+  box-sizing: border-box;
+}
+
+.account-layout {
+  --account-bg: #050d0b;
+  --account-panel: #0a1915;
+  --account-panel-light: #10251e;
+  --account-teal: #00d7c6;
+  --account-gold: #d9b878;
+  --account-white: #f5f2e9;
+  --account-muted: #a1b1a7;
+  --account-border: rgba(166, 190, 169, 0.2);
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+  color: var(--account-white);
+  background:
+    radial-gradient(ellipse at 8% 8%, rgba(16, 100, 70, 0.15), transparent 35%),
+    radial-gradient(ellipse at 90% 80%, rgba(0, 143, 124, 0.07), transparent 36%),
+    var(--account-bg);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* HEADER */
+
+.account-heading {
+  position: relative;
+  width: 100%;
+  padding: 26px 0 34px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--account-border);
+  background:
+    linear-gradient(115deg, rgba(12, 45, 33, 0.98), rgba(5, 15, 12, 0.98));
+}
+
+.account-heading::after {
+  position: absolute;
+  top: -130px;
+  right: 8%;
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(217, 184, 120, 0.12);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  box-shadow:
+    0 0 0 35px rgba(217, 184, 120, 0.025),
+    0 0 0 75px rgba(217, 184, 120, 0.018);
+}
+
+.account-heading-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1700px, 94%);
+  margin: 0 auto;
+}
+
+.account-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 19px;
+  color: var(--account-gold);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.account-back-link:hover {
+  color: var(--account-teal);
+}
+
+.account-heading-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: fit-content;
+  margin-bottom: 16px;
+  color: var(--account-white);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 2.5px;
+  text-decoration: none;
+}
+
+.account-brand-mark {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  place-items: center;
+  border: 1px solid rgba(0, 215, 198, 0.48);
+  border-radius: 7px;
+  color: var(--account-teal);
+  background: rgba(0, 215, 198, 0.04);
+}
+
+.account-heading-kicker {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--account-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+}
+
+.account-heading h1 {
+  margin: 0;
+  color: var(--account-white);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 4vw, 54px);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.account-heading p {
+  max-width: 650px;
+  margin: 10px 0 0;
+  color: #b7c6bc;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* MAIN TWO-COLUMN LAYOUT */
+
+.account-content {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  width: min(1700px, 96%);
+  margin: 26px auto 0;
+  padding-bottom: 45px;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.account-sidebar {
+  position: static;
+  align-self: start;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  max-height: none;
+  padding: 19px 16px 15px;
+  border: 1px solid rgba(217, 184, 120, 0.48);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(0, 215, 198, 0.07), transparent 45%),
+    linear-gradient(150deg, #092119, #03100c 75%);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  overflow: visible;
+}
+
+/* SIDEBAR BRAND */
+
+.account-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 6px 8px 20px;
+  border: 1px solid rgba(217, 184, 120, 0.5);
+  border-radius: 12px;
+  background: rgba(1, 12, 8, 0.38);
+}
+
+.account-sidebar-mark {
+  display: grid;
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+  place-items: center;
+  border: 1px solid rgba(217, 184, 120, 0.3);
+  border-radius: 10px;
+  color: var(--account-gold);
+  background: rgba(217, 184, 120, 0.07);
+}
+
+.account-sidebar-brand div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.account-sidebar-brand strong {
+  color: var(--account-white);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.account-sidebar-brand div > span {
+  color: var(--account-muted);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* SECTION LABEL */
+
+.account-sidebar-label {
+  margin: 22px 5px 12px;
+  color: var(--account-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* NAVIGATION */
+
+.account-sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+.account-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+  min-height: 58px;
+  padding: 13px 13px;
+  border: 1px solid rgba(217, 184, 120, 0.27);
+  border-radius: 12px;
+  color: #e5e6dd;
+  background: rgba(2, 15, 10, 0.45);
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+.account-nav-icon {
+  flex: 0 0 25px;
+  width: 25px;
+  height: 25px;
+  color: var(--account-gold);
+  transition: color 0.22s ease;
+}
+
+.account-nav-text {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.account-nav-chevron {
+  flex: 0 0 19px;
+  color: var(--account-gold);
+  opacity: 0.85;
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.account-nav-link:hover {
+  transform: translateX(2px);
+  border-color: rgba(0, 215, 198, 0.55);
+  color: #ffffff;
+  background: rgba(0, 215, 198, 0.07);
+}
+
+.account-nav-link:hover .account-nav-icon,
+.account-nav-link:hover .account-nav-chevron {
+  color: var(--account-teal);
+}
+
+.account-nav-link:hover .account-nav-chevron {
+  transform: translateX(3px);
+}
+
+.account-nav-link.active {
+  border-color: var(--account-teal);
+  color: var(--account-teal);
+  background:
+    linear-gradient(105deg, rgba(0, 215, 198, 0.17), rgba(0, 215, 198, 0.045));
+  box-shadow:
+    inset 3px 0 var(--account-teal),
+    0 0 15px rgba(0, 215, 198, 0.1);
+  font-weight: 750;
+}
+
+.account-nav-link.active .account-nav-icon,
+.account-nav-link.active .account-nav-chevron {
+  color: var(--account-teal);
+}
+
+.account-nav-link.active .account-nav-chevron {
+  transform: translateX(2px);
+}
+
+.account-nav-indicator {
+  display: none;
+}
+
+/* DECORATIVE SIDEBAR FOOTER IMAGE */
+
+.account-sidebar-decoration {
+  margin-top: 24px;
+  padding: 0 6px;
+}
+
+.account-decoration-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 12px;
+  background: linear-gradient(
+    90deg,
+    var(--account-gold),
+    rgba(217, 184, 120, 0.08)
+  );
+}
+
+.account-sidebar-image {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 205px;
+  padding: 17px 13px;
+  border: 1px solid rgba(217, 184, 120, 0.28);
+  border-radius: 10px;
+  background:
+    linear-gradient(0deg, rgba(1, 10, 7, 0.94), rgba(1, 10, 7, 0.02) 90%),
+    radial-gradient(ellipse at 75% 15%, rgba(217, 184, 120, 0.18), transparent 30%),
+    linear-gradient(140deg, #174535, #071510 50%, #5b4427);
+  overflow: hidden;
+}
+
+.account-sidebar-image::before,
+.account-sidebar-image::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.account-sidebar-image::before {
+  top: -20%;
+  left: 25%;
+  width: 1px;
+  height: 140%;
+  background: linear-gradient(
+    transparent,
+    rgba(217, 184, 120, 0.65),
+    transparent
+  );
+  transform: rotate(35deg);
+  box-shadow:
+    30px 0 0 rgba(217, 184, 120, 0.15),
+    72px 0 0 rgba(0, 215, 198, 0.12);
+}
+
+.account-sidebar-image::after {
+  top: 20px;
+  right: 20px;
+  width: 75px;
+  height: 75px;
+  border: 1px solid rgba(217, 184, 120, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px rgba(217, 184, 120, 0.04);
+}
+
+.account-sidebar-image-content {
+  position: relative;
+  z-index: 1;
+  color: var(--account-gold);
+}
+
+.account-sidebar-image-content > svg {
+  margin-bottom: 8px;
+}
+
+.account-sidebar-image-content p {
+  margin: 0;
+  color: #fff8e9;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.account-sidebar-image-content > span {
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 14px;
+  background: var(--account-gold);
+}
+
+.account-sidebar-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 13px 4px 2px;
+  border-top: 1px solid var(--account-border);
+  color: #b7a77e;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.account-sidebar-footer svg {
+  flex: 0 0 auto;
+  color: var(--account-gold);
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.account-page {
+  width: 100%;
+  min-width: 0;
+  min-height: 500px;
+  height: auto;
+  max-height: none;
+  padding: 27px;
+  border: 1px solid rgba(0, 215, 198, 0.25);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(0, 113, 84, 0.09), transparent 35%),
+    linear-gradient(145deg, #091711, #050d0b 75%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+  overflow: visible;
+}
+
+/* Keep browser document scrolling natural. */
+
+.account-layout,
+.account-content,
+.account-sidebar,
+.account-page {
+  max-height: none;
+}
+
+.account-content,
+.account-page {
+  overflow-y: visible;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.account-layout a:focus-visible,
+.account-layout button:focus-visible {
+  outline: 2px solid var(--account-gold);
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1150px) {
+  .account-content {
+    grid-template-columns: 275px minmax(0, 1fr);
+    gap: 20px;
+    width: 95%;
+  }
+
+  .account-sidebar {
+    padding: 16px 12px;
+  }
+
+  .account-nav-link {
+    min-height: 52px;
+    gap: 10px;
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .account-page {
+    padding: 21px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 720px) {
+  .account-heading {
+    padding: 22px 0 25px;
+  }
+
+  .account-heading-inner,
+  .account-content {
+    width: 92%;
+  }
+
+  .account-heading h1 {
+    font-size: 39px;
+  }
+
+  .account-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+    padding-bottom: 28px;
+  }
+
+  .account-sidebar {
+    position: static;
+    width: 100%;
+    padding: 14px;
+  }
+
+  .account-sidebar-brand {
+    padding: 8px;
+  }
+
+  .account-sidebar-label {
+    margin-top: 16px;
+  }
+
+  .account-sidebar-navigation {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .account-nav-link {
+    min-height: 48px;
+    gap: 8px;
+    padding: 9px;
+    font-size: 11px;
+  }
+
+  .account-nav-icon {
+    width: 19px;
+    height: 19px;
+    flex-basis: 19px;
+  }
+
+  .account-nav-chevron {
+    width: 15px;
+    height: 15px;
+  }
+
+  .account-sidebar-decoration {
+    margin-top: 16px;
+  }
+
+  .account-sidebar-image {
+    min-height: 130px;
+  }
+
+  .account-page {
+    min-height: 0;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .account-sidebar-navigation {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .account-nav-link {
+    min-height: 45px;
+  }
+
+  .account-page {
+    padding: 12px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .account-layout *,
+  .account-layout *::before,
+  .account-layout *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

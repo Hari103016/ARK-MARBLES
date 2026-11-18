@@ -1,0 +1,626 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
+/* ==========================================
+   ARK MARBLES — Luxury Product Card
+   Wine red + champagne gold
+   ========================================== */
+
+.marble-card,
+.marble-card * {
+  box-sizing: border-box;
+}
+
+.marble-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+
+  color: #fff5e8;
+  background: #2b0d12;
+  border: 1px solid rgba(207, 164, 95, 0.42);
+  border-radius: 8px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.marble-card:hover {
+  transform: translateY(-3px);
+  border-color: #d8ad62;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Product image */
+
+.marble-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.35 / 1;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #35151a;
+}
+
+.marble-card-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.marble-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.marble-card:hover .marble-card-image img {
+  transform: scale(1.045);
+}
+
+/* Missing image placeholder */
+
+.marble-card-image-placeholder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(216, 173, 98, 0.15),
+      transparent 55%
+    ),
+    #35151a;
+
+  color: #f0c978;
+  text-align: center;
+}
+
+.marble-card-image-placeholder span {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+.marble-card-image-placeholder small {
+  color: #ead9c6;
+  font-size: 12px;
+}
+
+/* Wishlist */
+
+.marble-card-wishlist {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  z-index: 2;
+
+  display: flex;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  border: 1px solid rgba(246, 217, 159, 0.7);
+  border-radius: 50%;
+  background: rgba(20, 9, 11, 0.94);
+  color: #fff5e8;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.marble-card-wishlist:hover,
+.marble-card-wishlist.active {
+  border-color: #f0c978;
+  background: #f0c978;
+  color: #2b0d12;
+}
+
+/* Card body */
+
+.marble-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 14px;
+  background: #2b0d12;
+}
+
+.marble-card-description {
+  display: -webkit-box;
+  min-height: 30px;
+  margin: 0 0 10px;
+  overflow: hidden;
+
+  color: #d5bfb4;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* Product name on the left, price on the right */
+
+.marble-card-title-price {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.marble-card-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.marble-card-title a {
+  color: #fff5e8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.marble-card-title a:hover {
+  color: #f0c978;
+}
+
+/* Larger gold price aligned right */
+
+.marble-card-price {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-left: auto;
+
+  color: #f0c978;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.marble-card-price strong {
+  color: #f0c978;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.marble-card-price span {
+  color: #e0cdbd;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.marble-card-price .marble-card-price-request {
+  font-size: 12px;
+  white-space: normal;
+}
+
+/* Divider under name and price */
+
+.marble-card-divider {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  margin: 12px 0;
+
+  background: rgba(240, 201, 120, 0.55);
+}
+
+/* Buy Now + Add to Cart */
+
+.marble-card-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.marble-card-buy,
+.marble-card-add {
+  display: inline-flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 8px;
+
+  border: 1px solid #d8ad62;
+  border-radius: 5px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.marble-card-buy svg,
+.marble-card-add svg {
+  flex-shrink: 0;
+}
+
+/* Buy Now — lighter champagne gold */
+
+.marble-card-buy {
+  background: #f0d394;
+  color: #2b0d12;
+}
+
+.marble-card-buy:hover {
+  transform: translateY(-1px);
+  background: #ffe4aa;
+  box-shadow: 0 4px 12px rgba(216, 173, 98, 0.18);
+}
+
+/* Add to Cart — darker gold */
+
+.marble-card-add {
+  background: #d8ad62;
+  color: #2b0d12;
+}
+
+.marble-card-add:hover {
+  transform: translateY(-1px);
+  background: #edc779;
+  box-shadow: 0 4px 12px rgba(216, 173, 98, 0.18);
+}
+
+/* Keyboard accessibility */
+
+.marble-card a:focus-visible,
+.marble-card button:focus-visible {
+  outline: 2px solid #f0c978;
+  outline-offset: 3px;
+}
+
+/* Medium screens */
+
+@media (max-width: 1100px) {
+  .marble-card-content {
+    padding: 12px;
+  }
+
+  .marble-card-title {
+    font-size: 17px;
+  }
+
+  .marble-card-price strong {
+    font-size: 16px;
+  }
+
+  .marble-card-buy,
+  .marble-card-add {
+    min-height: 40px;
+    gap: 5px;
+    padding: 8px 5px;
+    font-size: 10px;
+  }
+}
+
+/* Tablets and phones */
+
+@media (max-width: 600px) {
+  .marble-card-content {
+    padding: 10px;
+  }
+
+  .marble-card-description {
+    font-size: 10px;
+  }
+
+  .marble-card-title-price {
+    gap: 6px;
+  }
+
+  .marble-card-title {
+    font-size: 15px;
+  }
+
+  .marble-card-price {
+    gap: 3px;
+  }
+
+  .marble-card-price strong {
+    font-size: 14px;
+  }
+
+  .marble-card-price span {
+    font-size: 9px;
+  }
+
+  .marble-card-divider {
+    margin: 10px 0;
+  }
+
+  .marble-card-actions {
+    gap: 6px;
+  }
+
+  .marble-card-buy,
+  .marble-card-add {
+    min-height: 38px;
+    gap: 4px;
+    padding: 7px 4px;
+    font-size: 9px;
+  }
+
+  .marble-card-buy svg,
+  .marble-card-add svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .marble-card-wishlist {
+    top: 7px;
+    right: 7px;
+    width: 31px;
+    height: 31px;
+  }
+}
+
+/* Very narrow screens */
+
+@media (max-width: 360px) {
+  .marble-card-title-price {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .marble-card-price {
+    margin-left: 0;
+  }
+
+  .marble-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .marble-card-buy,
+  .marble-card-add {
+    min-height: 40px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marble-card,
+  .marble-card *,
+  .marble-card *::before,
+  .marble-card *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* FINAL FIX — visible product prices and action buttons */
+
+.marble-card-title-price {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.marble-card-title {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.marble-card-price {
+  flex: 0 0 auto !important;
+  margin-left: auto !important;
+  text-align: right !important;
+}
+
+.marble-card-price strong {
+  color: #ffd986 !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+/* Keep both button labels dark and readable */
+.marble-card-actions .marble-card-buy,
+.marble-card-actions .marble-card-add {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+.marble-card-actions .marble-card-buy,
+.marble-card-actions .marble-card-buy span,
+.marble-card-actions .marble-card-buy svg {
+  background-color: #f2d497;
+  color: #321019 !important;
+  stroke: #321019 !important;
+}
+
+.marble-card-actions .marble-card-add,
+.marble-card-actions .marble-card-add span,
+.marble-card-actions .marble-card-add svg {
+  background-color: #d9ad62;
+  color: #321019 !important;
+  stroke: #321019 !important;
+}
+
+.marble-card-actions .marble-card-buy:hover {
+  background-color: #ffe4aa !important;
+}
+
+.marble-card-actions .marble-card-add:hover {
+  background-color: #edc779 !important;
+}
+
+.marble-card-actions button span {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 600px) {
+  .marble-card-title-price {
+    gap: 6px !important;
+  }
+
+  .marble-card-price strong {
+    font-size: 14px !important;
+  }
+}
+
+.marble-card-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  margin-top: 0;
+}
+
+.marble-card-view-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 18px;
+  box-sizing: border-box;
+  border: 1px solid #d7ad62;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #f5d99a, #d7ad62);
+  color: #29070d;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.marble-card-view-product:hover {
+  background: linear-gradient(135deg, #ffe8b4, #e5bd72);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(215, 173, 98, 0.18);
+}
+
+.marble-card-view-product:focus-visible {
+  outline: 2px solid #f5d99a;
+  outline-offset: 3px;
+}
+
+.marble-card-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  margin-top: 0;
+}
+
+.marble-card-view-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 18px;
+  box-sizing: border-box;
+
+  background: linear-gradient(135deg, #ffe5a6 0%, #d7ad62 100%);
+  color: #29070d !important;
+
+  border: 1px solid #e7bf73;
+  border-radius: 5px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none !important;
+  text-align: center;
+
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.marble-card-view-product span,
+.marble-card-view-product svg {
+  color: #29070d !important;
+  opacity: 1;
+}
+
+.marble-card-view-product:hover {
+  background: linear-gradient(135deg, #fff0c9 0%, #e7bf73 100%);
+  color: #29070d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(215, 173, 98, 0.2);
+}
+
+.marble-card-view-product:focus-visible {
+  outline: 2px solid #f5d99a;
+  outline-offset: 3px;
+}
+
+.marble-card-view-product:active {
+  transform: translateY(0);
+}

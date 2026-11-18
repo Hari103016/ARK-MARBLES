@@ -1,0 +1,699 @@
+
+/* ==========================================
+   ARK MARBLES - CONTACT PAGE
+   Luxury Navy & Gold Theme
+   No Background Image
+   ========================================== */
+
+.ark-contact-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 45px 4% 65px;
+  box-sizing: border-box;
+
+  color: #f8f2e7;
+  background: #020e18;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+   PAGE HEADING
+   ========================================== */
+
+.ark-contact-heading {
+  max-width: 1500px;
+  margin: 0 auto 38px;
+}
+
+.ark-contact-heading h1 {
+  margin: 0 0 15px;
+
+  color: #f8f2e7;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3.2vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.ark-contact-heading h1 span {
+  color: #f0bf59;
+}
+
+.ark-contact-heading p {
+  margin: 0;
+
+  color: #eee9e0;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.ark-contact-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.65fr);
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* ==========================================
+   LEFT CONTACT CARD
+   ========================================== */
+
+.ark-contact-info {
+  padding: 32px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+
+  background: linear-gradient(
+    145deg,
+    #071b28,
+    #020e18
+  );
+
+  border: 1.5px solid #d8a83f;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* CONTACT ITEM */
+
+.ark-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.ark-info-icon {
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+
+  display: grid;
+  place-items: center;
+
+  color: #071522;
+
+  background: linear-gradient(
+    135deg,
+    #ffdf8d,
+    #d99c28
+  );
+
+  border-radius: 12px;
+}
+
+.ark-info-content {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.ark-info-content h3 {
+  margin: 0 0 9px;
+
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.ark-info-content p,
+.ark-info-content a {
+  display: block;
+
+  margin: 0 0 5px;
+
+  color: #eee9e0;
+  font-size: 15px;
+  line-height: 1.55;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ark-info-content a:hover {
+  color: #f0bf59;
+}
+
+/* ==========================================
+   SOCIAL MEDIA
+   ========================================== */
+
+.ark-social-section {
+  margin-top: 0;
+}
+
+.ark-social-section h3 {
+  margin: 0 0 17px;
+
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.ark-social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ark-social-links a {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+  border-radius: 50%;
+
+  transition: transform 0.25s ease;
+}
+
+.ark-social-links a:hover {
+  transform: translateY(-5px);
+}
+
+.ark-social-links .facebook {
+  background: #2361a7;
+}
+
+.ark-social-links .instagram {
+  background: linear-gradient(
+    45deg,
+    #f9a52b,
+    #e1306c,
+    #833ab4
+  );
+}
+
+.ark-social-links .youtube {
+  background: #df1724;
+}
+
+.ark-social-links .linkedin {
+  background: #0878ae;
+}
+
+/* ==========================================
+   RIGHT QUOTE CARD
+   ========================================== */
+
+.ark-quote-card {
+  min-width: 0;
+  padding: 25px 28px;
+
+  background: linear-gradient(
+    145deg,
+    #071b28,
+    #020e18
+  );
+
+  border: 1.5px solid #d8a83f;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* QUOTE HEADING */
+
+.ark-quote-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 28px;
+}
+
+.ark-quote-heading-icon {
+  flex: 0 0 auto;
+  color: #eab64f;
+  stroke-width: 1.6;
+}
+
+.ark-quote-heading h2 {
+  margin: 0 0 7px;
+
+  color: #f8f2e7;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.ark-quote-heading h2 span {
+  color: #f0bf59;
+}
+
+.ark-quote-heading p {
+  margin: 0;
+
+  color: #eee9e0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   SUCCESS MESSAGE
+   ========================================== */
+
+.ark-form-success {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+
+  color: #a9f3c5;
+  background: rgba(25, 150, 85, 0.12);
+
+  border: 1px solid #269d63;
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+/* ==========================================
+   FORM GRID
+   ========================================== */
+
+.ark-quote-form {
+  width: 100%;
+}
+
+.ark-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 30px;
+}
+
+.ark-form-group {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.ark-form-group label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ark-form-group label span {
+  color: #ef4444;
+}
+
+/* ==========================================
+   INPUTS AND SELECTS
+   ========================================== */
+
+.ark-input-wrapper {
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  box-sizing: border-box;
+
+  color: #f0bf59;
+
+  background: #0b1b25;
+  border: 1px solid #64717a;
+  border-radius: 10px;
+
+  transition: border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ark-input-wrapper:focus-within {
+  border-color: #eab64f;
+  box-shadow: 0 0 0 2px rgba(234, 182, 79, 0.12);
+}
+
+.ark-input-wrapper > svg {
+  flex: 0 0 auto;
+  color: #e8edf0;
+}
+
+.ark-input-wrapper input,
+.ark-input-wrapper select {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  padding: 0;
+
+  color: #ffffff;
+  background: transparent;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.ark-input-wrapper input::placeholder {
+  color: #c1c7cb;
+  opacity: 1;
+}
+
+.ark-input-wrapper select {
+  cursor: pointer;
+}
+
+.ark-input-wrapper select:invalid {
+  color: #c1c7cb;
+}
+
+.ark-input-wrapper select option {
+  color: #ffffff;
+  background: #071827;
+}
+
+/* ==========================================
+   TEXTAREA
+   ========================================== */
+
+.ark-full-width {
+  margin-top: 22px;
+}
+
+.ark-textarea-wrapper {
+  width: 100%;
+  min-height: 90px;
+
+  padding: 13px 15px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  box-sizing: border-box;
+
+  color: #e8edf0;
+  background: #0b1b25;
+
+  border: 1px solid #64717a;
+  border-radius: 10px;
+
+  transition: border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ark-textarea-wrapper:focus-within {
+  border-color: #eab64f;
+  box-shadow: 0 0 0 2px rgba(234, 182, 79, 0.12);
+}
+
+.ark-textarea-wrapper > svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.ark-textarea-wrapper textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 65px;
+
+  resize: vertical;
+
+  color: #ffffff;
+  background: transparent;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ark-textarea-wrapper textarea::placeholder {
+  color: #c1c7cb;
+  opacity: 1;
+}
+
+/* ==========================================
+   SUBMIT BUTTON
+   ========================================== */
+
+.ark-submit-quote {
+  width: 100%;
+  min-height: 54px;
+
+  margin-top: 19px;
+  padding: 12px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  color: #100e08;
+
+  background: linear-gradient(
+    110deg,
+    #ffdc8c,
+    #e0a32d
+  );
+
+  border: 1px solid #f0bd55;
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.ark-submit-quote:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.ark-submit-quote:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1000px) {
+  .ark-contact-page {
+    padding: 35px 3%;
+  }
+
+  .ark-contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .ark-contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .ark-social-section {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 600px) {
+  .ark-contact-page {
+    padding: 28px 16px 40px;
+  }
+
+  .ark-contact-heading {
+    margin-bottom: 25px;
+  }
+
+  .ark-contact-heading h1 {
+    font-size: 30px;
+  }
+
+  .ark-contact-heading p {
+    font-size: 14px;
+  }
+
+  .ark-contact-heading p br {
+    display: none;
+  }
+
+  .ark-contact-container {
+    gap: 16px;
+  }
+
+  .ark-contact-info {
+    grid-template-columns: 1fr;
+    padding: 23px 19px;
+    gap: 23px;
+  }
+
+  .ark-info-item {
+    gap: 14px;
+  }
+
+  .ark-info-icon {
+    flex-basis: 45px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .ark-info-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ark-info-content h3 {
+    font-size: 15px;
+  }
+
+  .ark-info-content p,
+  .ark-info-content a {
+    font-size: 13px;
+  }
+
+  .ark-quote-card {
+    padding: 22px 17px;
+  }
+
+  .ark-quote-heading {
+    gap: 12px;
+    margin-bottom: 23px;
+  }
+
+  .ark-quote-heading-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .ark-quote-heading h2 {
+    font-size: 25px;
+  }
+
+  .ark-quote-heading p {
+    font-size: 12px;
+  }
+
+  .ark-form-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .ark-full-width {
+    margin-top: 18px;
+  }
+
+  .ark-input-wrapper {
+    height: 44px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .ark-input-wrapper input,
+  .ark-input-wrapper select {
+    font-size: 12px;
+  }
+
+  .ark-textarea-wrapper {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .ark-textarea-wrapper textarea {
+    font-size: 12px;
+  }
+
+  .ark-submit-quote {
+    min-height: 49px;
+    font-size: 14px;
+  }
+
+  .ark-social-links {
+    gap: 11px;
+  }
+
+  .ark-social-links a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ==========================================
+   VERY SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 380px) {
+  .ark-contact-heading h1 {
+    font-size: 26px;
+  }
+
+  .ark-quote-heading h2 {
+    font-size: 22px;
+  }
+
+  .ark-quote-card {
+    padding: 18px 13px;
+  }
+}
+
+.ark-social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ark-social-links a {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 800;
+  transition: transform .25s ease;
+}
+
+.ark-social-links a:hover {
+  transform: translateY(-5px);
+}
+
+.ark-social-links .facebook {
+  background: #2361a7;
+}
+
+.ark-social-links .instagram {
+  background: linear-gradient(45deg, #f9a52b, #e1306c, #833ab4);
+}
+
+.ark-social-links .youtube {
+  background: #df1724;
+}
+
+.ark-social-links .linkedin {
+  background: #0878ae;
+}

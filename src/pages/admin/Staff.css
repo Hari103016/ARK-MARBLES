@@ -1,0 +1,179 @@
+/* ARK MARBLES — Staff Management */
+.ark-staff-page{--st-gold:#dfb64f;--st-gold2:#f2d17b;--st-line:rgba(219,177,75,.27);width:100%;min-height:100%;padding:clamp(12px,1.5vw,22px);color:#f5f0e7;background:radial-gradient(ellipse at 20% 0%,rgba(145,104,34,.1),transparent 32%),#080c0d;font-family:Inter,"Segoe UI",Arial,sans-serif;box-sizing:border-box}
+.ark-staff-page *,.ark-staff-page *:before,.ark-staff-page *:after{box-sizing:border-box}
+.ark-staff-shell{max-width:1900px;margin:0 auto}
+.ark-staff-hero{display:flex;align-items:center;gap:15px;min-height:102px;padding:15px 18px;border:1px solid #a77c1d;border-radius:14px;background:linear-gradient(100deg,rgba(10,13,13,.97),rgba(19,17,12,.8)),repeating-linear-gradient(130deg,transparent 0 75px,rgba(219,177,75,.09) 76px 78px);overflow:hidden}
+.ark-staff-hero-icon{width:65px;height:65px;flex:0 0 65px;display:grid;place-items:center;color:#f2ca59;border:1px solid #b68b2b;border-radius:50%;background:#17170f;box-shadow:0 0 20px #d8a82c1c}
+.ark-staff-hero-copy{min-width:0}
+.ark-staff-hero-copy>span,.ark-staff-panel-heading>div>span{color:#e8bd4a;font-size:11px;font-weight:850;letter-spacing:1.3px}
+.ark-staff-hero-copy h1{margin:4px 0;color:#fff9ee;font:600 clamp(25px,2.4vw,34px) Georgia,serif}
+.ark-staff-hero-copy p{margin:0;color:#c6c5bc;font-size:12px}
+.ark-staff-hero-actions{display:flex;gap:8px;margin-left:auto}
+.staff-btn{min-height:39px;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:0 13px;color:#f0c957;border:1px solid #a77c1c;border-radius:8px;background:#101516;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer}
+.staff-btn:hover{background:#272313}
+.staff-btn.primary{color:#1b1508;border-color:#e4b837;background:linear-gradient(135deg,#ffe18a,#e8b82f)}
+.staff-btn:disabled{opacity:.6;cursor:wait}
+.ark-staff-alert{display:flex;align-items:center;gap:9px;padding:10px 13px;margin-top:10px;border-radius:8px;font-size:11px}
+.ark-staff-alert span{flex:1}.ark-staff-alert button{display:grid;place-items:center;color:inherit;border:0;background:transparent;cursor:pointer}
+.ark-staff-alert.success{color:#91e0ae;border:1px solid #276e43;background:#10271a}
+.ark-staff-alert.error{color:#f2a29b;border:1px solid #91453e;background:#301918}
+.ark-staff-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin:12px 0 14px}
+.ark-staff-stats article{min-width:0;min-height:91px;display:flex;align-items:center;gap:11px;padding:12px;border:1px solid rgba(159,166,158,.22);border-radius:13px;background:linear-gradient(135deg,#151b1c,#0d1213)}
+.staff-stat-icon{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:50%}
+.staff-stat-icon.gold{color:#f0c64d;border:1px solid #a67b1e;background:#211d10}
+.staff-stat-icon.green{color:#10d778;border:1px solid #087b47;background:#09261a}
+.staff-stat-icon.blue{color:#22b8f0;border:1px solid #0879a8;background:#0b2430}
+.staff-stat-icon.amber{color:#ed9c37;border:1px solid #96521c;background:#2a1b10}
+.staff-stat-icon.purple{color:#d26ce9;border:1px solid #843b9b;background:#27122e}
+.ark-staff-stats article>div:last-child{min-width:0}
+.ark-staff-stats article span{display:block;color:#d1d1c9;font-size:11px}
+.ark-staff-stats article strong{display:block;margin:4px 0;color:#fff7e7;font:600 26px Georgia,serif}
+.ark-staff-stats article small{color:#b7aa8b;font-size:9px}
+.ark-staff-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(310px,.4fr);gap:14px;align-items:stretch}
+.ark-staff-list-panel,.ark-staff-details{min-width:0;border:1px solid #a77c1c;border-radius:13px;background:linear-gradient(145deg,#111718,#0a0f10);overflow:hidden}
+.ark-staff-panel-heading{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 15px;border-bottom:1px solid rgba(219,177,75,.14)}
+.ark-staff-panel-heading h2{margin:3px 0;color:#fff8ed;font:600 22px Georgia,serif}
+.ark-staff-panel-heading p{margin:0;color:#a9ada6;font-size:10px}
+.staff-count-pill{padding:6px 10px;color:#f0ce76;border:1px solid var(--st-line);border-radius:18px;background:#201b10;font-size:9px;font-weight:800}
+.ark-staff-filters{display:grid;grid-template-columns:minmax(180px,1fr) minmax(110px,.34fr) minmax(110px,.34fr) auto;gap:8px;padding:11px 13px;border-bottom:1px solid rgba(219,177,75,.12)}
+.staff-search,.ark-staff-filters select{height:38px;min-width:0;display:flex;align-items:center;gap:8px;padding:0 10px;color:#e8bd4a;border:1px solid rgba(219,177,75,.27);border-radius:8px;background:#0b1112}
+.staff-search input{width:100%;min-width:0;color:#eee9df;border:0;outline:0;background:transparent;font-size:11px}
+.staff-search input::placeholder{color:#828b85}
+.ark-staff-filters select{width:100%;color:#e9e4d8;font-size:10px;outline:0}
+.ark-staff-filters select option,.ark-staff-modal select option{background:#111718}
+.staff-reset{padding:0 13px;color:#edc454;border:1px solid #9f781e;border-radius:8px;background:#101516;font-size:10px;font-weight:800;cursor:pointer}
+.ark-staff-table-wrap{width:100%;overflow-x:auto}
+.ark-staff-table{width:100%;min-width:900px;border-collapse:collapse;text-align:left}
+.ark-staff-table thead{background:linear-gradient(90deg,#39191f,#281519)}
+.ark-staff-table th{height:39px;padding:0 9px;color:#f0d078;font-size:9px;letter-spacing:.45px;white-space:nowrap}
+.ark-staff-table td{height:54px;padding:8px 9px;color:#e2e0d9;border-bottom:1px solid rgba(219,177,75,.1);font-size:10px;white-space:nowrap}
+.ark-staff-table tbody tr{cursor:pointer;transition:background .15s}
+.ark-staff-table tbody tr:hover,.ark-staff-table tbody tr.selected{background:rgba(220,177,68,.075)}
+.staff-employee-id{color:#e8c86d!important;font-weight:800}
+.staff-name-cell{display:flex;align-items:center;gap:8px}
+.staff-name-cell>span{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;color:#f0d27b;border:1px solid #987222;border-radius:50%;background:#282113;font-size:9px;font-weight:850}
+.staff-name-cell b{color:#f4f0e7;font-size:10px}
+.staff-role-badge{display:inline-flex;align-items:center;padding:5px 9px;color:#f2c957;border:1px solid #a57b1b;border-radius:18px;background:#2b2411;font-size:9px;font-weight:800;white-space:nowrap}
+.staff-role-badge.manager{color:#63c9f5;border-color:#167aa5;background:#0d2732}
+.staff-role-badge.sales{color:#d28bf0;border-color:#8745a0;background:#281531}
+.staff-role-badge.inventory{color:#92e86e;border-color:#4c9d35;background:#172a13}
+.staff-role-badge.accounts{color:#64c9ed;border-color:#147fa7;background:#102632}
+.staff-role-badge.support{color:#e7a8d3;border-color:#9d5386;background:#301d2c}
+.staff-status{display:inline-flex;align-items:center;justify-content:center;min-width:65px;padding:5px 9px;border:1px solid transparent;border-radius:18px;font-size:9px;font-weight:850}
+.staff-status.active{color:#24df81;border-color:#07884b;background:#082b1c}
+.staff-status.inactive{color:#f3b75b;border-color:#a45a19;background:#34200f}
+.staff-row-actions{display:flex;gap:5px}
+.staff-row-actions button{width:29px;height:29px;display:grid;place-items:center;color:#e8bc47;border:1px solid #946e18;border-radius:6px;background:#111617;cursor:pointer}
+.staff-row-actions button:hover{background:#292313}
+.ark-staff-empty{min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#d6b14c;text-align:center}
+.ark-staff-empty h3{margin:0;color:#f6f0e5;font:600 20px Georgia,serif}
+.ark-staff-empty p{margin:0;color:#a8aaa2;font-size:10px}
+.ark-staff-pagination{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;color:#a9aaa2;border-top:1px solid rgba(219,177,75,.12);font-size:10px}
+.ark-staff-pagination>div{display:flex;align-items:center;gap:8px}
+.ark-staff-pagination label{display:flex;align-items:center;gap:6px}
+.ark-staff-pagination select{padding:5px 7px;color:#eee5d2;border:1px solid #695522;border-radius:6px;background:#101516;font-size:10px}
+.ark-staff-pagination button{width:27px;height:27px;display:grid;place-items:center;color:#e9c45c;border:1px solid var(--st-line);border-radius:6px;background:#101516;cursor:pointer}
+.ark-staff-pagination button:disabled{opacity:.35;cursor:not-allowed}
+.ark-staff-pagination b{width:26px;height:26px;display:grid;place-items:center;color:#201706;border-radius:6px;background:linear-gradient(135deg,#f9df8c,#dcae35)}
+.ark-staff-details{padding-bottom:14px}
+.staff-profile-top{display:flex;align-items:center;gap:12px;padding:18px 15px}
+.staff-profile-avatar{width:76px;height:76px;flex:0 0 76px;display:grid;place-items:center;color:#f6d77c;border:2px solid #d2a637;border-radius:50%;background:radial-gradient(circle at 35% 30%,#514323,#171a18 70%);font:600 25px Georgia,serif}
+.staff-profile-name{min-width:0;flex:1}
+.staff-profile-name h3{margin:0 0 9px;color:#fff8ed;font:600 22px Georgia,serif}
+.staff-profile-name>div{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.staff-profile-name>div>span:first-child{padding:5px 8px;color:#d8d8cf;border:1px solid #555b57;border-radius:18px;background:#171d1d;font-size:9px}
+.staff-profile-top>.staff-status{min-width:58px}
+.staff-profile-info{display:flex;flex-direction:column;gap:0;padding:0 15px 12px}
+.staff-profile-info>div{min-height:38px;display:grid;grid-template-columns:19px 82px minmax(0,1fr);align-items:center;gap:8px;border-bottom:1px solid rgba(219,177,75,.1)}
+.staff-profile-info svg{color:#e6b93f}
+.staff-profile-info span{color:#b9b9b0;font-size:10px}
+.staff-profile-info b{color:#f0eee7;font-size:10px;overflow-wrap:anywhere}
+.staff-profile-actions{display:flex;flex-wrap:wrap;gap:7px;padding:3px 14px}
+.staff-profile-actions .staff-btn{flex:1;padding:0 8px;font-size:9px}
+.staff-access-inline{margin:12px 14px 0;padding:12px;border:1px solid var(--st-line);border-radius:8px;background:#0a1011}
+.staff-access-inline label{display:flex;flex-direction:column;gap:6px;color:#d8bd70;font-size:10px}
+.staff-access-inline select{height:34px;padding:0 8px;color:#f1eadb;border:1px solid #70591f;border-radius:6px;background:#121819}
+.staff-access-inline p{color:#aeb0a7;font-size:9px;line-height:1.5}
+.staff-access-inline button{padding:6px 12px;color:#e9c55c;border:1px solid var(--st-line);border-radius:6px;background:#141919;font-size:9px;cursor:pointer}
+.ark-staff-modal-backdrop{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:18px;background:rgba(0,0,0,.72);backdrop-filter:blur(5px)}
+.ark-staff-modal{width:min(100%,480px);display:flex;flex-direction:column;gap:13px;padding:20px;border:1px solid #b88b2b;border-radius:14px;background:linear-gradient(145deg,#171d1d,#090e0f);box-shadow:0 20px 70px #0009}
+.ark-staff-modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--st-line)}
+.ark-staff-modal-head span{color:#e5bd4e;font-size:9px;font-weight:850;letter-spacing:1.2px}
+.ark-staff-modal-head h2{margin:4px 0 0;color:#fff7e8;font:600 23px Georgia,serif}
+.ark-staff-modal-head button{width:30px;height:30px;display:grid;place-items:center;color:#e5bd4e;border:1px solid var(--st-line);border-radius:6px;background:#101516;cursor:pointer}
+.ark-staff-modal>label{display:flex;flex-direction:column;gap:6px;color:#d6c18b;font-size:10px;font-weight:750}
+.ark-staff-modal input,.ark-staff-modal select{height:39px;padding:0 10px;color:#f4efe5;border:1px solid rgba(219,177,75,.32);border-radius:7px;outline:0;background:#0b1112;font-size:11px}
+.staff-modal-note{display:flex;align-items:flex-start;gap:8px;padding:10px;color:#e9c56d;border:1px solid #71571d;border-radius:8px;background:#29220f}
+.staff-modal-note svg{flex:0 0 auto;margin-top:1px}
+.staff-modal-note p{margin:0;color:#d3c8a8;font-size:10px;line-height:1.5}
+.ark-staff-modal-actions{display:flex;justify-content:flex-end;gap:8px;padding-top:8px;border-top:1px solid var(--st-line)}
+.staff-spin{animation:staff-spin 1s linear infinite}@keyframes staff-spin{to{transform:rotate(360deg)}}
+@media(max-width:1300px){.ark-staff-content{grid-template-columns:minmax(0,1fr) minmax(285px,.38fr)}.ark-staff-stats{gap:8px}.ark-staff-stats article{padding:9px;gap:8px}.staff-stat-icon{width:39px;height:39px;flex-basis:39px}}
+@media(max-width:1000px){.ark-staff-content{grid-template-columns:1fr}.ark-staff-details{min-height:300px}.staff-profile-info{max-width:700px}}
+@media(max-width:650px){.ark-staff-page{padding:9px 7px}.ark-staff-hero{align-items:flex-start;flex-wrap:wrap;padding:12px}.ark-staff-hero-icon{width:47px;height:47px;flex-basis:47px}.ark-staff-hero-copy{flex:1}.ark-staff-hero-copy h1{font-size:24px}.ark-staff-hero-copy p{font-size:10px;line-height:1.4}.ark-staff-hero-actions{width:100%;margin-left:0}.ark-staff-hero-actions .staff-btn{flex:1;padding:0 6px;font-size:9px}.ark-staff-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.ark-staff-stats article{min-height:75px;padding:8px}.staff-stat-icon{width:33px;height:33px;flex-basis:33px}.ark-staff-stats article span{font-size:9px}.ark-staff-stats article strong{font-size:21px}.ark-staff-stats article small{font-size:8px}.ark-staff-filters{grid-template-columns:1fr 1fr}.staff-search{grid-column:1/-1}.staff-reset{min-height:37px}.ark-staff-pagination{align-items:flex-start;flex-direction:column}.staff-profile-top{gap:8px;padding:13px 10px}.staff-profile-avatar{width:58px;height:58px;flex-basis:58px;font-size:19px}.staff-profile-name h3{font-size:18px}.staff-profile-top>.staff-status{min-width:50px;padding:4px;font-size:8px}.staff-profile-info{padding:0 10px 10px}.staff-profile-info>div{grid-template-columns:18px 68px minmax(0,1fr)}.staff-profile-actions{padding:3px 9px}.staff-profile-actions .staff-btn{font-size:8px}.ark-staff-modal{padding:15px}}
+
+
+/* ================================
+   STAFF PAGE — LARGER TEXT UPDATE
+   ================================ */
+.ark-staff-page { font-size: 14px; }
+.ark-staff-hero-copy > span,
+.ark-staff-panel-heading > div > span { font-size: 12px; }
+.ark-staff-hero-copy h1 { font-size: clamp(29px, 2.6vw, 38px); }
+.ark-staff-hero-copy p { font-size: 14px; }
+.staff-btn { min-height: 43px; padding: 0 15px; font-size: 13px; }
+.ark-staff-stats article { min-height: 100px; gap: 13px; padding: 14px; }
+.staff-stat-icon { width: 52px; height: 52px; flex-basis: 52px; }
+.ark-staff-stats article span { font-size: 13px; }
+.ark-staff-stats article strong { font-size: 30px; }
+.ark-staff-stats article small { font-size: 11px; }
+.ark-staff-panel-heading { min-height: 66px; padding: 14px 17px; }
+.ark-staff-panel-heading h2 { font-size: 25px; }
+.ark-staff-panel-heading p { font-size: 12px; }
+.staff-count-pill { font-size: 11px; }
+.staff-search, .ark-staff-filters select { height: 42px; }
+.staff-search input { font-size: 13px; }
+.ark-staff-filters select, .staff-reset { font-size: 12px; }
+.ark-staff-table th { height: 43px; font-size: 11px; }
+.ark-staff-table td { height: 59px; font-size: 12px; }
+.staff-name-cell > span { width: 34px; height: 34px; flex-basis: 34px; font-size: 11px; }
+.staff-name-cell b { font-size: 12px; }
+.staff-role-badge, .staff-status { font-size: 11px; }
+.staff-row-actions button { width: 32px; height: 32px; }
+.ark-staff-pagination { font-size: 12px; }
+.ark-staff-pagination select { font-size: 12px; }
+.staff-profile-avatar { width: 84px; height: 84px; flex-basis: 84px; font-size: 28px; }
+.staff-profile-name h3 { font-size: 25px; }
+.staff-profile-name > div > span:first-child { font-size: 11px; }
+.staff-profile-info > div { min-height: 43px; grid-template-columns: 21px 90px minmax(0,1fr); }
+.staff-profile-info span { font-size: 12px; }
+.staff-profile-info b { font-size: 12px; }
+.staff-profile-actions .staff-btn { font-size: 11px; }
+.staff-access-inline label { font-size: 12px; }
+.staff-access-inline p { font-size: 11px; }
+.staff-access-inline button { font-size: 11px; }
+.ark-staff-empty h3 { font-size: 22px; }
+.ark-staff-empty p { font-size: 12px; }
+.ark-staff-alert { font-size: 13px; }
+.ark-staff-modal-head span { font-size: 11px; }
+.ark-staff-modal-head h2 { font-size: 26px; }
+.ark-staff-modal > label { font-size: 12px; }
+.ark-staff-modal input, .ark-staff-modal select { height: 43px; font-size: 13px; }
+.staff-modal-note p { font-size: 12px; }
+
+@media (max-width: 650px) {
+  .ark-staff-hero-copy h1 { font-size: 26px; }
+  .ark-staff-hero-copy p { font-size: 11px; }
+  .ark-staff-hero-actions .staff-btn { font-size: 10px; }
+  .ark-staff-stats article span { font-size: 10px; }
+  .ark-staff-stats article strong { font-size: 23px; }
+  .ark-staff-stats article small { font-size: 9px; }
+  .ark-staff-panel-heading h2 { font-size: 21px; }
+  .ark-staff-panel-heading p { font-size: 10px; }
+  .staff-search input { font-size: 11px; }
+  .ark-staff-filters select, .staff-reset { font-size: 10px; }
+  .ark-staff-pagination { font-size: 10px; }
+  .staff-profile-name h3 { font-size: 20px; }
+  .staff-profile-info span, .staff-profile-info b { font-size: 10px; }
+  .staff-profile-actions .staff-btn { font-size: 9px; }
+}

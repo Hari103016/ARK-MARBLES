@@ -1,0 +1,1019 @@
+
+/* =========================================================
+   AARK MARBLES — CUSTOMER STYLES
+   Customer Dashboard • Profile • Orders • Wishlist
+   ========================================================= */
+
+/* Customer layout */
+
+.customer-layout {
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.customer-main {
+  min-width: 0;
+  width: 100%;
+}
+
+.customer-page {
+  width: min(100% - 40px, 1200px);
+  margin: 0 auto;
+  padding: 42px 0 64px;
+}
+
+.customer-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.customer-page-header h1 {
+  margin-bottom: 10px;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.customer-page-header p {
+  max-width: 650px;
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+}
+
+.customer-eyebrow {
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+/* Customer dashboard */
+
+.customer-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.customer-welcome {
+  padding: 32px;
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(201, 166, 107, 0.09),
+      transparent 40%
+    ),
+    var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.customer-welcome h1 {
+  margin-bottom: 12px;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.customer-welcome p {
+  margin-bottom: 0;
+  color: var(--color-text-secondary);
+}
+
+.customer-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.customer-stat-card {
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-stat-card p {
+  margin-bottom: 12px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.customer-stat-card h2 {
+  margin-bottom: 8px;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.customer-stat-card span {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.customer-dashboard-sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: 24px;
+}
+
+.customer-panel {
+  min-width: 0;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.customer-panel-header h2 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Account navigation */
+
+.customer-account-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-account-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.customer-account-nav a:hover,
+.customer-account-nav a.active {
+  color: var(--color-primary);
+  background: var(--color-surface-hover);
+}
+
+/* Profile */
+
+.customer-profile-layout {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  align-items: start;
+  gap: 26px;
+}
+
+.customer-profile-sidebar {
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 16px;
+  color: #101510;
+  background: var(--color-primary);
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.customer-profile-sidebar h2 {
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.customer-profile-sidebar p {
+  margin-bottom: 22px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.customer-profile-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.customer-profile-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.customer-profile-sidebar nav a:hover,
+.customer-profile-sidebar nav a.active {
+  color: var(--color-primary);
+  background: var(--color-surface-hover);
+}
+
+.customer-profile-content {
+  min-width: 0;
+  padding: 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-profile-content h2 {
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.customer-profile-content > p {
+  margin-bottom: 24px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+/* Customer forms */
+
+.customer-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.customer-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.customer-form-group label {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.customer-form-group input,
+.customer-form-group select,
+.customer-form-group textarea {
+  width: 100%;
+}
+
+.customer-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.customer-form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  grid-column: 1 / -1;
+  padding-top: 8px;
+}
+
+/* Addresses */
+
+.customer-addresses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.customer-address-card {
+  min-width: 0;
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-address-card.default {
+  border-color: var(--color-primary);
+}
+
+.customer-address-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.customer-address-header h3 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.customer-address-card p {
+  margin-bottom: 8px;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.customer-address-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* Orders */
+
+.customer-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.customer-order-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.customer-order-card:hover {
+  border-color: var(--color-border-light);
+}
+
+.customer-order-info {
+  min-width: 0;
+}
+
+.customer-order-info h3 {
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.customer-order-info p {
+  margin-bottom: 5px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.customer-order-price {
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.customer-order-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Order details */
+
+.customer-order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.customer-order-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.customer-order-detail-item {
+  padding: 16px;
+  background: var(--color-background-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.customer-order-detail-item span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.customer-order-detail-item strong {
+  display: block;
+  color: var(--color-text);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* Order tracking timeline */
+
+.customer-order-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 10px 0;
+}
+
+.customer-timeline-item {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  min-height: 76px;
+}
+
+.customer-timeline-marker {
+  position: relative;
+  display: flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-muted);
+  background: var(--color-surface-hover);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+}
+
+.customer-timeline-item:not(:last-child)
+  .customer-timeline-marker::after {
+  position: absolute;
+  top: 23px;
+  left: 10px;
+  width: 1px;
+  height: 52px;
+  background: var(--color-border);
+  content: "";
+}
+
+.customer-timeline-item.completed .customer-timeline-marker {
+  color: #101510;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.customer-timeline-content h4 {
+  margin-bottom: 5px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.customer-timeline-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* Wishlist */
+
+.customer-wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.customer-wishlist-item {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-wishlist-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: var(--color-surface-hover);
+}
+
+.customer-wishlist-item-content {
+  padding: 16px;
+}
+
+.customer-wishlist-item h3 {
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.customer-wishlist-item p {
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.customer-wishlist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.customer-wishlist-actions .button {
+  flex: 1;
+  min-width: 0;
+  padding-inline: 10px;
+  font-size: 11px;
+}
+
+/* Enquiries */
+
+.customer-enquiries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.customer-enquiry-card {
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-enquiry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.customer-enquiry-header h3 {
+  margin-bottom: 6px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.customer-enquiry-header p {
+  margin-bottom: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.customer-enquiry-message {
+  padding: 14px;
+  color: var(--color-text-secondary);
+  background: var(--color-background-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* Customer table */
+
+.customer-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.customer-table th {
+  color: var(--color-text-muted);
+  background: var(--color-surface-hover);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.customer-table td {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.customer-table tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Customer alerts and empty states */
+
+.customer-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 30px;
+  color: var(--color-text-muted);
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.customer-empty-state h3 {
+  margin: 14px 0 8px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.customer-empty-state p {
+  max-width: 420px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.customer-notice {
+  padding: 14px 16px;
+  color: var(--color-text-secondary);
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Responsive customer pages */
+
+@media (max-width: 1000px) {
+  .customer-dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customer-dashboard-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-wishlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customer-profile-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .customer-page {
+    width: calc(100% - 32px);
+    padding: 30px 0 48px;
+  }
+
+  .customer-profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-profile-sidebar {
+    padding: 18px;
+  }
+
+  .customer-profile-sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customer-profile-content {
+    padding: 22px;
+  }
+
+  .customer-account-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .customer-account-nav a {
+    flex-shrink: 0;
+  }
+
+  .customer-addresses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-wishlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customer-order-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .customer-order-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-page {
+    width: calc(100% - 24px);
+    padding-top: 24px;
+  }
+
+  .customer-page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customer-welcome {
+    padding: 22px;
+  }
+
+  .customer-dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .customer-panel {
+    padding: 16px;
+  }
+
+  .customer-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .customer-form-group.full-width,
+  .customer-form-actions {
+    grid-column: auto;
+  }
+
+  .customer-profile-content {
+    padding: 16px;
+  }
+
+  .customer-profile-sidebar nav {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-wishlist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-wishlist-item img {
+    height: 220px;
+  }
+
+  .customer-order-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-order-card {
+    padding: 16px;
+  }
+
+  .customer-enquiry-header {
+    flex-direction: column;
+  }
+
+  .customer-form-actions .button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ARK MARBLES — CUSTOMER PAGES THEME
+   Add at the bottom of src/styles/customer.css
+   ========================================================= */
+
+.customer-page,
+.customer-dashboard,
+.customer-profile,
+.customer-orders,
+.customer-wishlist,
+.customer-cart {
+  color: #e8f0ed;
+}
+
+.customer-page,
+.customer-dashboard,
+.customer-profile,
+.customer-orders,
+.customer-wishlist {
+  background: #071310;
+}
+
+.customer-page h1,
+.customer-dashboard h1,
+.customer-profile h1,
+.customer-orders h1,
+.customer-wishlist h1 {
+  color: #f0f7f4;
+  letter-spacing: -0.035em;
+}
+
+.customer-page h2,
+.customer-dashboard h2,
+.customer-profile h2,
+.customer-orders h2,
+.customer-wishlist h2 {
+  color: #b5e7d7;
+}
+
+.customer-page p,
+.customer-dashboard p,
+.customer-profile p,
+.customer-orders p,
+.customer-wishlist p {
+  color: #a4b9b1;
+  line-height: 1.7;
+}
+
+/* Customer cards and panels */
+.customer-page .customer-card,
+.customer-dashboard .customer-card,
+.customer-profile .customer-card,
+.customer-orders .customer-card,
+.customer-wishlist .customer-card {
+  background: #0d1c17;
+  border: 1px solid rgba(88, 194, 157, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+/* Form controls */
+.customer-page input,
+.customer-page select,
+.customer-page textarea,
+.customer-profile input,
+.customer-profile select,
+.customer-profile textarea {
+  width: 100%;
+  max-width: 100%;
+  color: #edf8f3;
+  background: #091712;
+  border: 1px solid #29483b;
+  border-radius: 9px;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.customer-page input:focus,
+.customer-page select:focus,
+.customer-page textarea:focus,
+.customer-profile input:focus,
+.customer-profile select:focus,
+.customer-profile textarea:focus {
+  border-color: #49c6a0;
+  box-shadow: 0 0 0 3px rgba(73, 198, 160, 0.12);
+}
+
+.customer-page label,
+.customer-profile label {
+  display: block;
+  margin-bottom: 8px;
+  color: #c9dcd4;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.customer-page button,
+.customer-dashboard button,
+.customer-profile button {
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.customer-page button:hover,
+.customer-dashboard button:hover,
+.customer-profile button:hover {
+  border-color: #49c6a0;
+}
+
+.customer-page button:focus-visible,
+.customer-dashboard button:focus-visible,
+.customer-profile button:focus-visible {
+  outline: 2px solid #49c6a0;
+  outline-offset: 3px;
+}
+
+/* Customer tables */
+.customer-page table,
+.customer-dashboard table,
+.customer-orders table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-page th,
+.customer-dashboard th,
+.customer-orders th {
+  color: #b5e7d7;
+  background: #10241c;
+  text-align: left;
+  font-weight: 600;
+}
+
+.customer-page th,
+.customer-page td,
+.customer-dashboard th,
+.customer-dashboard td,
+.customer-orders th,
+.customer-orders td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(88, 194, 157, 0.14);
+}
+
+/* Links */
+.customer-page a,
+.customer-dashboard a,
+.customer-profile a,
+.customer-orders a,
+.customer-wishlist a {
+  color: #68d7b3;
+  text-decoration: none;
+}
+
+.customer-page a:hover,
+.customer-dashboard a:hover,
+.customer-profile a:hover,
+.customer-orders a:hover,
+.customer-wishlist a:hover {
+  color: #b5f4df;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .customer-page,
+  .customer-dashboard,
+  .customer-profile,
+  .customer-orders,
+  .customer-wishlist {
+    padding-inline: 16px;
+  }
+
+  .customer-page table,
+  .customer-dashboard table,
+  .customer-orders table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .customer-page th,
+  .customer-page td,
+  .customer-dashboard th,
+  .customer-dashboard td,
+  .customer-orders th,
+  .customer-orders td {
+    padding: 10px;
+    white-space: nowrap;
+  }
+}

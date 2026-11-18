@@ -1,0 +1,588 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+.lux-marble-page{--lux-bg:#100d0b;--lux-card:#1b1411;--lux-gold:#d5a94f;--lux-gold-light:#f0cf7c;--lux-cream:#f8f1e6;--lux-muted:#c1b3a3;--lux-border:rgba(213,169,79,.42);width:100%;min-width:0;overflow:hidden;background:var(--lux-bg);color:var(--lux-cream);font-family:"DM Sans",sans-serif}
+.lux-marble-page *,.lux-marble-page *:before,.lux-marble-page *:after{box-sizing:border-box}.lux-marble-page img{display:block;max-width:100%}.lux-marble-page a{text-decoration:none}.lux-marble-page button,.lux-marble-page input,.lux-marble-page select{font:inherit}
+/* Full-width world-class marble collection image */
+.lux-marble-page .ark-marble-image-hero{
+  width:100%;
+  margin:0;
+  overflow:hidden;
+  background:#100d0b;
+  border-bottom:1px solid var(--lux-border);
+  line-height:0;
+}
+.lux-marble-page .ark-marble-image-hero img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:none;
+  object-fit:contain;
+}
+
+/* Collection */
+.lux-marble-page .lux-collection{padding:25px clamp(20px,3.5vw,55px) 46px;background:var(--lux-bg)}.lux-marble-page .lux-collection-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:17px}.lux-marble-page .lux-eyebrow{margin:0 0 7px;color:var(--lux-gold-light);font-size:10px;font-weight:700;letter-spacing:2.4px;line-height:1.5}
+.lux-marble-page .lux-collection-heading h2{margin:0;color:var(--lux-cream);font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(32px,3vw,43px);font-weight:500;line-height:1.05}.lux-marble-page .lux-collection-heading h2 span{color:var(--lux-gold-light)}.lux-marble-page .lux-collection-heading>div:first-child>p:last-child{margin:8px 0 0;color:var(--lux-muted);font-size:13px;line-height:1.6}
+.lux-marble-page .lux-design-count{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:70px;padding-left:18px;border-left:1px solid var(--lux-border)}.lux-marble-page .lux-design-count strong{color:var(--lux-gold-light);font-family:"Cormorant Garamond",Georgia,serif;font-size:28px;font-weight:500}.lux-marble-page .lux-design-count span{color:var(--lux-muted);font-size:9px;letter-spacing:2px}
+.lux-marble-page .lux-categories{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;margin-bottom:13px}.lux-marble-page .lux-categories button{min-width:0;min-height:38px;padding:8px 9px;border:1px solid var(--lux-border);border-radius:22px;background:transparent;color:var(--lux-cream);font-size:11px;font-weight:600;cursor:pointer;transition:.2s ease}.lux-marble-page .lux-categories button:hover,.lux-marble-page .lux-categories button.active{border-color:var(--lux-gold);background:linear-gradient(135deg,#f0cd77,#c99738);color:#17100a}
+.lux-marble-page .lux-toolbar{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 11px;border:1px solid var(--lux-border);border-radius:5px;background:#15100d}.lux-marble-page .lux-search{display:flex;align-items:center;flex:1;min-width:0;gap:11px;padding:0 12px;color:var(--lux-gold-light)}.lux-marble-page .lux-search input{width:100%;min-width:0;height:39px;outline:none;border:0;background:transparent;color:var(--lux-cream);font-size:13px}.lux-marble-page .lux-search input::placeholder{color:#aa9b8b}.lux-marble-page .lux-sort{display:flex;align-items:center;gap:10px}.lux-marble-page .lux-sort>span{color:var(--lux-gold-light);font-size:11px;font-weight:600}.lux-marble-page .lux-sort select{height:38px;min-width:145px;padding:0 10px;border:1px solid var(--lux-border);border-radius:3px;outline:none;background:#211711;color:var(--lux-cream);font-size:12px;cursor:pointer}.lux-marble-page .lux-layout-buttons{display:flex;gap:6px}.lux-marble-page .lux-layout-buttons button{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--lux-border);border-radius:3px;background:transparent;color:var(--lux-gold-light);cursor:pointer}.lux-marble-page .lux-layout-buttons button.active{background:var(--lux-gold);color:#17100a}.lux-marble-page .lux-results-info{margin:12px 0;color:var(--lux-muted);font-size:12px}.lux-marble-page .lux-results-info span{color:var(--lux-gold-light)}
+/* Cards */
+.lux-marble-page .lux-product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;gap:16px}.lux-marble-page .lux-product-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--lux-border);border-radius:7px;background:linear-gradient(145deg,#241914,#170f0d);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}.lux-marble-page .lux-product-card:hover{transform:translateY(-4px);border-color:var(--lux-gold);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.lux-marble-page .lux-product-image{position:relative;display:block;width:100%;height:220px;flex:0 0 auto;overflow:hidden;background:#211711}.lux-marble-page .lux-product-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s ease}.lux-marble-page .lux-product-card:hover .lux-product-image img{transform:scale(1.04)}.lux-marble-page .lux-image-category{position:absolute;bottom:12px;left:12px;padding:7px 10px;border:1px solid rgba(213,169,79,.7);background:rgba(15,11,9,.88);color:var(--lux-gold-light);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase}.lux-marble-page .lux-image-arrow{position:absolute;top:11px;right:11px;display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--lux-gold);border-radius:50%;background:rgba(15,11,9,.82);color:var(--lux-gold-light);transform:rotate(-45deg)}
+.lux-marble-page .lux-product-info{display:flex;flex:1;flex-direction:column;min-width:0;padding:15px 15px 14px}.lux-marble-page .lux-product-category{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;color:var(--lux-gold-light);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}.lux-marble-page .lux-availability{display:inline-flex;align-items:center;gap:5px;color:#c4bd91;font-size:9px;letter-spacing:0;white-space:nowrap}.lux-marble-page .lux-availability i{width:6px;height:6px;border-radius:50%;background:#9cbd69}.lux-marble-page .lux-availability.is-unavailable i{background:#c76b5e}
+.lux-marble-page .lux-product-title-row{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:72px}.lux-marble-page .lux-product-title-row h3{margin:0;color:var(--lux-cream);font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;line-height:1.12}.lux-marble-page .lux-product-price{display:block;max-width:100%;color:var(--lux-gold-light);font-size:13px;font-weight:700;line-height:1.5;text-align:left}.lux-marble-page .lux-product-description{min-height:40px;margin:9px 0 14px;color:#d1c3b5;font-size:12px;line-height:1.65}.lux-marble-page .lux-product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid rgba(213,169,79,.24)}.lux-marble-page .lux-product-finish{display:flex;flex-direction:column;gap:4px;color:var(--lux-muted);font-size:10px}.lux-marble-page .lux-details-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:36px;padding:0 12px;border:1px solid var(--lux-gold);border-radius:3px;color:var(--lux-gold-light);font-size:11px;font-weight:700;white-space:nowrap;transition:.2s ease}.lux-marble-page .lux-details-button:hover{background:var(--lux-gold);color:#17100a}.lux-marble-page .lux-product-grid.list-view{grid-template-columns:1fr;gap:12px}.lux-marble-page .lux-product-grid.list-view .lux-product-card{display:grid;grid-template-columns:260px minmax(0,1fr)}.lux-marble-page .lux-product-grid.list-view .lux-product-image{height:100%;min-height:200px}.lux-marble-page .lux-product-grid.list-view .lux-product-info{padding:18px 20px}.lux-marble-page .lux-product-grid.list-view .lux-product-title-row{min-height:0}
+.lux-marble-page .lux-empty{padding:65px 20px;border:1px solid var(--lux-border);border-radius:6px;text-align:center;background:var(--lux-card)}.lux-marble-page .lux-empty h3{margin:0 0 9px;color:var(--lux-cream);font-family:"Cormorant Garamond",Georgia,serif;font-size:29px}.lux-marble-page .lux-empty p{margin:0 0 20px;color:var(--lux-muted);font-size:13px}.lux-marble-page .lux-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:0 17px;border:1px solid var(--lux-gold);border-radius:3px;background:linear-gradient(135deg,#f1ce78,#c89432);color:#1a1008;font-size:12px;font-weight:700;cursor:pointer}
+@media(min-width:1500px){.lux-marble-page .lux-product-image{height:245px}}
+@media(max-width:1100px){.lux-marble-page .ark-marble-banner{min-height:370px;height:390px}.lux-marble-page .ark-marble-banner-content{width:min(620px,65%);padding:35px 34px}.lux-marble-page .lux-categories{grid-template-columns:repeat(5,minmax(0,1fr))}.lux-marble-page .lux-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.lux-marble-page .ark-marble-banner{align-items:flex-end;min-height:390px;height:430px}.lux-marble-page .ark-marble-banner-image{object-position:58% center}.lux-marble-page .ark-marble-banner-shade{background:linear-gradient(0deg,rgba(10,7,5,.97) 0%,rgba(10,7,5,.82) 48%,rgba(10,7,5,.12) 100%),linear-gradient(90deg,rgba(10,7,5,.22),transparent)}.lux-marble-page .ark-marble-banner-content{width:100%;padding:28px 22px 34px}.lux-marble-page .ark-marble-banner h1{font-size:clamp(43px,9vw,58px)}.lux-marble-page .ark-marble-banner-content>p{max-width:480px;font-size:13px}.lux-marble-page .ark-marble-banner-caption{top:18px;right:18px;bottom:auto}.lux-marble-page .ark-marble-banner-caption strong{font-size:23px}.lux-marble-page .ark-marble-banner-notes{gap:8px;font-size:8px}.lux-marble-page .lux-collection{padding:22px 17px 35px}.lux-marble-page .lux-categories{display:flex;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}.lux-marble-page .lux-categories button{flex:0 0 auto;min-width:115px}.lux-marble-page .lux-toolbar{flex-wrap:wrap;gap:8px}.lux-marble-page .lux-search{flex-basis:100%;border-bottom:1px solid var(--lux-border)}.lux-marble-page .lux-sort{flex:1}.lux-marble-page .lux-sort select{flex:1;min-width:0}.lux-marble-page .lux-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.lux-marble-page .lux-product-image{height:175px}.lux-marble-page .lux-product-info{padding:12px}.lux-marble-page .lux-product-title-row h3{font-size:21px}.lux-marble-page .lux-product-description{font-size:11px}.lux-marble-page .lux-product-bottom{align-items:flex-start;flex-direction:column}.lux-marble-page .lux-details-button{width:100%}.lux-marble-page .lux-product-grid.list-view .lux-product-card{grid-template-columns:130px minmax(0,1fr)}.lux-marble-page .lux-product-grid.list-view .lux-product-image{min-height:100%}}
+@media(max-width:480px){.lux-marble-page .ark-marble-banner{min-height:410px;height:440px}.lux-marble-page .ark-marble-banner-kicker{font-size:9px;letter-spacing:1.7px}.lux-marble-page .ark-marble-banner h1{font-size:45px}.lux-marble-page .ark-marble-banner-notes{align-items:flex-start;flex-direction:column}.lux-marble-page .ark-marble-banner-notes i{display:none}.lux-marble-page .lux-product-grid{grid-template-columns:1fr}.lux-marble-page .lux-product-image{height:225px}.lux-marble-page .lux-product-title-row{min-height:0}.lux-marble-page .lux-product-title-row h3{font-size:23px}.lux-marble-page .lux-product-bottom{flex-direction:row;align-items:center}.lux-marble-page .lux-details-button{width:auto}.lux-marble-page .lux-design-count{min-width:55px;padding-left:10px}}
+
+/* Keep the collection image edge-to-edge on smaller screens */
+@media(max-width:760px){
+  .lux-marble-page .ark-marble-image-hero img{width:100%;height:auto;}
+}
+
+
+/* =========================================
+   ARK MARBLES — CARD ALIGNMENT + PRICE FIX
+   Keeps the existing burgundy / gold theme.
+========================================= */
+.lux-marble-page .lux-product-grid {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: 18px;
+}
+.lux-marble-page .lux-product-card {
+  min-height: 0;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(155deg, #241914 0%, #17100e 100%);
+}
+.lux-marble-page .lux-product-image {
+  height: 205px;
+  background: #211711;
+}
+.lux-marble-page .lux-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.lux-marble-page .lux-product-info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 17px 17px 16px;
+}
+.lux-marble-page .lux-product-category {
+  min-height: 18px;
+  margin-bottom: 9px;
+  font-size: 11px;
+  letter-spacing: 1.15px;
+}
+.lux-marble-page .lux-availability {
+  font-size: 10px;
+}
+.lux-marble-page .lux-product-title-row {
+  min-height: 57px;
+  display: flex;
+  align-items: flex-start;
+}
+.lux-marble-page .lux-product-title-row h3 {
+  font-size: clamp(22px, 1.55vw, 26px);
+  line-height: 1.12;
+}
+.lux-marble-page .lux-product-price-row {
+  min-height: 31px;
+  display: flex;
+  align-items: center;
+  margin: 2px 0 8px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(213, 169, 79, .18);
+}
+.lux-marble-page .lux-product-price {
+  display: inline-block;
+  color: #f0cf7c;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.lux-marble-page .lux-product-description {
+  min-height: 48px;
+  margin: 7px 0 16px;
+  color: #d8cabb;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.lux-marble-page .lux-product-bottom {
+  margin-top: auto;
+  padding-top: 13px;
+}
+.lux-marble-page .lux-product-finish {
+  font-size: 11px;
+}
+.lux-marble-page .lux-details-button {
+  min-height: 39px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+@media (min-width: 1500px) {
+  .lux-marble-page .lux-product-image { height: 220px; }
+}
+@media (max-width: 1100px) {
+  .lux-marble-page .lux-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .lux-marble-page .lux-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+  .lux-marble-page .lux-product-image { height: 175px; }
+  .lux-marble-page .lux-product-info { padding: 13px; }
+  .lux-marble-page .lux-product-title-row { min-height: 0; }
+  .lux-marble-page .lux-product-title-row h3 { font-size: 21px; }
+  .lux-marble-page .lux-product-price { font-size: 14px; }
+  .lux-marble-page .lux-product-description { min-height: 0; font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .lux-marble-page .lux-product-grid { grid-template-columns: 1fr; }
+  .lux-marble-page .lux-product-image { height: 225px; }
+  .lux-marble-page .lux-product-title-row { min-height: 0; }
+}
+
+/* =========================================
+   ARK MARBLES — COMPACT, BALANCED PRODUCT CARDS
+   Append-only override: preserves the existing theme.
+========================================= */
+.lux-marble-page .lux-product-grid {
+  align-items: start;
+  grid-auto-rows: auto;
+  gap: 16px;
+}
+
+.lux-marble-page .lux-product-card {
+  height: auto;
+  min-height: 0;
+  align-self: start;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.lux-marble-page .lux-product-image {
+  height: 180px;
+  flex: 0 0 180px;
+  background: #211711;
+}
+
+.lux-marble-page .lux-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lux-marble-page .lux-product-info {
+  flex: 1 1 auto;
+  padding: 13px 14px 14px;
+}
+
+.lux-marble-page .lux-product-category {
+  min-height: 16px;
+  margin: 0 0 8px;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.lux-marble-page .lux-product-title-row {
+  min-height: 0;
+  margin: 0 0 7px;
+}
+
+.lux-marble-page .lux-product-title-row h3 {
+  font-size: clamp(21px, 1.45vw, 25px);
+  line-height: 1.12;
+}
+
+.lux-marble-page .lux-product-price-row {
+  min-height: 28px;
+  margin: 0 0 8px;
+  padding: 0 0 7px;
+}
+
+.lux-marble-page .lux-product-price {
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.lux-marble-page .lux-product-description {
+  min-height: 42px;
+  margin: 4px 0 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.lux-marble-page .lux-product-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(213, 169, 79, .24);
+}
+
+.lux-marble-page .lux-product-finish {
+  min-height: 14px;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.lux-marble-page .lux-details-button {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #f0cf7c, #c99738);
+  color: #170f09;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lux-marble-page .lux-details-button:hover {
+  background: #fff0c5;
+  color: #170f09;
+  transform: translateY(-1px);
+}
+
+@media (min-width: 1500px) {
+  .lux-marble-page .lux-product-image {
+    height: 190px;
+    flex-basis: 190px;
+  }
+}
+
+@media (max-width: 760px) {
+  .lux-marble-page .lux-product-grid {
+    align-items: stretch;
+    gap: 13px;
+  }
+  .lux-marble-page .lux-product-image {
+    height: 155px;
+    flex-basis: 155px;
+  }
+  .lux-marble-page .lux-product-info {
+    padding: 11px;
+  }
+  .lux-marble-page .lux-product-title-row h3 {
+    font-size: 20px;
+  }
+  .lux-marble-page .lux-product-price {
+    font-size: 14px;
+  }
+  .lux-marble-page .lux-product-description {
+    min-height: 38px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lux-marble-page .lux-product-image {
+    height: 200px;
+    flex-basis: 200px;
+  }
+  .lux-marble-page .lux-product-info {
+    padding: 13px;
+  }
+  .lux-marble-page .lux-product-title-row h3 {
+    font-size: 23px;
+  }
+}
+
+
+/* =========================================
+   ARK MARBLES — LUXURY REFERENCE CARD
+   Matches the supplied black-and-gold card visual.
+========================================= */
+.lux-marble-page .lux-product-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+}
+.lux-marble-page .lux-product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(211, 163, 70, .82);
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 85% 70%, rgba(107, 73, 27, .12), transparent 48%),
+              linear-gradient(145deg, #17120e 0%, #080706 100%);
+  box-shadow: 0 12px 35px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,220,145,.06);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.lux-marble-page .lux-product-card:hover {
+  transform: translateY(-5px);
+  border-color: #f0c96e;
+  box-shadow: 0 18px 42px rgba(0,0,0,.42), 0 0 20px rgba(213,169,79,.10);
+}
+.lux-marble-page .lux-product-image {
+  position: relative;
+  display: block;
+  height: 245px;
+  flex: 0 0 245px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(231,185,88,.72);
+  background: #211710;
+}
+.lux-marble-page .lux-product-image img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  transition: transform .55s ease;
+}
+.lux-marble-page .lux-product-card:hover .lux-product-image img { transform: scale(1.035); }
+.lux-marble-page .lux-card-heart {
+  position: absolute; top: 18px; right: 18px; display: grid; place-items: center;
+  width: 54px; height: 54px; border: 1px solid #c99b43; border-radius: 50%;
+  background: rgba(15,12,10,.88); color: #f2d58e;
+}
+.lux-marble-page .lux-image-category {
+  display: inline-flex; align-items: center; gap: 12px;
+  bottom: 17px; left: 18px; padding: 12px 17px;
+  border: 1px solid #c99b43; border-radius: 22px;
+  background: rgba(15,12,10,.94); color: #f2d58e;
+  font-size: 12px; font-weight: 700; letter-spacing: 1.6px;
+}
+.lux-marble-page .lux-image-category svg { color: #f0c65f; }
+.lux-marble-page .lux-image-arrow { display: none; }
+.lux-marble-page .lux-product-info {
+  display: flex; flex: 1 1 auto; flex-direction: column;
+  padding: 24px 25px 25px;
+}
+.lux-marble-page .lux-card-title {
+  margin: 0; color: #f8f0df;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 2vw, 34px); font-weight: 600; line-height: 1.12;
+}
+.lux-marble-page .lux-product-description {
+  min-height: 0; margin: 12px 0 22px; color: #d4c9bb;
+  font-size: 15px; line-height: 1.55;
+}
+.lux-marble-page .lux-card-features {
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
+  align-items: center; gap: 8px; padding: 0 0 22px;
+  border-bottom: 1px solid rgba(213,169,79,.38);
+}
+.lux-marble-page .lux-card-features > div {
+  display: flex; min-width: 0; flex-direction: column; align-items: center;
+  justify-content: center; gap: 9px; color: #f1d17c; text-align: center;
+}
+.lux-marble-page .lux-card-features > div + div {
+  border-left: 1px solid rgba(213,169,79,.3);
+}
+.lux-marble-page .lux-card-features span {
+  color: #eee6da; font-size: 13px; line-height: 1.3;
+}
+.lux-marble-page .lux-card-price-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin: 19px 0 23px;
+}
+.lux-marble-page .lux-card-price-row .lux-product-price {
+  color: #f3d17a; font-size: clamp(21px, 1.8vw, 29px);
+  font-weight: 700; line-height: 1.2;
+}
+.lux-marble-page .lux-card-stock {
+  display: inline-flex; align-items: center; gap: 9px; flex: 0 0 auto;
+  color: #65d68a; font-size: 14px; font-weight: 600; white-space: nowrap;
+}
+.lux-marble-page .lux-card-stock i {
+  width: 11px; height: 11px; border-radius: 50%; background: #26c76b;
+  box-shadow: 0 0 9px rgba(38,199,107,.4);
+}
+.lux-marble-page .lux-card-stock.out-of-stock { color: #e18c78; }
+.lux-marble-page .lux-card-stock.out-of-stock i { background: #d46b59; box-shadow: none; }
+.lux-marble-page .lux-details-button {
+  display: flex; width: 100%; min-height: 68px; margin-top: auto;
+  align-items: center; justify-content: center; gap: 17px;
+  border: 1px solid #f0d078; border-radius: 12px;
+  background: linear-gradient(110deg, #ffe49a 0%, #e8b84f 52%, #c78b28 100%);
+  box-shadow: 0 5px 18px rgba(201,151,56,.16);
+  color: #100c08; font-size: 20px; font-weight: 800; letter-spacing: .2px;
+  transition: transform .2s ease, filter .2s ease;
+}
+.lux-marble-page .lux-details-button:hover {
+  transform: translateY(-2px); filter: brightness(1.08); color: #100c08;
+}
+.lux-marble-page .lux-product-grid.list-view { grid-template-columns: 1fr; }
+.lux-marble-page .lux-product-grid.list-view .lux-product-card {
+  display: grid; grid-template-columns: minmax(260px, 36%) minmax(0,1fr);
+}
+.lux-marble-page .lux-product-grid.list-view .lux-product-image { height: 100%; min-height: 330px; }
+@media (max-width: 1150px) {
+  .lux-marble-page .lux-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .lux-marble-page .lux-product-image { height: 220px; flex-basis: 220px; }
+  .lux-marble-page .lux-product-info { padding: 20px; }
+}
+@media (max-width: 680px) {
+  .lux-marble-page .lux-product-grid { grid-template-columns: 1fr; gap: 18px; }
+  .lux-marble-page .lux-product-image { height: 235px; flex-basis: 235px; }
+  .lux-marble-page .lux-product-info { padding: 20px; }
+  .lux-marble-page .lux-card-title { font-size: 29px; }
+  .lux-marble-page .lux-product-description { font-size: 14px; }
+  .lux-marble-page .lux-card-features span { font-size: 12px; }
+  .lux-marble-page .lux-card-price-row { align-items: flex-start; flex-direction: column; }
+  .lux-marble-page .lux-details-button { min-height: 58px; font-size: 18px; }
+}
+
+
+/* =========================================
+   ARK MARBLES — COMPACT LUXURY CARD OVERRIDE
+   Same black-and-gold design, reduced card scale.
+========================================= */
+.lux-marble-page .lux-product-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.lux-marble-page .lux-product-card {
+  height: auto;
+  min-height: 0;
+  border-radius: 12px;
+}
+
+.lux-marble-page .lux-product-image {
+  height: 185px;
+  flex: 0 0 185px;
+}
+
+.lux-marble-page .lux-card-heart {
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+}
+
+.lux-marble-page .lux-image-category {
+  bottom: 12px;
+  left: 12px;
+  gap: 7px;
+  padding: 8px 11px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.lux-marble-page .lux-product-info {
+  padding: 16px 16px 17px;
+}
+
+.lux-marble-page .lux-card-title {
+  font-size: clamp(21px, 1.45vw, 27px);
+  line-height: 1.12;
+}
+
+.lux-marble-page .lux-product-description {
+  margin: 8px 0 13px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.lux-marble-page .lux-card-features {
+  gap: 5px;
+  padding-bottom: 14px;
+}
+
+.lux-marble-page .lux-card-features > div {
+  gap: 6px;
+}
+
+.lux-marble-page .lux-card-features svg {
+  width: 20px;
+  height: 20px;
+}
+
+.lux-marble-page .lux-card-features span {
+  font-size: 11px;
+}
+
+.lux-marble-page .lux-card-price-row {
+  gap: 8px;
+  margin: 13px 0 15px;
+}
+
+.lux-marble-page .lux-card-price-row .lux-product-price {
+  font-size: clamp(18px, 1.35vw, 23px);
+}
+
+.lux-marble-page .lux-card-stock {
+  gap: 6px;
+  font-size: 11px;
+}
+
+.lux-marble-page .lux-card-stock i {
+  width: 8px;
+  height: 8px;
+}
+
+.lux-marble-page .lux-details-button {
+  min-height: 48px;
+  gap: 10px;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+.lux-marble-page .lux-product-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+.lux-marble-page .lux-product-grid.list-view .lux-product-card {
+  grid-template-columns: minmax(210px, 30%) minmax(0, 1fr);
+}
+
+.lux-marble-page .lux-product-grid.list-view .lux-product-image {
+  height: 100%;
+  min-height: 220px;
+}
+
+@media (max-width: 1250px) {
+  .lux-marble-page .lux-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .lux-marble-page .lux-product-image {
+    height: 180px;
+    flex-basis: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .lux-marble-page .lux-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .lux-marble-page .lux-card-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lux-marble-page .lux-product-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .lux-marble-page .lux-product-image {
+    height: 210px;
+    flex-basis: 210px;
+  }
+  .lux-marble-page .lux-product-info {
+    padding: 16px;
+  }
+  .lux-marble-page .lux-card-title {
+    font-size: 25px;
+  }
+  .lux-marble-page .lux-card-price-row {
+    align-items: center;
+    flex-direction: row;
+  }
+  .lux-marble-page .lux-details-button {
+    min-height: 48px;
+    font-size: 15px;
+  }
+}
