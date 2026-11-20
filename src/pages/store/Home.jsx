@@ -1,3 +1,4 @@
+
 import React, { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
@@ -9,9 +10,6 @@ import {
   ShieldCheck,
   Headphones,
   Gem,
-  Wrench,
-  PackageCheck,
-  Star,
 } from "lucide-react";
 
 import { supabase } from "../../lib/supabase";
@@ -38,6 +36,7 @@ const fallbackProducts = [
     image: IMAGE.tiles,
     description: "Elegant ivory marble with beautiful golden veining.",
     path: "/marbles",
+    status: "in stock",
   },
   {
     id: "fallback-marble-2",
@@ -48,6 +47,7 @@ const fallbackProducts = [
     image: IMAGE.marble,
     description: "Classic white marble with natural grey patterns.",
     path: "/marbles",
+    status: "in stock",
   },
   {
     id: "fallback-marble-3",
@@ -58,6 +58,7 @@ const fallbackProducts = [
     image: "/images/marbles/Nero Marquina Marble.png",
     description: "Premium black marble with dramatic white veins.",
     path: "/marbles",
+    status: "in stock",
   },
   {
     id: "fallback-marble-4",
@@ -68,6 +69,7 @@ const fallbackProducts = [
     image: "/images/marbles/Emerald Fusion Marble.png",
     description: "Premium emerald stone with elegant natural veins.",
     path: "/marbles",
+    status: "in stock",
   },
   {
     id: "fallback-construction-1",
@@ -78,6 +80,7 @@ const fallbackProducts = [
     image: IMAGE.cement,
     description: "Quality cement for residential and commercial construction.",
     path: "/construction",
+    status: "in stock",
   },
   {
     id: "fallback-construction-2",
@@ -88,6 +91,7 @@ const fallbackProducts = [
     image: IMAGE.bricks,
     description: "Traditional clay bricks for building walls.",
     path: "/construction",
+    status: "in stock",
   },
   {
     id: "fallback-construction-3",
@@ -98,6 +102,7 @@ const fallbackProducts = [
     image: IMAGE.pipes,
     description: "PVC pipes for residential plumbing installations.",
     path: "/construction",
+    status: "in stock",
   },
   {
     id: "fallback-construction-4",
@@ -108,6 +113,7 @@ const fallbackProducts = [
     image: IMAGE.adhesive,
     description: "Tile adhesive for fixing tiles to suitable surfaces.",
     path: "/construction",
+    status: "in stock",
   },
 ];
 
@@ -119,7 +125,7 @@ const getText = (...values) =>
       String(value).trim() !== ""
   );
 
-const getCategory = (product) => {
+const getCategory = (product = {}) => {
   const value = String(
     getText(
       product.category,
@@ -131,7 +137,12 @@ const getCategory = (product) => {
   ).toLowerCase();
 
   const name = String(
-    getText(product.name, product.title, product.product_name, "")
+    getText(
+      product.name,
+      product.title,
+      product.product_name,
+      ""
+    )
   ).toLowerCase();
 
   if (
@@ -147,31 +158,45 @@ const getCategory = (product) => {
   return "construction";
 };
 
-const getFallbackImage = (product) => {
+const getFallbackImage = (product = {}) => {
   const name = String(
-    getText(product.name, product.title, product.product_name, "")
+    getText(
+      product.name,
+      product.title,
+      product.product_name,
+      ""
+    )
   ).toLowerCase();
 
   if (name.includes("cement")) return IMAGE.cement;
   if (name.includes("brick") || name.includes("block")) return IMAGE.bricks;
   if (name.includes("pipe") || name.includes("plumbing")) return IMAGE.pipes;
   if (name.includes("adhesive")) return IMAGE.adhesive;
-  if (name.includes("steel") || name.includes("rod") || name.includes("tmt")) {
+
+  if (
+    name.includes("steel") ||
+    name.includes("rod") ||
+    name.includes("tmt")
+  ) {
     return IMAGE.steel;
   }
+
   if (name.includes("tile")) return IMAGE.tiles;
+
   if (name.includes("nero")) {
     return "/images/marbles/Nero Marquina Marble.png";
   }
+
   if (name.includes("emerald")) {
     return "/images/marbles/Emerald Fusion Marble.png";
   }
+
   if (name.includes("calacatta")) return IMAGE.tiles;
 
   return IMAGE.marble;
 };
 
-const normalizeProduct = (product) => {
+const normalizeProduct = (product = {}) => {
   const category = getCategory(product);
 
   const rawImage = getText(
@@ -183,13 +208,24 @@ const normalizeProduct = (product) => {
 
   const rawPrice =
     category === "marble"
-      ? getText(product.price_per_sqft, product.price, product.selling_price, 0)
-      : getText(product.price, product.selling_price, product.sale_price, 0);
+      ? getText(
+          product.price_per_sqft,
+          product.price,
+          product.selling_price,
+          0
+        )
+      : getText(
+          product.price,
+          product.selling_price,
+          product.sale_price,
+          0
+        );
 
-  const price = Number(String(rawPrice).replace(/[₹,\s]/g, "")) || 0;
+  const price =
+    Number(String(rawPrice).replace(/[₹,\s]/g, "")) || 0;
 
   return {
-    id: product.id,
+    id: product.id || `product-${Math.random().toString(36).slice(2)}`,
     name: getText(
       product.name,
       product.title,
@@ -204,7 +240,11 @@ const normalizeProduct = (product) => {
       category === "marble" ? "Sq.Ft" : "Piece"
     ),
     image: rawImage || getFallbackImage(product),
-    description: getText(product.description, product.short_description, ""),
+    description: getText(
+      product.description,
+      product.short_description,
+      ""
+    ),
     status: String(
       getText(product.status, product.stock_status, "in stock")
     ).toLowerCase(),
@@ -218,29 +258,40 @@ const normalizeProduct = (product) => {
 const formatPrice = (price) =>
   new Intl.NumberFormat("en-IN", {
     maximumFractionDigits: 2,
-  }).format(price);
+  }).format(Number(price) || 0);
 
 function ProductCard({ product }) {
   const [imageFailed, setImageFailed] = useState(false);
 
+  const status = String(product?.status || "in stock").toLowerCase();
+  const name = product?.name || "Product";
+  const category = product?.category || "construction";
+  const path = product?.path || "/construction";
+
   return (
     <article className="ark-home-product-card">
       <Link
-        to={product.path}
+        to={path}
         className="ark-home-product-image-link"
-        aria-label={`View ${product.name}`}
+        aria-label={`View ${name}`}
       >
         <div className="ark-home-product-image-wrap">
           <img
-            src={imageFailed ? getFallbackImage({ name: product.name }) : product.image}
-            alt={product.name}
+            src={
+              imageFailed
+                ? getFallbackImage({ name })
+                : product?.image || IMAGE.marble
+            }
+            alt={name}
             className="ark-home-product-image"
             loading="lazy"
             onError={() => setImageFailed(true)}
           />
 
           <span className="ark-home-product-tag">
-            {product.category === "marble" ? "PREMIUM MARBLE" : "BUILDING MATERIAL"}
+            {category === "marble"
+              ? "PREMIUM MARBLE"
+              : "BUILDING MATERIAL"}
           </span>
 
           <span className="ark-home-heart" aria-hidden="true">
@@ -252,30 +303,32 @@ function ProductCard({ product }) {
       <div className="ark-home-product-details">
         <div className="ark-home-product-meta">
           <span>
-            {product.category === "marble" ? "MARBLE COLLECTION" : "BUILDING MATERIALS"}
+            {category === "marble"
+              ? "MARBLE COLLECTION"
+              : "BUILDING MATERIALS"}
           </span>
 
           <span className="ark-home-stock">
             <i />
-            {product.status.includes("out") ? "OUT OF STOCK" : "IN STOCK"}
+            {status.includes("out") ? "OUT OF STOCK" : "IN STOCK"}
           </span>
         </div>
 
-        <h3>{product.name}</h3>
+        <h3>{name}</h3>
 
         <p className="ark-home-product-description">
-          {product.description ||
-            (product.category === "marble"
+          {product?.description ||
+            (category === "marble"
               ? "Natural stone selected for elegant interiors and architecture."
               : "Quality building material for residential and commercial projects.")}
         </p>
 
         <div className="ark-home-product-price">
-          ₹{formatPrice(product.price)}
-          <span> / {product.unit}</span>
+          ₹{formatPrice(product?.price)}
+          <span> / {product?.unit || "Piece"}</span>
         </div>
 
-        <Link to={product.path} className="ark-home-product-button">
+        <Link to={path} className="ark-home-product-button">
           <ShoppingCart size={16} />
           View Product
           <ArrowRight size={16} />
@@ -299,16 +352,25 @@ function ProductCollection({
 }) {
   return (
     <section
-      id={side === "right" ? "ark-construction-collection" : "ark-marble-collection"}
-      className={`ark-home-split-section ${side === "right" ? "construction-layout" : "marble-layout"}`}
+      id={
+        side === "right"
+          ? "ark-construction-collection"
+          : "ark-marble-collection"
+      }
+      className={`ark-home-split-section ${
+        side === "right" ? "construction-layout" : "marble-layout"
+      }`}
     >
       <div className="ark-home-split-intro">
         <span className="ark-home-section-kicker">{kicker}</span>
+
         <h2>
           {title}
           <span>{highlight}</span>
         </h2>
+
         <p>{description}</p>
+
         <Link to={link} className="ark-home-view-all">
           {buttonText}
           <ArrowRight size={17} />
@@ -339,8 +401,13 @@ export default function Home() {
 
   const updateSearch = (value) => {
     const next = new URLSearchParams(searchParams);
-    if (value.trim()) next.set("search", value);
-    else next.delete("search");
+
+    if (value.trim()) {
+      next.set("search", value);
+    } else {
+      next.delete("search");
+    }
+
     setSearchParams(next, { replace: true });
   };
 
@@ -359,23 +426,33 @@ export default function Home() {
         if (active) {
           const visibleProducts = (data || [])
             .filter((item) => {
-              const status = String(item.status || "").toLowerCase();
+              const status = String(item?.status || "").toLowerCase();
+
               return (
                 status !== "hidden" &&
                 status !== "inactive" &&
                 status !== "deleted" &&
-                item.is_available !== false
+                item?.is_available !== false
               );
             })
             .map(normalizeProduct);
 
-          setProducts(visibleProducts.length ? visibleProducts : fallbackProducts);
+          setProducts(
+            visibleProducts.length
+              ? visibleProducts
+              : fallbackProducts
+          );
         }
       } catch (error) {
         console.error("Unable to load homepage products:", error);
-        if (active) setProducts(fallbackProducts);
+
+        if (active) {
+          setProducts(fallbackProducts);
+        }
       } finally {
-        if (active) setLoading(false);
+        if (active) {
+          setLoading(false);
+        }
       }
     };
 
@@ -388,10 +465,13 @@ export default function Home() {
 
   const filteredProducts = useMemo(() => {
     const term = search.trim().toLowerCase();
+
     if (!term) return products;
 
     return products.filter((product) =>
-      `${product.name} ${product.category} ${product.description}`
+      `${product?.name || ""} ${product?.category || ""} ${
+        product?.description || ""
+      }`
         .toLowerCase()
         .includes(term)
     );
@@ -428,10 +508,17 @@ export default function Home() {
           </ul>
 
           <div className="ark-home-hero-actions">
-            <Link to="/marbles" className="ark-home-button ark-home-button-gold">
+            <Link
+              to="/marbles"
+              className="ark-home-button ark-home-button-gold"
+            >
               Shop Marbles <ArrowRight size={17} />
             </Link>
-            <Link to="/construction" className="ark-home-button ark-home-button-outline">
+
+            <Link
+              to="/construction"
+              className="ark-home-button ark-home-button-outline"
+            >
               Construction Materials <ArrowRight size={17} />
             </Link>
           </div>
@@ -443,13 +530,17 @@ export default function Home() {
           className="ark-home-search"
           onSubmit={(event) => {
             event.preventDefault();
-            document.getElementById("ark-marble-collection")?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
+
+            document
+              .getElementById("ark-marble-collection")
+              ?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
           }}
         >
           <Search size={20} />
+
           <input
             type="search"
             placeholder="Search marbles, tiles, cement, pipes, bricks..."
@@ -457,8 +548,12 @@ export default function Home() {
             onChange={(event) => updateSearch(event.target.value)}
             aria-label="Search all products"
           />
+
           {search && (
-            <button type="button" onClick={() => updateSearch("")}>
+            <button
+              type="button"
+              onClick={() => updateSearch("")}
+            >
               Clear
             </button>
           )}
@@ -497,16 +592,19 @@ export default function Home() {
           <strong>Premium Quality</strong>
           <span>Carefully selected materials</span>
         </div>
+
         <div>
           <ShieldCheck />
           <strong>Secure Payments</strong>
           <span>Safe and reliable checkout</span>
         </div>
+
         <div>
           <Truck />
           <strong>Fast Delivery</strong>
           <span>Reliable delivery support</span>
         </div>
+
         <div>
           <Headphones />
           <strong>Expert Support</strong>
