@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { SlidersHorizontal, RotateCcw } from "lucide-react";
 
@@ -12,9 +13,9 @@ export default function ProductFilters({
   const [filters, setFilters] = useState({
     minPrice: initialFilters.minPrice ?? "",
     maxPrice: initialFilters.maxPrice ?? "",
-    colors: initialFilters.colors ?? [],
-    types: initialFilters.types ?? [],
-    finishes: initialFilters.finishes ?? [],
+    colors: Array.isArray(initialFilters.colors) ? initialFilters.colors : [],
+    types: Array.isArray(initialFilters.types) ? initialFilters.types : [],
+    finishes: Array.isArray(initialFilters.finishes) ? initialFilters.finishes : [],
     availability: initialFilters.availability ?? "all",
   });
 
@@ -26,7 +27,7 @@ export default function ProductFilters({
   };
 
   const toggleOption = (key, value) => {
-    const current = filters[key];
+    const current = Array.isArray(filters[key]) ? filters[key] : [];
 
     const updated = current.includes(value)
       ? current.filter((item) => item !== value)
@@ -56,7 +57,9 @@ export default function ProductFilters({
         <label className="product-filter-option" key={option}>
           <input
             type="checkbox"
-            checked={filters[key].includes(option)}
+            checked={(
+              Array.isArray(filters[key]) ? filters[key] : []
+            ).includes(option)}
             onChange={() => toggleOption(key, option)}
           />
           <span>{option}</span>
